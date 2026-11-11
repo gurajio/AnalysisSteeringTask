@@ -152,6 +152,30 @@ class AnalysisTests(unittest.TestCase):
         options['trialEnd']=None
         self.assertEqual(analyze(rows,options)['included'],46)
 
+    def test_boundary_windows_are_optional_and_not_double_counted(self):
+        rows = [dict(participant='001', n=n, success=n != 100, phase='post', condition='C1',
+                     source='test.csv', line=n+1, attempt=n, errorType='none', region='none',
+                     coreMtMs=dict(MT=n, ER=0, TPe=1)) for n in range(1, 311)]
+        options = dict(scope='coreMtMs', phase='post', mode='individual', bin=10,
+                       participants=['001'], conditions=['C1'], exclude=True,
+                       excludeBoundaryTrials=True, trialStart=1, trialEnd=None)
+        result = analyze(rows, options)
+        self.assertEqual(result['selected'], 310)
+        self.assertEqual(result['included'], 280)
+        self.assertEqual(len(result['excluded']), 30)
+        self.assertEqual(result['summary'][0]['rows'], 280)
+        overlap = next(row for row in result['excluded'] if row['n'] == 100)
+        self.assertEqual(overlap['reason'], 'success=false / 100・200・300試行周辺10試行')
+        options['excludeBoundaryTrials'] = False
+        kept = analyze(rows, options)
+        self.assertEqual(kept['included'], 309)
+        self.assertEqual(len(kept['excluded']), 1)
+        options.update(excludeBoundaryTrials=True, trialStart=100, trialEnd=200)
+        partial = analyze(rows, options)
+        self.assertEqual(partial['selected'], 101)
+        self.assertEqual(partial['included'], 90)
+        self.assertEqual(len(partial['excluded']), 11)
+
 
 if __name__ == '__main__':
     unittest.main()

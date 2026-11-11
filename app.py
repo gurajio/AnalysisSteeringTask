@@ -81,7 +81,8 @@ def plot_result(result, key):
         ax.legend(loc='upper left', bbox_to_anchor=(1.01, 1), frameon=False, fontsize=10)
     if not result['summary']:
         ax.text(.5, .5, 'No data for the current selection', transform=ax.transAxes, ha='center')
-    fig.supxlabel(f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {options['mode']} | "
+    boundary_note = 'Exclude boundary trials' if options['excludeBoundaryTrials'] else 'Keep boundary trials'
+    fig.supxlabel(f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {options['mode']} | "
                   f"trials={start}-{end if end is not None else 'all'} | rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
     data = io.BytesIO()
     fig.savefig(data, format='png', dpi=100)
@@ -89,26 +90,35 @@ def plot_result(result, key):
 
 
 def metadata():
-    return dict(participants=sorted({r['participant'] for r in ROWS}),
-                conditions=sorted({r['condition'] for r in ROWS}), rows=len(ROWS),
+    participants = sorted({r['participant'] for r in ROWS})
+    conditions = sorted({r['condition'] for r in ROWS})
+    by_condition = {condition: sorted({r['participant'] for r in ROWS
+                                       if r['phase'] == 'practice' and r['condition'] == condition})
+                    for condition in conditions}
+    assigned = {participant for members in by_condition.values() for participant in members}
+    unassigned = sorted(set(participants) - assigned)
+    return dict(participants=participants, conditions=conditions, participantsByCondition=by_condition,
+                unassignedParticipants=unassigned, rows=len(ROWS),
                 files=len({r['source'] for r in ROWS}))
 
 
 def validate(data):
     start, end = trial_range(data)
-    data = dict(data, trialStart=start, trialEnd=end)
+    data = dict(data, trialStart=start, trialEnd=end,
+                excludeBoundaryTrials=data.get('excludeBoundaryTrials', False))
     meta = metadata()
     if data.get('scope') not in ('coreMtMs', 'mtMs') or data.get('phase') not in ('practice', 'post'):
         raise ValueError('対象区間またはphaseが不正です')
     if data.get('mode') not in ('individual', 'mean') or data.get('bin') not in (10, 50, 100):
         raise ValueError('表示方法または区間幅が不正です')
-    if not isinstance(data.get('exclude'), bool):
+    if not isinstance(data.get('exclude'), bool) or not isinstance(data.get('excludeBoundaryTrials'), bool):
         raise ValueError('除外設定が不正です')
     for key in ('participants', 'conditions'):
         if not isinstance(data.get(key), list) or any(v not in meta[key] for v in data[key]):
             raise ValueError('選択が不正です')
         data[key] = sorted(set(data[key]))
-    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'participants', 'conditions', 'trialStart', 'trialEnd')}
+    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'excludeBoundaryTrials',
+                                  'participants', 'conditions', 'trialStart', 'trialEnd')}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -176,7 +186,8 @@ class Handler(BaseHTTPRequestHandler):
                 if key not in charts:
                     raise ValueError('図が見つかりません')
                 stamp = datetime.now().astimezone().strftime('%Y%m%d_%H%M%S_%f')
-                name = f"{key}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_P{'-'.join(options['participants'])}_{stamp}.png"
+                boundary = 'boundary-excluded' if options['excludeBoundaryTrials'] else 'boundary-kept'
+                name = f"{key}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_P{'-'.join(options['participants'])}_{stamp}.png"
                 name = re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
                 if len(name.encode()) > 240:
                     name = name[:170] + '_' + stamp + '.png'

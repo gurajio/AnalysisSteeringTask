@@ -7,6 +7,8 @@ from pathlib import Path
 import numpy as np
 from scipy.optimize import least_squares
 
+BOUNDARY_WINDOWS = ((96, 105), (196, 205), (296, 305))
+
 
 def number(value):
     try:
@@ -153,16 +155,29 @@ def trial_range(options):
     return start, end
 
 
+def boundary_trial(n):
+    return any(start <= n <= end for start, end in BOUNDARY_WINDOWS)
+
+
 def analyze(rows, options):
     start, end = trial_range(options)
     scope, phase, mode, width = options['scope'], options['phase'], options['mode'], options['bin']
     selected = [r for r in rows if r['participant'] in options['participants'] and r['phase'] == phase
                 and r['condition'] in options['conditions'] and r['n'] >= start
                 and (end is None or r['n'] <= end)]
-    included = [r for r in selected if not options['exclude'] or r['success']]
-    excluded = [dict(participant=r['participant'], condition=r['condition'], n=r['n'],
-                     attempt=r['attempt'], source=r['source'], line=r['line'], reason='success=false')
-                for r in selected if options['exclude'] and not r['success']]
+    included, excluded = [], []
+    for row in selected:
+        reasons = []
+        if options['exclude'] and not row['success']:
+            reasons.append('success=false')
+        if options.get('excludeBoundaryTrials', False) and boundary_trial(row['n']):
+            reasons.append('100・200・300試行周辺10試行')
+        if reasons:
+            excluded.append(dict(participant=row['participant'], condition=row['condition'], n=row['n'],
+                                 attempt=row['attempt'], source=row['source'], line=row['line'],
+                                 reason=' / '.join(reasons)))
+        else:
+            included.append(row)
     groups = defaultdict(list)
     for r in included:
         groups[(r['condition'], r['participant'])].append(r)
