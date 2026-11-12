@@ -21,11 +21,12 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib.figure import Figure
-from analysis import analyze, load_rows, trial_range
+from analysis import MT_OUTLIERS, analyze, load_rows, trial_range
 
 ROWS = []
 RESULTS = OrderedDict()
 COLORS = {}
+CONDITION_COLORS = {'C1': '#1f77b4', 'C2': '#ff7f0e', 'C3': '#2ca02c'}
 
 
 def plot_result(result, key):
@@ -50,7 +51,8 @@ def plot_result(result, key):
     elif learning:
         for fit in result['inverseFits' if metric == '1/TPe' else 'fits']:
             label = f"{fit['participant']} / {fit['condition']}"
-            color = COLORS.get(fit['participant'], '#0f766e')
+            color = (CONDITION_COLORS.get(fit['condition'], '#0f766e') if options['mode'] == 'mean'
+                     else COLORS.get(fit['participant'], '#0f766e'))
             ax.scatter(fit['observedX'], fit['observedY'], s=10, alpha=.3, color=color)
             if fit['ok']:
                 ax.plot(fit['x'], fit['y'], color=color, linestyle=styles[conditions.index(fit['condition']) % 4], label=label)
@@ -58,7 +60,9 @@ def plot_result(result, key):
     else:
         for line in result['series']:
             y = [v if v is not None else float('nan') for v in line[metric]]
-            ax.plot(line['x'], y, marker='o', markersize=4, color=COLORS.get(line['participant'], '#0f766e'),
+            color = (CONDITION_COLORS.get(line['condition'], '#0f766e') if options['mode'] == 'mean'
+                     else COLORS.get(line['participant'], '#0f766e'))
+            ax.plot(line['x'], y, marker='o', markersize=4, color=color,
                     linestyle=styles[conditions.index(line['condition']) % 4], label=f"{line['participant']} / {line['condition']}")
         ax.set_xlabel(f"Original trial number / {options['bin']}-trial bins (midpoint)")
     start, end = trial_range(options)
@@ -67,24 +71,34 @@ def plot_result(result, key):
             [start] + [x for line in result['series'] for x in line['x']]
             + [x for fit in result['fits'] for x in fit['observedX']])
         ax.set_xlim(start - 1, max(last, start))
-    unit = {'MT': 'ms', 'ER': '%', 'TPe': '1/s', '1/TPe': 's'}[metric]
+    unit = {'MT': 'ms', 'ER': '%', 'TPe': '1/s', '1/TPe': 's', 'IP': 'ms'}[metric]
     ax.set_ylabel(f'{metric} ({unit})')
-    ax.set_title(f"{'Learning curve: ' + metric if learning else key.replace('_', ' ').title()} | {options['phase']} | {options['scope']}", loc='left', fontsize=20)
+    plot_scope = 'coreMtMs / (amplitude / width)' if metric == 'IP' else options['scope']
+    ax.set_title(f"{'Learning curve: ' + metric if learning else key.replace('_', ' ').title()} | {options['phase']} | {plot_scope}", loc='left', fontsize=20)
     ax.spines[['top', 'right']].set_visible(False)
     ax.grid(axis='y', alpha=.18)
     if metric == 'ER':
         ax.set_ylim(0, 100)
-    else:
+    elif not (learning and options.get('aBound') == 'free'):
         ax.set_ylim(bottom=0)
     handles, _ = ax.get_legend_handles_labels()
     if handles:
         ax.legend(loc='upper left', bbox_to_anchor=(1.01, 1), frameon=False, fontsize=10)
     if not result['summary']:
         ax.text(.5, .5, 'No data for the current selection', transform=ax.transAxes, ha='center')
+    if metric == 'IP' and result['summary'] and all(v is None for line in result['series'] for v in line['IP']):
+        ax.text(.5, .5, 'IP unavailable: valid core MT and nominal ID required', transform=ax.transAxes, ha='center')
     boundary_note = 'Exclude boundary trials' if options['excludeBoundaryTrials'] else 'Keep boundary trials'
     outlier_note = {'none': 'MT outliers: none', 'trial3sd': 'MT outliers: trial mean ±3SD',
-                    'curve3sd': 'MT outliers: curve residual ±3SD'}[options['mtOutlier']]
-    fig.supxlabel(f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
+                    'curve3sd': 'MT outliers: curve residual ±3SD',
+                    'trial1_5sd': 'MT outliers: trial mean ±1.5SD',
+                    'curve1_5sd': 'MT outliers: curve residual ±1.5SD'}[options['mtOutlier']]
+    formula = 'A+B*N^(-a)' if options.get('curveModel') == 'power' else 'A+B*(N+E)^(-a)'
+    bound_note = 'A unrestricted' if options.get('aBound') == 'free' else 'A >= 0'
+    if options.get('aBound') == 'fixed_core':
+        bound_note = 'Core MT A fixed: C1=84, C2=253, C3=315 ms; other fits A >= 0'
+    fig.supxlabel(f"Model: {formula} | {bound_note}\n"
+                  f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
                   f"trials={start}-{end if end is not None else 'all'} | rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
     data = io.BytesIO()
     fig.savefig(data, format='png', dpi=100)
@@ -108,7 +122,12 @@ def validate(data):
     start, end = trial_range(data)
     data = dict(data, trialStart=start, trialEnd=end,
                 excludeBoundaryTrials=data.get('excludeBoundaryTrials', False),
-                mtOutlier=data.get('mtOutlier', 'none'))
+                mtOutlier=data.get('mtOutlier', 'none'), curveModel=data.get('curveModel', 'shifted'),
+                aBound=data.get('aBound', 'nonnegative'))
+    if data['curveModel'] not in ('shifted', 'power'):
+        raise ValueError('回帰式が不正です')
+    if data['aBound'] not in ('nonnegative', 'free', 'fixed_core'):
+        raise ValueError('Aの制約が不正です')
     meta = metadata()
     if data.get('scope') not in ('coreMtMs', 'mtMs') or data.get('phase') not in ('practice', 'post'):
         raise ValueError('対象区間またはphaseが不正です')
@@ -116,13 +135,13 @@ def validate(data):
         raise ValueError('表示方法または区間幅が不正です')
     if not isinstance(data.get('exclude'), bool) or not isinstance(data.get('excludeBoundaryTrials'), bool):
         raise ValueError('除外設定が不正です')
-    if data.get('mtOutlier') not in ('none', 'trial3sd', 'curve3sd'):
+    if data.get('mtOutlier') not in MT_OUTLIERS:
         raise ValueError('MT外れ値除外の設定が不正です')
     for key in ('participants', 'conditions'):
         if not isinstance(data.get(key), list) or any(v not in meta[key] for v in data[key]):
             raise ValueError('選択が不正です')
         data[key] = sorted(set(data[key]))
-    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'excludeBoundaryTrials', 'mtOutlier',
+    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'excludeBoundaryTrials', 'mtOutlier', 'curveModel', 'aBound',
                                   'participants', 'conditions', 'trialStart', 'trialEnd')}
 
 
@@ -173,6 +192,7 @@ class Handler(BaseHTTPRequestHandler):
                 options = validate(data)
                 result = analyze(ROWS, options)
                 keys = [f'{kind}_{metric}' for kind in ('mean', 'trend') for metric in ('MT', 'ER', 'TPe')]
+                keys.append('trend_IP')
                 if options['phase'] == 'practice':
                     keys.extend(['learning', 'learning_inverse_TPe'])
                 charts = {k: plot_result(result, k) for k in keys}
@@ -192,7 +212,11 @@ class Handler(BaseHTTPRequestHandler):
                     raise ValueError('図が見つかりません')
                 stamp = datetime.now().astimezone().strftime('%Y%m%d_%H%M%S_%f')
                 boundary = 'boundary-excluded' if options['excludeBoundaryTrials'] else 'boundary-kept'
-                name = f"{key}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_{options['mtOutlier']}_P{'-'.join(options['participants'])}_{stamp}.png"
+                if key == 'trend_IP':
+                    key_name = 'trend_IP_coreMtMs_nominalID_ms'
+                else:
+                    key_name = key
+                name = f"{key_name}_{options['curveModel']}_A-{options['aBound']}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_{options['mtOutlier']}_P{'-'.join(options['participants'])}_{stamp}.png"
                 name = re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
                 if len(name.encode()) > 240:
                     name = name[:170] + '_' + stamp + '.png'

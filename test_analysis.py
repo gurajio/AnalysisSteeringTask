@@ -3,10 +3,38 @@ import unittest
 from unittest.mock import patch
 
 import numpy as np
-from analysis import aggregate, analyze, clip_points, curve, event_region, fit_curve, mt_outliers, trajectory_metrics, trial_range
+from analysis import aggregate, analyze, clip_points, core_ip, curve, event_region, fit_curve, mt_outliers, trajectory_metrics, trial_range
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_core_ip_units(self):
+        self.assertAlmostEqual(core_ip(1000, 1350, 70), 1000 / (1350 / 70))
+        for values in [(None, 10, 2), (100, 0, 2), (100, 10, -1), (100, 'nan', 2), (0, 10, 2)]:
+            self.assertIsNone(core_ip(*values))
+
+    def test_ip_trend_scope_and_filters(self):
+        rows = []
+        for p, n, success, ip in [('001', 1, True, 10), ('001', 2, True, 30),
+                                   ('002', 1, True, 100), ('002', 2, False, 900),
+                                   ('002', 3, True, None), ('002', 96, True, 800)]:
+            rows.append(dict(participant=p, n=n, success=success, phase='post', condition='C1',
+                             source='test.csv', line=n, attempt=n, errorType='none', region='none', IP=ip,
+                             coreMtMs=dict(MT=100, ER=0, TPe=1), mtMs=dict(MT=200, ER=0, TPe=2)))
+        options = dict(scope='mtMs', phase='post', mode='mean', bin=10, participants=['001', '002'],
+                       conditions=['C1'], exclude=True, excludeBoundaryTrials=True, mtOutlier='none')
+        result = analyze(rows, options)
+        self.assertEqual(result['series'][0]['IP'], [60])
+        self.assertEqual(result['missing']['IP'], 1)
+        self.assertEqual(result['summary'][0]['IPParticipants'], 2)
+        options['scope'] = 'coreMtMs'
+        self.assertEqual(analyze(rows, options)['series'][0]['IP'], [60])
+        options.update(trialStart=2, trialEnd=3)
+        result = analyze(rows, options)
+        self.assertEqual(result['series'][0]['IP'], [30])
+        self.assertEqual(result['series'][0]['x'], [2.5])
+        options.update(mode='individual', trialStart=1, trialEnd=None)
+        self.assertEqual([line['IP'] for line in analyze(rows, options)['series']], [[20], [100]])
+
     def test_width_uses_perpendicular_axis(self):
         direction = np.array([math.sqrt(3) / 2, -.5])
         normal = np.array([.5, math.sqrt(3) / 2])
@@ -60,6 +88,84 @@ class AnalysisTests(unittest.TestCase):
         self.assertLess(result['rmse'], .01)
         self.assertGreater(result['r2'], .99999)
         self.assertFalse(fit_curve([1, 2], [5, 4])['ok'])
+
+    def test_power_curve_units(self):
+        x = np.arange(1, 41, dtype=float)
+        for unit in (1, 1000):
+            expected = [300 / unit, 1500 / unit, .6]
+            y = curve(x, expected)
+            result = fit_curve(x, y, unit_scale=unit, model='power')
+            self.assertTrue(result['ok'])
+            self.assertEqual(result['parameters']['E'], 0)
+            np.testing.assert_allclose([result['parameters'][k] for k in ('A', 'B', 'a')], expected, rtol=1e-5)
+            self.assertLess(result['rmse'], .01 / unit)
+        self.assertFalse(fit_curve(x[:7], y[:7], model='power')['ok'])
+
+    def test_unrestricted_a(self):
+        x = np.arange(1, 101, dtype=float)
+        for model in ('shifted', 'power'):
+            for unit in (1, 1000):
+                params = [-100 / unit, 2000 / unit, 4. if model == 'shifted' else 0., .5]
+                y = curve(x, params)
+                free = fit_curve(x, y, unit_scale=unit, model=model, a_bound='free')
+                bounded = fit_curve(x, y, unit_scale=unit, model=model)
+                self.assertTrue(free['ok'])
+                self.assertAlmostEqual(free['parameters']['A'], params[0], delta=.01 / unit)
+                self.assertLess(free['rmse'], .001 / unit)
+                self.assertGreaterEqual(bounded['parameters']['A'], 0)
+                self.assertLess(free['rmse'], bounded['rmse'])
+
+    def test_fixed_a_recovery(self):
+        x = np.arange(1, 101, dtype=float)
+        for model in ('shifted', 'power'):
+            for value in (84., 253., 315.):
+                params = [value, 1500., 4. if model == 'shifted' else 0., .6]
+                result = fit_curve(x, curve(x, params), model=model, fixed_a=value)
+                self.assertTrue(result['ok'])
+                self.assertTrue(result['aFixed'])
+                self.assertEqual(result['parameters']['A'], value)
+                self.assertLess(result['rmse'], .001)
+                np.testing.assert_allclose(result['y'], curve(result['x'], params), atol=.001)
+
+    def test_fixed_core_scope(self):
+        rows = [dict(participant='001', n=n, success=True, phase='practice', condition=c,
+                     source='test.csv', line=n+1, attempt=n, errorType='none', region='none',
+                     coreMtMs=dict(MT=float(curve(n, [a, 1500., .6])), ER=0, TPe=2),
+                     mtMs=dict(MT=float(curve(n, [500., 1500., .6])), ER=0, TPe=2))
+                for c, a in [('C1', 84.), ('C2', 253.), ('C3', 315.)] for n in range(1, 41)]
+        options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
+                       participants=['001'], conditions=['C1', 'C2', 'C3'], exclude=False,
+                       curveModel='power', aBound='fixed_core', mtOutlier='none')
+        result = analyze(rows, options)
+        self.assertEqual([f['parameters']['A'] for f in result['fits']], [84., 253., 315.])
+        self.assertTrue(all(f['aFixed'] for f in result['fits']))
+        self.assertTrue(all(not f['aFixed'] for f in result['inverseFits']))
+        for scope in ('coreMtMs', 'mtMs'):
+            for method in ('curve3sd', 'curve1_5sd'):
+                with patch('analysis.fit_curve', return_value=dict(ok=False)) as mock:
+                    mt_outliers(rows, scope, method, model='power', a_bound='fixed_core')
+                expected = [84., 253., 315.] if scope == 'coreMtMs' else [None]*3
+                self.assertEqual([c.kwargs['fixed_a'] for c in mock.call_args_list], expected)
+        options['scope'] = 'mtMs'
+        result = analyze(rows, options)
+        self.assertTrue(all(not f['aFixed'] for f in result['fits'] + result['inverseFits']))
+        self.assertAlmostEqual(result['fits'][0]['parameters']['A'], 500., places=2)
+
+    def test_selected_model_propagation(self):
+        rows = [dict(participant='001', n=n, success=True, phase='practice', condition='C1',
+                     source='test.csv', line=n+1, attempt=1, errorType='none', region='none',
+                     coreMtMs=dict(MT=float(curve(n, [300., 1500., .6])), ER=0, TPe=2)) for n in range(1, 41)]
+        options = dict(scope='coreMtMs', phase='practice', mode='individual', bin=10,
+                       participants=['001'], conditions=['C1'], exclude=False, curveModel='power', aBound='free')
+        for method in ('curve3sd', 'curve1_5sd'):
+            options['mtOutlier'] = method
+            with patch('analysis.fit_curve', wraps=fit_curve) as mock:
+                result = analyze(rows, options)
+                self.assertEqual(mock.call_count, 3)
+                self.assertTrue(all(call.kwargs['model'] == 'power' for call in mock.call_args_list))
+                self.assertTrue(all(call.kwargs['a_bound'] == 'free' for call in mock.call_args_list))
+                self.assertEqual(mock.call_args_list[-1].kwargs['unit_scale'], 1000)
+                self.assertEqual(result['fits'][0]['parameters']['E'], 0)
 
     def test_inverse_curve_units(self):
         x = np.arange(1, 101, dtype=float)
@@ -192,6 +298,30 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(result['included'], 11)
         self.assertEqual(result['excluded'][0]['reason'], '同一試行番号MTが平均±3SD超過')
         self.assertEqual(result['summary'][0]['ER'], 0)
+
+    def test_trial_one_half_sd(self):
+        rows = [dict(participant=str(i), n=1, phase='post', condition='C1', success=True,
+                     source='test.csv', line=i+2, attempt=1, errorType='none', region='none',
+                     coreMtMs=dict(MT=mt, ER=0, TPe=1)) for i, mt in enumerate([100, 100, 100, 200])]
+        self.assertEqual(mt_outliers(rows, 'coreMtMs', 'trial1_5sd'), set())
+        rows.append(dict(rows[0], participant='4'))
+        self.assertEqual(mt_outliers(rows, 'coreMtMs', 'trial1_5sd'), {id(rows[3])})
+        self.assertEqual(mt_outliers(rows, 'coreMtMs', 'trial3sd'), set())
+        options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
+                       participants=[r['participant'] for r in rows], conditions=['C1'], exclude=False,
+                       mtOutlier='trial1_5sd')
+        result = analyze(rows, options)
+        self.assertEqual(result['included'], 4)
+        self.assertEqual(result['excluded'][0]['reason'], '同一試行番号MTが平均±1.5SD超過')
+
+    def test_residual_one_half_sd(self):
+        rows = [dict(participant='001', n=i+1, condition='C1',
+                     coreMtMs=dict(MT=mt)) for i, mt in enumerate([100]*7 + [200])]
+        fit = dict(ok=True, parameters=dict(A=100., B=0., E=0., a=1.))
+        with patch('analysis.fit_curve', return_value=fit) as mock:
+            self.assertEqual(mt_outliers(rows, 'coreMtMs', 'curve1_5sd'), {id(rows[-1])})
+            self.assertEqual(mock.call_count, 1)
+            self.assertEqual(mt_outliers(rows, 'coreMtMs', 'curve3sd'), set())
 
     def test_learning_curve_residual_mt_outlier(self):
         rows = []
