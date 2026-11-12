@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 
 import numpy as np
-from analysis import aggregate, analyze, clip_points, curve, event_region, fit_curve, trajectory_metrics, trial_range
+from analysis import aggregate, analyze, clip_points, curve, event_region, fit_curve, mt_outliers, trajectory_metrics, trial_range
 
 
 class AnalysisTests(unittest.TestCase):
@@ -175,6 +175,39 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(partial['selected'], 101)
         self.assertEqual(partial['included'], 90)
         self.assertEqual(len(partial['excluded']), 11)
+
+    def test_trial_number_mt_outlier_uses_three_sample_sd(self):
+        rows = []
+        for i in range(12):
+            mt = 1000 if i == 11 else 100
+            rows.append(dict(participant=f'{i:03}', n=1, success=True, phase='post', condition='C1',
+                             source='test.csv', line=i+2, attempt=1, errorType='none', region='none',
+                             coreMtMs=dict(MT=mt, ER=0, TPe=1)))
+        found = mt_outliers(rows, 'coreMtMs', 'trial3sd')
+        self.assertEqual([row['participant'] for row in rows if id(row) in found], ['011'])
+        options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
+                       participants=[row['participant'] for row in rows], conditions=['C1'], exclude=False,
+                       mtOutlier='trial3sd')
+        result = analyze(rows, options)
+        self.assertEqual(result['included'], 11)
+        self.assertEqual(result['excluded'][0]['reason'], '同一試行番号MTが平均±3SD超過')
+        self.assertEqual(result['summary'][0]['ER'], 0)
+
+    def test_learning_curve_residual_mt_outlier(self):
+        rows = []
+        for n in range(1, 41):
+            mt = float(curve(n, [300, 1500, 4, .6])) + (5000 if n == 20 else 0)
+            rows.append(dict(participant='001', n=n, success=True, phase='practice', condition='C1',
+                             source='test.csv', line=n+1, attempt=1, errorType='none', region='none',
+                             coreMtMs=dict(MT=mt, ER=0, TPe=1)))
+        found = mt_outliers(rows, 'coreMtMs', 'curve3sd')
+        self.assertEqual([row['n'] for row in rows if id(row) in found], [20])
+        options = dict(scope='coreMtMs', phase='practice', mode='individual', bin=10,
+                       participants=['001'], conditions=['C1'], exclude=False, mtOutlier='curve3sd')
+        result = analyze(rows, options)
+        self.assertEqual(result['included'], 39)
+        self.assertEqual(result['excluded'][0]['reason'], '習熟曲線MT残差が平均±3SD超過')
+        self.assertNotIn(20, result['fits'][0]['observedX'])
 
 
 if __name__ == '__main__':

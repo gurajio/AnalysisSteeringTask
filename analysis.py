@@ -8,6 +8,7 @@ import numpy as np
 from scipy.optimize import least_squares
 
 BOUNDARY_WINDOWS = ((96, 105), (196, 205), (296, 305))
+MT_OUTLIERS = ('none', 'trial3sd', 'curve3sd')
 
 
 def number(value):
@@ -159,6 +160,50 @@ def boundary_trial(n):
     return any(start <= n <= end for start, end in BOUNDARY_WINDOWS)
 
 
+def valid_mt(row, scope):
+    value = row[scope]['MT']
+    return value is not None and math.isfinite(value) and value > 0
+
+
+def mt_outliers(rows, scope, method):
+    if method == 'none':
+        return set()
+    found = set()
+    if method == 'trial3sd':
+        groups = defaultdict(list)
+        for row in rows:
+            if valid_mt(row, scope):
+                groups[(row['condition'], row['n'])].append(row)
+        for group in groups.values():
+            if len(group) < 2:
+                continue
+            values = np.asarray([row[scope]['MT'] for row in group], dtype=float)
+            mean, sd = float(np.mean(values)), float(np.std(values, ddof=1))
+            if sd > 0:
+                found.update(id(row) for row, value in zip(group, values) if abs(value - mean) > 3 * sd)
+        return found
+    groups = defaultdict(list)
+    for row in rows:
+        if valid_mt(row, scope):
+            groups[(row['condition'], row['participant'])].append(row)
+    for group in groups.values():
+        per_n = defaultdict(list)
+        for row in group:
+            per_n[row['n']].append(row[scope]['MT'])
+        x = sorted(per_n)
+        fit = fit_curve(x, [average(per_n[n]) for n in x])
+        if not fit['ok']:
+            continue
+        params = [fit['parameters'][key] for key in ('A', 'B', 'E', 'a')]
+        residuals = np.asarray([row[scope]['MT'] - float(curve(row['n'], params)) for row in group])
+        if len(residuals) < 2:
+            continue
+        mean, sd = float(np.mean(residuals)), float(np.std(residuals, ddof=1))
+        if sd > 0:
+            found.update(id(row) for row, value in zip(group, residuals) if abs(value - mean) > 3 * sd)
+    return found
+
+
 def analyze(rows, options):
     start, end = trial_range(options)
     scope, phase, mode, width = options['scope'], options['phase'], options['mode'], options['bin']
@@ -178,6 +223,21 @@ def analyze(rows, options):
                                  reason=' / '.join(reasons)))
         else:
             included.append(row)
+    outlier_method = options.get('mtOutlier', 'none')
+    if outlier_method not in MT_OUTLIERS:
+        raise ValueError('MT外れ値除外の設定が不正です')
+    outlier_ids = mt_outliers(included, scope, outlier_method)
+    if outlier_ids:
+        reason = ('同一試行番号MTが平均±3SD超過' if outlier_method == 'trial3sd'
+                  else '習熟曲線MT残差が平均±3SD超過')
+        kept = []
+        for row in included:
+            if id(row) in outlier_ids:
+                excluded.append(dict(participant=row['participant'], condition=row['condition'], n=row['n'],
+                                     attempt=row['attempt'], source=row['source'], line=row['line'], reason=reason))
+            else:
+                kept.append(row)
+        included = kept
     groups = defaultdict(list)
     for r in included:
         groups[(r['condition'], r['participant'])].append(r)

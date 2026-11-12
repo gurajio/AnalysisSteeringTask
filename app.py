@@ -82,7 +82,9 @@ def plot_result(result, key):
     if not result['summary']:
         ax.text(.5, .5, 'No data for the current selection', transform=ax.transAxes, ha='center')
     boundary_note = 'Exclude boundary trials' if options['excludeBoundaryTrials'] else 'Keep boundary trials'
-    fig.supxlabel(f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {options['mode']} | "
+    outlier_note = {'none': 'MT outliers: none', 'trial3sd': 'MT outliers: trial mean ±3SD',
+                    'curve3sd': 'MT outliers: curve residual ±3SD'}[options['mtOutlier']]
+    fig.supxlabel(f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
                   f"trials={start}-{end if end is not None else 'all'} | rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
     data = io.BytesIO()
     fig.savefig(data, format='png', dpi=100)
@@ -105,7 +107,8 @@ def metadata():
 def validate(data):
     start, end = trial_range(data)
     data = dict(data, trialStart=start, trialEnd=end,
-                excludeBoundaryTrials=data.get('excludeBoundaryTrials', False))
+                excludeBoundaryTrials=data.get('excludeBoundaryTrials', False),
+                mtOutlier=data.get('mtOutlier', 'none'))
     meta = metadata()
     if data.get('scope') not in ('coreMtMs', 'mtMs') or data.get('phase') not in ('practice', 'post'):
         raise ValueError('対象区間またはphaseが不正です')
@@ -113,11 +116,13 @@ def validate(data):
         raise ValueError('表示方法または区間幅が不正です')
     if not isinstance(data.get('exclude'), bool) or not isinstance(data.get('excludeBoundaryTrials'), bool):
         raise ValueError('除外設定が不正です')
+    if data.get('mtOutlier') not in ('none', 'trial3sd', 'curve3sd'):
+        raise ValueError('MT外れ値除外の設定が不正です')
     for key in ('participants', 'conditions'):
         if not isinstance(data.get(key), list) or any(v not in meta[key] for v in data[key]):
             raise ValueError('選択が不正です')
         data[key] = sorted(set(data[key]))
-    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'excludeBoundaryTrials',
+    return {k: data[k] for k in ('scope', 'phase', 'mode', 'bin', 'exclude', 'excludeBoundaryTrials', 'mtOutlier',
                                   'participants', 'conditions', 'trialStart', 'trialEnd')}
 
 
@@ -187,7 +192,7 @@ class Handler(BaseHTTPRequestHandler):
                     raise ValueError('図が見つかりません')
                 stamp = datetime.now().astimezone().strftime('%Y%m%d_%H%M%S_%f')
                 boundary = 'boundary-excluded' if options['excludeBoundaryTrials'] else 'boundary-kept'
-                name = f"{key}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_P{'-'.join(options['participants'])}_{stamp}.png"
+                name = f"{key}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_{options['mtOutlier']}_P{'-'.join(options['participants'])}_{stamp}.png"
                 name = re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
                 if len(name.encode()) > 240:
                     name = name[:170] + '_' + stamp + '.png'
