@@ -3,7 +3,7 @@ import unittest
 from unittest.mock import patch
 
 import numpy as np
-from analysis import aggregate, analyze, clip_points, core_ip, curve, event_region, fit_curve, mt_outliers, trajectory_metrics, trial_range
+from analysis import REGRESSION_MODELS, aggregate, analyze, analyze_regressions, clip_points, core_ip, curve, event_region, fit_curve, fit_regression_model, mt_outliers, regression_value, trajectory_metrics, trial_range
 
 
 class AnalysisTests(unittest.TestCase):
@@ -130,6 +130,44 @@ class AnalysisTests(unittest.TestCase):
         self.assertLess(result['rmse'], .01)
         self.assertGreater(result['r2'], .99999)
         self.assertFalse(fit_curve([1, 2], [5, 4])['ok'])
+
+    def test_extended_regression_models(self):
+        x = np.arange(1, 101, dtype=float)
+        parameters = {
+            'power_rate': [1500., -.3],
+            'asymptotic_power': [300., 1200., .6],
+            'exponential': [300., 1200., .02],
+            'lower_limit': [300., 1200., .6],
+            'unlearnable': [1500., .2, .6],
+            'experience': [3000., 10., .6],
+            'changing_rate': [1500., -.5, 100.],
+        }
+        for model, params in parameters.items():
+            with self.subTest(model=model):
+                result = fit_regression_model(x, regression_value(model, x, params), model)
+                self.assertTrue(result['ok'], result.get('message'))
+                self.assertLess(result['rmse'], .01)
+                self.assertEqual(tuple(result['parameters']), REGRESSION_MODELS[model]['parameters'])
+        rate = fit_regression_model(x, regression_value('power_rate', x, parameters['power_rate']), 'power_rate')
+        self.assertAlmostEqual(rate['parameters']['r'], 2 ** rate['parameters']['b'])
+        lower = fit_regression_model(x, regression_value('lower_limit', x, parameters['lower_limit']), 'lower_limit')
+        self.assertGreaterEqual(lower['parameters']['a'], lower['parameters']['c'])
+        self.assertFalse(fit_regression_model(x[:7], x[:7], 'power_rate')['ok'])
+        with self.assertRaises(ValueError):
+            fit_regression_model(x, x, 'unknown')
+
+    def test_regression_analysis_uses_filtered_mt(self):
+        rows = [dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=n != 2,
+                     phase='practice', condition='C1', source='test.csv', line=n+1, attempt=n,
+                     errorType='none', region='none', coreMtMs=dict(MT=1000 * n ** -.2, ER=0, TPe=2))
+                for n in range(1, 21)]
+        options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
+                       participants=['001'], conditions=['C1'], exclude=True, mtOutlier='none')
+        result = analyze_regressions(rows, options)
+        self.assertEqual(list(result['regressionFits']), list(REGRESSION_MODELS))
+        for fits in result['regressionFits'].values():
+            self.assertEqual(fits[0]['observedX'], [1] + list(range(3, 21)))
+        self.assertEqual(analyze(rows, options, include_fits=False)['fits'], [])
 
     def test_power_curve_units(self):
         x = np.arange(1, 41, dtype=float)

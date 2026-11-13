@@ -21,7 +21,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib.figure import Figure
-from analysis import MT_OUTLIERS, analyze, load_rows, trial_range
+from analysis import MT_OUTLIERS, REGRESSION_MODELS, analyze, analyze_regressions, load_rows, trial_range
 
 ROWS = []
 RESULTS = OrderedDict()
@@ -39,13 +39,19 @@ def plot_result(result, key):
     labels = sorted({s['participant'] for s in result['summary']})
     styles = ['-', '--', ':', '-.']
     if key.startswith('mean_'):
-        for j, label in enumerate(labels):
-            xs, ys = [], []
+        if options['mode'] == 'mean':
             for i, condition in enumerate(conditions):
-                row = next((s for s in result['summary'] if s['participant'] == label and s['condition'] == condition), None)
-                xs.append(i + (j - (len(labels) - 1) / 2) * .65 / max(len(labels), 1))
-                ys.append(row[metric] if row and row[metric] is not None else float('nan'))
-            ax.bar(xs, ys, width=.65 / max(len(labels), 1), label=label, color=COLORS.get(label, '#0f766e'))
+                row = next((s for s in result['summary'] if s['participant'] == 'Mean' and s['condition'] == condition), None)
+                value = row[metric] if row and row[metric] is not None else float('nan')
+                ax.bar(i, value, width=.65, label=condition, color=CONDITION_COLORS.get(condition, '#0f766e'))
+        else:
+            for j, label in enumerate(labels):
+                xs, ys = [], []
+                for i, condition in enumerate(conditions):
+                    row = next((s for s in result['summary'] if s['participant'] == label and s['condition'] == condition), None)
+                    xs.append(i + (j - (len(labels) - 1) / 2) * .65 / max(len(labels), 1))
+                    ys.append(row[metric] if row and row[metric] is not None else float('nan'))
+                ax.bar(xs, ys, width=.65 / max(len(labels), 1), label=label, color=COLORS.get(label, '#0f766e'))
         ax.set_xticks(range(len(conditions)), conditions)
         ax.set_xlabel('Condition')
     elif learning:
@@ -100,6 +106,46 @@ def plot_result(result, key):
     fig.supxlabel(f"Model: {formula} | {bound_note}\n"
                   f"{'Keep counted trials with coreExitMs' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
                   f"trials={start}-{end if end is not None else 'all'} | rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
+    data = io.BytesIO()
+    fig.savefig(data, format='png', dpi=100)
+    return data.getvalue()
+
+
+def plot_regression(result, model):
+    fig = Figure(figsize=(16, 10), dpi=100, layout='constrained')
+    ax = fig.subplots()
+    options = result['options']
+    conditions = options['conditions']
+    styles = ['-', '--', ':', '-.']
+    for fit in result['regressionFits'][model]:
+        color = (CONDITION_COLORS.get(fit['condition'], '#0f766e') if options['mode'] == 'mean'
+                 else COLORS.get(fit['participant'], '#0f766e'))
+        label = f"{fit['participant']} / {fit['condition']}"
+        ax.scatter(fit['observedX'], fit['observedY'], s=10, alpha=.3, color=color)
+        if fit['ok']:
+            ax.plot(fit['x'], fit['y'], color=color,
+                    linestyle=styles[conditions.index(fit['condition']) % len(styles)], label=label)
+    start, end = trial_range(options)
+    if start > 1 or end is not None:
+        last = end if end is not None else max([start] + [x for fit in result['regressionFits'][model] for x in fit['observedX']])
+        ax.set_xlim(start - 1, max(last, start))
+    details = REGRESSION_MODELS[model]
+    ax.set_xlabel('Original trial number within condition (N)')
+    ax.set_ylabel('MT (ms)')
+    ax.set_title(f"{details['plotTitle']} | {details['formula']} | {options['scope']}", loc='left', fontsize=20)
+    ax.set_ylim(bottom=0)
+    ax.spines[['top', 'right']].set_visible(False)
+    ax.grid(axis='y', alpha=.18)
+    handles, _ = ax.get_legend_handles_labels()
+    if handles:
+        ax.legend(loc='upper left', bbox_to_anchor=(1.01, 1), frameon=False, fontsize=10)
+    if not result['regressionFits'][model]:
+        message = 'Regression is available for practice data only' if options['phase'] != 'practice' else 'No data for the current selection'
+        ax.text(.5, .5, message, transform=ax.transAxes, ha='center')
+    boundary = 'Exclude boundary trials' if options['excludeBoundaryTrials'] else 'Keep boundary trials'
+    fig.supxlabel(f"{'Keep counted trials with coreExitMs' if options['exclude'] else 'All attempts'} | {boundary} | "
+                  f"outliers={options['mtOutlier']} | {options['mode']} | trials={start}-{end if end is not None else 'all'} | "
+                  f"rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
     data = io.BytesIO()
     fig.savefig(data, format='png', dpi=100)
     return data.getvalue()
@@ -168,6 +214,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.respond(403, dict(error='ローカル接続のみ許可しています'))
         if self.path == '/':
             self.respond(200, (ROOT / 'index.html').read_bytes(), 'text/html; charset=utf-8')
+        elif self.path == '/regression':
+            self.respond(200, (ROOT / 'regression.html').read_bytes(), 'text/html; charset=utf-8')
         elif self.path == '/api/meta':
             self.respond(200, metadata())
         else:
@@ -190,12 +238,24 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, metadata())
             if self.path == '/api/analyze':
                 options = validate(data)
-                result = analyze(ROWS, options)
+                result = analyze(ROWS, options, include_fits=False)
                 keys = [f'{kind}_{metric}' for kind in ('mean', 'trend') for metric in ('MT', 'ER', 'TPe')]
                 keys.append('trend_IP')
-                if options['phase'] == 'practice':
-                    keys.extend(['learning', 'learning_inverse_TPe'])
                 charts = {k: plot_result(result, k) for k in keys}
+                result.pop('fits')
+                result.pop('inverseFits')
+                token = secrets.token_hex(16)
+                RESULTS[token] = (options, charts)
+                while len(RESULTS) > 4:
+                    RESULTS.popitem(last=False)
+                result['token'] = token
+                result['charts'] = {k: base64.b64encode(v).decode() for k, v in charts.items()}
+                return self.respond(200, result)
+            if self.path == '/api/regression':
+                options = validate(data)
+                result = analyze_regressions(ROWS, options)
+                charts = ({f'regression_{key}': plot_regression(result, key) for key in REGRESSION_MODELS}
+                          if options['phase'] == 'practice' else {})
                 token = secrets.token_hex(16)
                 RESULTS[token] = (options, charts)
                 while len(RESULTS) > 4:

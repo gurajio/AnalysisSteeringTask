@@ -10,6 +10,15 @@ from scipy.optimize import least_squares
 BOUNDARY_WINDOWS = ((96, 105), (196, 205), (296, 305))
 CORE_A = {'C1': 84., 'C2': 253., 'C3': 315.}
 MT_OUTLIERS = ('none', 'trial3sd', 'curve3sd', 'trial1_5sd', 'curve1_5sd')
+REGRESSION_MODELS = {
+    'power_rate': dict(title='べき乗則と習熟率', plotTitle='Power law and learning rate', formula='T̄(N) = aN^b,  b = log(r) / log(2)', parameters=('a', 'b', 'r')),
+    'asymptotic_power': dict(title='終端値付きべき乗則', plotTitle='Asymptotic power law', formula='T(n) = a + bn^(-c)', parameters=('a', 'b', 'c')),
+    'exponential': dict(title='指数関数的習熟', plotTitle='Exponential learning', formula='T(n) = a + b exp(-cn)', parameters=('a', 'b', 'c')),
+    'lower_limit': dict(title='作業時間の下限', plotTitle='Lower-bound task time', formula='T(n) = (a - c)n^(-b) + c', parameters=('a', 'b', 'c')),
+    'unlearnable': dict(title='習熟できない作業時間', plotTitle='Unlearnable task time', formula='T(n) = a[M + (1 - M)n^(-b)]', parameters=('a', 'M', 'b')),
+    'experience': dict(title='過去の作業経験', plotTitle='Prior work experience', formula='T(n) = a(n + B)^(-b)', parameters=('a', 'B', 'b')),
+    'changing_rate': dict(title='変化する習熟率', plotTitle='Changing learning rate', formula='T(n) = a n^[b / (1 + n/c)]', parameters=('a', 'b', 'c')),
+}
 
 
 def number(value):
@@ -180,6 +189,108 @@ def fit_curve(x, y, unit_scale=1, model="shifted", a_bound="nonnegative", fixed_
                 points=len(x), warning=warning, x=grid.tolist(), y=(curve(grid, fitted) / unit_scale).tolist())
 
 
+def regression_value(model, n, params):
+    n = np.asarray(n, dtype=float)
+    if model == 'power_rate':
+        return params[0] * n ** params[1]
+    if model == 'asymptotic_power':
+        return params[0] + params[1] * n ** (-params[2])
+    if model == 'exponential':
+        return params[0] + params[1] * np.exp(-params[2] * n)
+    if model == 'lower_limit':
+        return params[1] * n ** (-params[2]) + params[0]
+    if model == 'unlearnable':
+        return params[0] * (params[1] + (1 - params[1]) * n ** (-params[2]))
+    if model == 'experience':
+        return params[0] * (n + params[1]) ** (-params[2])
+    if model == 'changing_rate':
+        exponent = params[1] / (1 + n / params[2])
+        return np.exp(np.clip(np.log(params[0]) + exponent * np.log(n), -700, 700))
+    raise ValueError('回帰モデルが不正です')
+
+
+def regression_setup(model, x, y):
+    first, minimum = float(y[0]), float(np.min(y))
+    scale, last_n = max(float(np.mean(y)), 1), float(max(x))
+    if model == 'power_rate':
+        guesses = [[max(first / x[0] ** b, 1e-9), b] for b in (-.1, -.5, -1.5)]
+        return [0, -np.inf], [np.inf, 0], guesses
+    if model in ('asymptotic_power', 'lower_limit'):
+        guesses = []
+        for c in (.3, .8, 1.5):
+            floor = max(minimum * .8, 0)
+            span = max((first - floor) * x[0] ** c, scale * .1)
+            guesses.append([floor, span, c])
+        return [0, 0, .001], [np.inf, np.inf, 5], guesses
+    if model == 'exponential':
+        guesses = []
+        for c in (1 / last_n, 5 / last_n, min(.1, 20 / last_n)):
+            floor = max(minimum * .8, 0)
+            span = max((first - floor) * math.exp(min(c * x[0], 50)), scale * .1)
+            guesses.append([floor, span, c])
+        return [0, 0, .000001], [np.inf, np.inf, 5], guesses
+    if model == 'unlearnable':
+        guesses = []
+        for m, b in ((.2, .3), (.5, .8), (.8, 1.5)):
+            divisor = m + (1 - m) * x[0] ** (-b)
+            guesses.append([max(first / divisor, 1e-9), m, b])
+        return [0, 0, .001], [np.inf, 1, 5], guesses
+    if model == 'experience':
+        guesses = [[max(first * (x[0] + shift) ** b, 1e-9), shift, b]
+                   for shift, b in ((0, .3), (10, .8), (100, 1.5))]
+        return [0, 0, .001], [np.inf, last_n * 10, 5], guesses
+    if model == 'changing_rate':
+        guesses = []
+        for b, c in ((-.1, 10), (-.5, 100), (-1.5, max(last_n, 1))):
+            c = min(c, last_n * 10)
+            divisor = x[0] ** (b / (1 + x[0] / c))
+            guesses.append([max(first / divisor, 1e-9), b, c])
+        return [1e-12, -np.inf, .001], [np.inf, np.inf, last_n * 10], guesses
+    raise ValueError('回帰モデルが不正です')
+
+
+def public_parameters(model, fitted):
+    if model == 'power_rate':
+        return dict(a=float(fitted[0]), b=float(fitted[1]), r=float(2 ** fitted[1]))
+    if model == 'lower_limit':
+        return dict(a=float(fitted[0] + fitted[1]), b=float(fitted[2]), c=float(fitted[0]))
+    names = REGRESSION_MODELS[model]['parameters']
+    return dict(zip(names, map(float, fitted)))
+
+
+def fit_regression_model(x, y, model):
+    if model not in REGRESSION_MODELS:
+        raise ValueError('回帰モデルが不正です')
+    x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)
+    if len(x) < 8 or len(np.unique(x)) < 8:
+        return dict(ok=False, message='回帰には8点以上の異なる試行番号が必要です')
+    scale = max(float(np.mean(y)), 1)
+    lower, upper, guesses = regression_setup(model, x, y)
+    best = None
+    for guess in guesses:
+        try:
+            fit = least_squares(lambda p: (regression_value(model, x, p) - y) / scale, guess,
+                                bounds=(lower, upper), x_scale='jac', max_nfev=1500)
+        except (ValueError, FloatingPointError):
+            continue
+        if fit.success and np.isfinite(fit.fun).all() and (best is None or fit.cost < best.cost):
+            best = fit
+    if best is None:
+        return dict(ok=False, message='回帰が収束しませんでした')
+    pred = regression_value(model, x, best.x)
+    sse = float(np.sum((y - pred) ** 2))
+    sst = float(np.sum((y - np.mean(y)) ** 2))
+    grid = np.linspace(float(min(x)), float(max(x)), 200)
+    condition = float(np.linalg.cond(best.jac))
+    warning = 'パラメータの識別が不安定です' if not math.isfinite(condition) or condition > 1e8 else ''
+    if np.any(best.active_mask):
+        warning = (warning + ' / ' if warning else '') + 'パラメータが制約境界に達しています'
+    return dict(ok=True, parameters=public_parameters(model, best.x),
+                r2=1 - sse / sst if sst > 1e-12 else None, rmse=math.sqrt(sse / len(x)),
+                points=len(x), warning=warning, x=grid.tolist(),
+                y=regression_value(model, grid, best.x).tolist())
+
+
 def trial_range(options):
     start, end = options.get('trialStart', 1), options.get('trialEnd')
     if type(start) is not int or start < 1:
@@ -248,7 +359,7 @@ def mt_outliers(rows, scope, method, model="shifted", a_bound="nonnegative"):
     return found
 
 
-def analyze(rows, options):
+def analyze(rows, options, include_fits=True):
     start, end = trial_range(options)
     model = options.get('curveModel', 'shifted')
     a_bound = options.get('aBound', 'nonnegative')
@@ -321,7 +432,7 @@ def analyze(rows, options):
                     values = [aggregate(g, metric, scope) for g in block_groups]
                     line[metric].append(average(values) if metric != 'ER' or all(v is not None for v in values) else None)
             series.append(line)
-            if phase == 'practice':
+            if include_fits and phase == 'practice':
                 for metric, target in [('MT', fits), ('TPe', inverse_fits)]:
                     per_n = defaultdict(list)
                     for group in active.values():
@@ -346,3 +457,17 @@ def analyze(rows, options):
     missing['IP'] = sum(r.get('IP') is None for r in included)
     return dict(summary=summaries, series=series, fits=fits, inverseFits=inverse_fits, excluded=excluded, regions=regions,
                 trialRange=dict(start=start, end=end), missing=missing, selected=len(selected), included=len(included), options=options)
+
+
+def analyze_regressions(rows, options):
+    result = analyze(rows, options)
+    fits = {key: [] for key in REGRESSION_MODELS}
+    if options['phase'] == 'practice':
+        for observed in result['fits']:
+            for key in REGRESSION_MODELS:
+                fits[key].append(dict(condition=observed['condition'], participant=observed['participant'],
+                                      observedX=observed['observedX'], observedY=observed['observedY'],
+                                      **fit_regression_model(observed['observedX'], observed['observedY'], key)))
+    result['regressionFits'] = fits
+    result['regressionModels'] = [dict(key=key, **details) for key, details in REGRESSION_MODELS.items()]
+    return result
