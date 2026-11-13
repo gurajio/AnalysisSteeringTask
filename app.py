@@ -98,7 +98,7 @@ def plot_result(result, key):
     if options.get('aBound') == 'fixed_core':
         bound_note = 'Core MT A fixed: C1=84, C2=253, C3=315 ms; other fits A >= 0'
     fig.supxlabel(f"Model: {formula} | {bound_note}\n"
-                  f"{'Exclude success=false' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
+                  f"{'Keep counted trials with coreExitMs' if options['exclude'] else 'All attempts'} | {boundary_note} | {outlier_note} | {options['mode']} | "
                   f"trials={start}-{end if end is not None else 'all'} | rows={result['included']} | participants={','.join(options['participants'])}", fontsize=10)
     data = io.BytesIO()
     fig.savefig(data, format='png', dpi=100)
@@ -216,7 +216,7 @@ class Handler(BaseHTTPRequestHandler):
                     key_name = 'trend_IP_coreMtMs_nominalID_ms'
                 else:
                     key_name = key
-                name = f"{key_name}_{options['curveModel']}_A-{options['aBound']}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'filtered' if options['exclude'] else 'all'}_{boundary}_{options['mtOutlier']}_P{'-'.join(options['participants'])}_{stamp}.png"
+                name = f"{key_name}_{options['curveModel']}_A-{options['aBound']}_trials{options['trialStart']}-{options['trialEnd'] if options['trialEnd'] is not None else 'all'}_{options['phase']}_{options['scope']}_{'-'.join(options['conditions'])}_{options['mode']}_bin{options['bin']}_{'counted-core-exit' if options['exclude'] else 'all'}_{boundary}_{options['mtOutlier']}_P{'-'.join(options['participants'])}_{stamp}.png"
                 name = re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
                 if len(name.encode()) > 240:
                     name = name[:170] + '_' + stamp + '.png'

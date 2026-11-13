@@ -7,6 +7,48 @@ from analysis import aggregate, analyze, clip_points, core_ip, curve, event_regi
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_core_exit_filter(self):
+        rows = [dict(participant='001', n=i+1, success=False, countedAsTrial=counted,
+                     coreExitMs=exit_time, phase='practice', condition='C2',
+                     source='test.csv', line=i+2, attempt=i+1, errorType='deviation', region='inside',
+                     IP=10, coreMtMs=dict(MT=100, ER=1, TPe=2), mtMs=dict(MT=200, ER=1, TPe=4))
+                for i, (counted, exit_time) in enumerate([(True, 1000), (True, None),
+                                                          (False, 1000), (False, None), (True, 0)])]
+        options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
+                       participants=['001'], conditions=['C2'], exclude=True)
+        for scope in ('coreMtMs', 'mtMs'):
+            options['scope'] = scope
+            result = analyze(rows, options)
+            self.assertEqual(result['included'], 2)
+            self.assertEqual([r['reason'] for r in result['excluded']],
+                             ['coreExitMs欠損', 'countedAsTrial=false', 'countedAsTrial=false / coreExitMs欠損'])
+            self.assertEqual(result['summary'][0]['rows'], 2)
+            self.assertEqual(result['regions']['inside'], 2)
+            self.assertEqual(result['series'][0]['IP'], [10])
+            for fit in (result['fits'][0], result['inverseFits'][0]):
+                self.assertEqual(fit['observedX'], [1, 5])
+        options['exclude'] = False
+        self.assertEqual(analyze(rows, options)['included'], 5)
+        options.update(exclude=True, trialStart=1, trialEnd=1)
+        self.assertEqual(analyze(rows, options)['excluded'], [])
+
+    def test_counted_failure_is_included(self):
+        rows = [dict(coreExitMs=1000, participant='001', n=1, success=success, countedAsTrial=counted,
+                     phase='post', condition='C2', source='test.csv', line=i+2, attempt=i+1,
+                     errorType=error, region='none', coreMtMs=dict(MT=mt, ER=0, TPe=1))
+                for i, (success, counted, error, mt) in enumerate([
+                    (True, True, 'none', 100),
+                    (False, True, 'near_goal_pointerup', 300),
+                    (False, False, 'pointerup_mid_path', 800)])]
+        options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
+                       participants=['001'], conditions=['C2'], exclude=True)
+        result = analyze(rows, options)
+        self.assertEqual(result['included'], 2)
+        self.assertEqual(result['summary'][0]['MT'], 200)
+        self.assertEqual(result['excluded'][0]['reason'], 'countedAsTrial=false')
+        options['exclude'] = False
+        self.assertEqual(analyze(rows, options)['included'], 3)
+
     def test_core_ip_units(self):
         self.assertAlmostEqual(core_ip(1000, 1350, 70), 1000 / (1350 / 70))
         for values in [(None, 10, 2), (100, 0, 2), (100, 10, -1), (100, 'nan', 2), (0, 10, 2)]:
@@ -14,10 +56,10 @@ class AnalysisTests(unittest.TestCase):
 
     def test_ip_trend_scope_and_filters(self):
         rows = []
-        for p, n, success, ip in [('001', 1, True, 10), ('001', 2, True, 30),
+        for p, n, countedAsTrial, ip in [('001', 1, True, 10), ('001', 2, True, 30),
                                    ('002', 1, True, 100), ('002', 2, False, 900),
                                    ('002', 3, True, None), ('002', 96, True, 800)]:
-            rows.append(dict(participant=p, n=n, success=success, phase='post', condition='C1',
+            rows.append(dict(coreExitMs=1000, participant=p, n=n, countedAsTrial=countedAsTrial, phase='post', condition='C1',
                              source='test.csv', line=n, attempt=n, errorType='none', region='none', IP=ip,
                              coreMtMs=dict(MT=100, ER=0, TPe=1), mtMs=dict(MT=200, ER=0, TPe=2)))
         options = dict(scope='mtMs', phase='post', mode='mean', bin=10, participants=['001', '002'],
@@ -61,9 +103,9 @@ class AnalysisTests(unittest.TestCase):
 
     def test_equal_participants_and_er_denominator(self):
         rows = []
-        for p, n, success, mt, er in [('001', 1, True, 100, 1), ('001', 2, True, 300, 0),
+        for p, n, countedAsTrial, mt, er in [('001', 1, True, 100, 1), ('001', 2, True, 300, 0),
                                      ('002', 1, True, 1000, 0), ('002', 2, False, 5000, 0)]:
-            rows.append(dict(participant=p, n=n, success=success, phase='post', condition='C1',
+            rows.append(dict(coreExitMs=1000, participant=p, n=n, countedAsTrial=countedAsTrial, phase='post', condition='C1',
                              source='test.csv', line=n, attempt=n, errorType='deviation' if er else 'none',
                              region='inside' if er else 'none', coreMtMs=dict(MT=mt, ER=er, TPe=1)))
         options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
@@ -128,7 +170,7 @@ class AnalysisTests(unittest.TestCase):
                 np.testing.assert_allclose(result['y'], curve(result['x'], params), atol=.001)
 
     def test_fixed_core_scope(self):
-        rows = [dict(participant='001', n=n, success=True, phase='practice', condition=c,
+        rows = [dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=True, phase='practice', condition=c,
                      source='test.csv', line=n+1, attempt=n, errorType='none', region='none',
                      coreMtMs=dict(MT=float(curve(n, [a, 1500., .6])), ER=0, TPe=2),
                      mtMs=dict(MT=float(curve(n, [500., 1500., .6])), ER=0, TPe=2))
@@ -152,7 +194,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertAlmostEqual(result['fits'][0]['parameters']['A'], 500., places=2)
 
     def test_selected_model_propagation(self):
-        rows = [dict(participant='001', n=n, success=True, phase='practice', condition='C1',
+        rows = [dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=True, phase='practice', condition='C1',
                      source='test.csv', line=n+1, attempt=1, errorType='none', region='none',
                      coreMtMs=dict(MT=float(curve(n, [300., 1500., .6])), ER=0, TPe=2)) for n in range(1, 41)]
         options = dict(scope='coreMtMs', phase='practice', mode='individual', bin=10,
@@ -181,7 +223,7 @@ class AnalysisTests(unittest.TestCase):
     def test_inverse_before_averaging(self):
         rows = []
         for p, tpe in [('001', 2), ('001', 4), ('002', 10), ('002', None), ('002', 0)]:
-            rows.append(dict(participant=p, n=1, success=True, phase='practice', condition='C1',
+            rows.append(dict(coreExitMs=1000, participant=p, n=1, countedAsTrial=True, phase='practice', condition='C1',
                              errorType='none', region='none', coreMtMs=dict(MT=100, ER=0, TPe=tpe),
                              mtMs=dict(MT=200, ER=0, TPe=tpe * 2 if tpe else tpe)))
         options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
@@ -197,7 +239,7 @@ class AnalysisTests(unittest.TestCase):
             self.assertEqual(analyze(rows, options)['inverseFits'], [])
 
     def test_inverse_selection_and_exclusion(self):
-        rows = [dict(participant='001', n=i + 1, success=i != 1, phase='practice', condition='C1',
+        rows = [dict(coreExitMs=1000, participant='001', n=i + 1, countedAsTrial=i != 1, phase='practice', condition='C1',
                      source='test.csv', line=i+2, attempt=i+1, errorType='none', region='none',
                      coreMtMs=dict(MT=100, ER=0, TPe=value)) for i, value in enumerate([2, 4, None])]
         options = dict(scope='coreMtMs', phase='practice', mode='individual', bin=10,
@@ -212,7 +254,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(analyze(rows, options)['inverseFits'], [])
 
     def test_trial_range_filters_all_outputs(self):
-        rows = [dict(participant='001', n=n, success=n not in (2, 12), phase='practice', condition='C1',
+        rows = [dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=n not in (2, 12), phase='practice', condition='C1',
                      source='test.csv', line=n+1, attempt=n, errorType='deviation', region='inside',
                      coreMtMs=dict(MT=n*100, ER=1, TPe=n)) for n in range(1, 21)]
         options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
@@ -246,7 +288,7 @@ class AnalysisTests(unittest.TestCase):
                 trial_range(dict(trialStart=start,trialEnd=end))
 
     def test_partial_range_preserves_bin_boundaries(self):
-        rows = [dict(participant=p, n=n, success=True, phase='post', condition='C1',
+        rows = [dict(coreExitMs=1000, participant=p, n=n, countedAsTrial=True, phase='post', condition='C1',
                      errorType='none', region='none', coreMtMs=dict(MT=n, ER=0, TPe=n))
                 for p in ('001','002') for n in range(1,31)]
         options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
@@ -259,7 +301,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(analyze(rows,options)['included'],46)
 
     def test_boundary_windows_are_optional_and_not_double_counted(self):
-        rows = [dict(participant='001', n=n, success=n != 100, phase='post', condition='C1',
+        rows = [dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=n != 100, phase='post', condition='C1',
                      source='test.csv', line=n+1, attempt=n, errorType='none', region='none',
                      coreMtMs=dict(MT=n, ER=0, TPe=1)) for n in range(1, 311)]
         options = dict(scope='coreMtMs', phase='post', mode='individual', bin=10,
@@ -271,7 +313,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(len(result['excluded']), 30)
         self.assertEqual(result['summary'][0]['rows'], 280)
         overlap = next(row for row in result['excluded'] if row['n'] == 100)
-        self.assertEqual(overlap['reason'], 'success=false / 100・200・300試行周辺10試行')
+        self.assertEqual(overlap['reason'], 'countedAsTrial=false / 100・200・300試行周辺10試行')
         options['excludeBoundaryTrials'] = False
         kept = analyze(rows, options)
         self.assertEqual(kept['included'], 309)
@@ -286,7 +328,7 @@ class AnalysisTests(unittest.TestCase):
         rows = []
         for i in range(12):
             mt = 1000 if i == 11 else 100
-            rows.append(dict(participant=f'{i:03}', n=1, success=True, phase='post', condition='C1',
+            rows.append(dict(coreExitMs=1000, participant=f'{i:03}', n=1, countedAsTrial=True, phase='post', condition='C1',
                              source='test.csv', line=i+2, attempt=1, errorType='none', region='none',
                              coreMtMs=dict(MT=mt, ER=0, TPe=1)))
         found = mt_outliers(rows, 'coreMtMs', 'trial3sd')
@@ -300,7 +342,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(result['summary'][0]['ER'], 0)
 
     def test_trial_one_half_sd(self):
-        rows = [dict(participant=str(i), n=1, phase='post', condition='C1', success=True,
+        rows = [dict(coreExitMs=1000, participant=str(i), n=1, phase='post', condition='C1', countedAsTrial=True,
                      source='test.csv', line=i+2, attempt=1, errorType='none', region='none',
                      coreMtMs=dict(MT=mt, ER=0, TPe=1)) for i, mt in enumerate([100, 100, 100, 200])]
         self.assertEqual(mt_outliers(rows, 'coreMtMs', 'trial1_5sd'), set())
@@ -315,7 +357,7 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(result['excluded'][0]['reason'], '同一試行番号MTが平均±1.5SD超過')
 
     def test_residual_one_half_sd(self):
-        rows = [dict(participant='001', n=i+1, condition='C1',
+        rows = [dict(coreExitMs=1000, participant='001', n=i+1, condition='C1',
                      coreMtMs=dict(MT=mt)) for i, mt in enumerate([100]*7 + [200])]
         fit = dict(ok=True, parameters=dict(A=100., B=0., E=0., a=1.))
         with patch('analysis.fit_curve', return_value=fit) as mock:
@@ -327,7 +369,7 @@ class AnalysisTests(unittest.TestCase):
         rows = []
         for n in range(1, 41):
             mt = float(curve(n, [300, 1500, 4, .6])) + (5000 if n == 20 else 0)
-            rows.append(dict(participant='001', n=n, success=True, phase='practice', condition='C1',
+            rows.append(dict(coreExitMs=1000, participant='001', n=n, countedAsTrial=True, phase='practice', condition='C1',
                              source='test.csv', line=n+1, attempt=1, errorType='none', region='none',
                              coreMtMs=dict(MT=mt, ER=0, TPe=1)))
         found = mt_outliers(rows, 'coreMtMs', 'curve3sd')

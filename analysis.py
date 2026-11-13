@@ -80,6 +80,8 @@ def load_rows(folder):
                     seen.add(key)
                     if raw['success'].lower() not in ('true', 'false'):
                         raise ValueError('successが真偽値ではありません')
+                    if raw['countedAsTrial'].lower() not in ('true', 'false'):
+                        raise ValueError('countedAsTrialが真偽値ではありません')
                     n = int(raw['trialInCondition'])
                     if n < 1:
                         raise ValueError('試行番号が1未満です')
@@ -101,7 +103,9 @@ def load_rows(folder):
                     deviation = raw['errorType'] == 'deviation'
                     core_error = None if deviation and region in ('unknown', 'none') else int(deviation and region in ('inside', 'both'))
                     rows.append(dict(participant=raw['participantId'], phase=raw['phase'], condition=raw['conditionId'],
-                                     n=n, success=raw['success'].lower() == 'true', source=path.name, line=line,
+                                     n=n, success=raw['success'].lower() == 'true',
+                                     countedAsTrial=raw['countedAsTrial'].lower() == 'true', coreExitMs=exit_time,
+                                     source=path.name, line=line,
                                      attempt=raw['attemptNumber'], errorType=raw['errorType'], region=region,
                                      IP=core_ip(core_mt, raw.get('amplitude'), raw.get('width')),
                                      coreMtMs=dict(MT=core_mt if core_mt and core_mt > 0 else None,
@@ -259,8 +263,10 @@ def analyze(rows, options):
     included, excluded = [], []
     for row in selected:
         reasons = []
-        if options['exclude'] and not row['success']:
-            reasons.append('success=false')
+        if options['exclude'] and not row['countedAsTrial']:
+            reasons.append('countedAsTrial=false')
+        if options['exclude'] and row['coreExitMs'] is None:
+            reasons.append('coreExitMs欠損')
         if options.get('excludeBoundaryTrials', False) and boundary_trial(row['n']):
             reasons.append('100・200・300試行周辺10試行')
         if reasons:
