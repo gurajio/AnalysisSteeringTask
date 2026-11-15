@@ -1,0 +1,39 @@
+{
+  "created_jst": "20261114_152450",
+  "status": "Retrospective reanalysis after prior results were viewed; not preregistered.",
+  "phase": "practice",
+  "metric": "coreMtMs",
+  "unit": "ms",
+  "conditions": [
+    "C2",
+    "C3"
+  ],
+  "participants_each": 10,
+  "early": [
+    1,
+    100
+  ],
+  "late": [
+    301,
+    400
+  ],
+  "base": "countedAsTrial=true AND finite coreExitMs",
+  "valid_MT": "finite and positive",
+  "success_exclusion": false,
+  "outliers": "none",
+  "boundary_exclusion": false,
+  "transformation": "none",
+  "imputation": "none",
+  "aggregation": "Arithmetic mean of valid rows per participant and period; equal participant weight; retain valid retries.",
+  "primary": "Between-condition difference in participant changes (late minus early)",
+  "secondary": "Between-condition difference in participant late means",
+  "contrast": "C2 minus C3",
+  "test": "Independent two-sided Welch t-test for each endpoint",
+  "alpha": 0.05,
+  "multiplicity": "Holm across exactly the primary and secondary tests; report both regardless of primary significance.",
+  "confidence": "Pointwise unadjusted 95% Welch CI",
+  "diagnostics": "All participant points and within-group Q-Q plots for both endpoints; no test switching.",
+  "supplementary_tests": "none",
+  "missing": "Stop if a participant has no valid MT in either period; report missing records without imputation.",
+  "numeric_cores": 1
+}

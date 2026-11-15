@@ -7,6 +7,50 @@ from analysis import REGRESSION_MODELS, aggregate, analyze, analyze_regressions,
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_variance_we_trends(self):
+        rows = [dict(participant=p, condition='C2', phase='post', n=n, countedAsTrial=True,
+                     coreExitMs=1000, source='test.csv', line=i+2, attempt=i+1,
+                     errorType='none', region='none',
+                     coreMtMs=dict(MT=mt, TPe=1, ER=0, We=we),
+                     mtMs=dict(MT=mt*2 if mt is not None else None, TPe=1, ER=0, We=we*3 if we is not None else None))
+                for i, (p, n, mt, we) in enumerate([
+                    ('001', 1, 100, 2), ('001', 2, 300, 4),
+                    ('002', 1, 1000, 10), ('002', 2, 1000, None), ('002', 3, 1000, 20),
+                    ('003', 1, 5000, 0), ('001', 11, None, 8)])]
+        options = dict(scope='coreMtMs', phase='post', mode='mean', bin=10,
+                       participants=['001', '002', '003'], conditions=['C2'], exclude=True)
+        result = analyze(rows, options)
+        line = result['series'][0]
+        self.assertEqual(line['MTVariance'], [10000, None])
+        self.assertEqual(line['We'], [6, 8])
+        self.assertEqual(line['MTVarianceParticipants'], [2, 0])
+        self.assertEqual(line['WeParticipants'], [3, 1])
+        self.assertEqual(result['missing']['We'], 1)
+        options['scope'] = 'mtMs'
+        line = analyze(rows, options)['series'][0]
+        self.assertEqual(line['MTVariance'], [40000, None])
+        self.assertEqual(line['We'], [18, 24])
+        options.update(scope='coreMtMs', mode='individual', participants=['001'])
+        self.assertEqual(analyze(rows, options)['series'][0]['MTVariance'], [20000, None])
+        rows[1]['coreExitMs'] = None
+        line = analyze(rows, options)['series'][0]
+        self.assertEqual(line['MTVariance'], [None, None])
+        self.assertEqual(line['We'], [2, 8])
+        options.update(exclude=False, trialStart=2, trialEnd=3)
+        self.assertEqual(analyze(rows, options)['series'][0]['We'], [4])
+        options.update(trialStart=1, trialEnd=None, bin=50)
+        self.assertAlmostEqual(analyze(rows, options)['series'][0]['We'][0], 14/3)
+
+    def test_effective_width(self):
+        from analysis import effective_width
+        normal = np.array([.5, math.sqrt(3)/2])
+        points = np.column_stack(([0, 1, 2], np.outer([-1, 0, 1], normal)))
+        self.assertAlmostEqual(effective_width(points), 4.133)
+        self.assertAlmostEqual(effective_width(points + [0, 100, 100]), 4.133)
+        self.assertIsNone(effective_width(points[:1]))
+        self.assertIsNone(effective_width(None))
+        self.assertEqual(effective_width(np.zeros((2, 3))), 0)
+
     def test_core_exit_filter(self):
         rows = [dict(participant='001', n=i+1, success=False, countedAsTrial=counted,
                      coreExitMs=exit_time, phase='practice', condition='C2',
@@ -418,6 +462,64 @@ class AnalysisTests(unittest.TestCase):
         self.assertEqual(result['included'], 39)
         self.assertEqual(result['excluded'][0]['reason'], '習熟曲線MT残差が平均±3SD超過')
         self.assertNotIn(20, result['fits'][0]['observedX'])
+
+
+class TrajectoryTests(unittest.TestCase):
+    def test_task_geometry(self):
+        from app import task_geometry
+        size, origin, direction, normal = task_geometry(675, 70)
+        np.testing.assert_allclose(size, [2560, 1440])
+        np.testing.assert_allclose(origin + direction * 337.5, [1280, 720])
+        self.assertAlmostEqual(float(direction @ normal), 0)
+        self.assertAlmostEqual(origin[1], 888.75)
+        with self.assertRaises(ValueError):
+            task_geometry(None, 70)
+
+    def test_trajectory_selection(self):
+        import app
+        import struct
+        points = np.array([[0, 500, 800], [10, 510, 790]])
+        rows = [dict(participant='001', condition='C1', phase='practice', n=n, attempt=str(i + 1),
+                     success=False, countedAsTrial=False, coreExitMs=None, errorType='deviation',
+                     source='synthetic.csv', line=i+2, amplitude=675, width=70, experimentMode='main',
+                     trajectory=points, coreTrajectory=None) for i, n in enumerate([1, 1, 10, 11])]
+        data = dict(revision=app.REVISION, participant='001', condition='C1', phase='practice',
+                    block=1, scope='full', ids=[0, 1, 2])
+        with patch.object(app, 'ROWS', rows):
+            catalog = app.trajectory_catalog(data)['rows']
+            self.assertEqual([r['n'] for r in catalog], [1, 1, 10, 11])
+            self.assertFalse(catalog[0]['counted'])
+            png, missing = app.plot_trajectory(data)
+            self.assertEqual(struct.unpack('>II', png[16:24]), (1600, 1000))
+            self.assertEqual(missing, [])
+            _, missing = app.plot_trajectory(dict(data, scope='core'))
+            self.assertEqual(len(missing), 3)
+            for change in [dict(ids=[3]), dict(ids=[]), dict(ids=[0, 0]), dict(block=2),
+                           dict(scope='bad'), dict(revision='old')]:
+                with self.assertRaises(ValueError):
+                    app.plot_trajectory(dict(data, **change))
+
+    def test_load_trajectory(self):
+        import csv
+        import json
+        import tempfile
+        from pathlib import Path
+        from analysis import load_rows
+        raw = dict(participantId='001', phase='practice', conditionId='C1', trialInCondition='1',
+                   attemptNumber='1', success='false', countedAsTrial='false', mtMs='20', coreMtMs='10',
+                   coreEntryMs='5', coreExitMs='15', errorType='none', startedAtIso='synthetic',
+                   amplitude='675', width='70', deviationEvents='[]',
+                   trajectory=json.dumps([dict(t=0, x=0, y=0), dict(t=10, x=10, y=10),
+                                          dict(t=10, x=12, y=12), dict(t=20, x=20, y=20)]))
+        with tempfile.TemporaryDirectory() as folder:
+            with (Path(folder) / 'synthetic.csv').open('w') as stream:
+                writer = csv.DictWriter(stream, fieldnames=raw.keys())
+                writer.writeheader()
+                writer.writerow(raw)
+            row = load_rows(folder)[0]
+        self.assertEqual(row['participant'], '001')
+        self.assertEqual(len(row['trajectory']), 4)
+        np.testing.assert_allclose(row['coreTrajectory'], [[5, 6, 6], [10, 12, 12], [15, 16, 16]])
 
 
 if __name__ == '__main__':

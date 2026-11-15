@@ -1,0 +1,29 @@
+{
+  "status": "passed",
+  "raw_rows_checked": 4168,
+  "participant_means_checked": 20,
+  "geometry": {
+    "C2": [
+      [
+        "1350",
+        "70"
+      ]
+    ],
+    "C3": [
+      [
+        "675",
+        "35"
+      ]
+    ]
+  },
+  "numeric_cores": 1,
+  "min_valid_rows": 94,
+  "max_valid_rows": 100,
+  "checks": [
+    "independent scalar CSV audit",
+    "participant means against statistics.mean",
+    "confidence intervals against explicit t formula",
+    "two-test Holm formula",
+    "input hashes unchanged"
+  ]
+}

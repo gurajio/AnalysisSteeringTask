@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Steering Lab — 軌跡の比較</title>
+<style>
+:root{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans",sans-serif;color:#1b3539;background:#f2f5f3;font-size:14px}*{box-sizing:border-box}body{margin:0}header{padding:24px 32px;background:#153e41;color:white;display:flex;justify-content:space-between;gap:20px;align-items:center}h1{font-size:25px;margin:5px 0}small{letter-spacing:.15em;color:#aad0c7}nav{display:flex;gap:10px;flex-wrap:wrap}a{color:inherit}nav a{border:1px solid #7ba69e;padding:9px;border-radius:7px;text-decoration:none}main{max-width:1500px;margin:auto;padding:22px}h2{font-size:19px;margin:0 0 16px}button,select{font:inherit;border:1px solid #bfd0ca;border-radius:7px;padding:8px;background:white;color:#173e41}button{cursor:pointer}button:disabled{opacity:.45;cursor:default}.panel{background:white;border:1px solid #dce6e1;border-radius:12px;padding:20px;margin:20px 0}.fields{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}label.field{display:grid;gap:6px}.field output{padding:9px 0}select[hidden]{display:none}select{width:100%;min-width:0}.trials{display:flex;flex-wrap:wrap;gap:8px;max-height:200px;overflow:auto;margin:10px 0}.trial{border:1px solid #dce6e1;border-left:4px solid var(--color);border-radius:6px;padding:7px;display:flex;gap:6px;align-items:start}.trial span{white-space:pre-line;font-size:12px;line-height:1.7}.tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:12px 0}.status{white-space:pre-wrap;overflow-wrap:anywhere;line-height:1.7}.error{color:#b7352b}img{display:block;width:100%;height:auto}img[hidden]{display:none}.muted{font-size:12px;color:#60736e;line-height:1.8}.plot{min-height:70px}input{accent-color:#087f73}fieldset{border:0;margin:16px 0 0;padding:0}legend{font-weight:600}@media(max-width:800px){header{display:block;padding:18px}nav{margin-top:15px}.fields{grid-template-columns:repeat(2,minmax(0,1fr))}main{padding:10px}.panel{padding:12px}}
+</style>
+<header><div><small>STEERING LAB / TRAJECTORY</small><h1>軌跡の比較</h1><div>上下で参加者・ブロックを選び、実験タスク上の軌跡を比較する。</div></div><nav><a href="/">通常の分析</a><a href="/regression">回帰</a></nav></header>
+<main><div id="dataset" role="status">読み込み中…</div><p class="muted">全記録が選択対象です。通常分析の除外設定は適用しません。元の試行番号で1–10、11–20…に分割し、再試行はattemptで区別します。各図は同じ座標縮尺で表示します。記録の座標点を直線で結び、core選択時は時間境界を補間します。core前後には各100pxの移動区間があります。通路はCSVの座標・core通過時刻・逸脱距離と整合する2560×1440のキャンバス座標で再現します。</p><div id="panels"></div></main>
+<script>
+const palette=['#1f77b4','#ff7f0e','#2ca02c','#d62728','#9467bd','#8c564b','#e377c2','#7f7f7f','#bcbd22','#17becf'];
+function node(tag,text,cls){const e=document.createElement(tag);if(text!==undefined)e.textContent=text;if(cls)e.className=cls;return e}
+async function api(path,data){const response=await fetch(path,data===undefined?{}:{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});const result=await response.json();if(!response.ok)throw Error(result.error||'読み込みに失敗しました');return result}
+function panel(meta,title){
+ const root=node('section',undefined,'panel');root.append(node('h2',title));document.getElementById('panels').append(root);
+ const fields=node('div',undefined,'fields');root.append(fields);const selects={};
+ for(const [key,label,values] of [['participant','参加者',meta.participants.map(p=>[p,p])],['condition','条件',meta.conditions.map(c=>[c,c])],['phase','phase',[['practice','practice'],['post','post']]],['block','10試行ブロック',[]],['scope','軌跡の区間',[['full','全軌跡'],['core','core区間のみ']]]]){
+  const field=node('label',label,'field'),select=node('select');select.setAttribute('aria-label',`${title} ${label}`);selects[key]=select;for(const [value,text] of values)select.add(new Option(text,value));field.append(select);fields.append(field);
+ }
+ const assigned=node('output');assigned.setAttribute('aria-label',`${title} 割当条件`);selects.condition.parentElement.append(assigned);
+ const trialset=node('fieldset'),legend=node('legend','表示する試行'),tools=node('div',undefined,'tools'),all=node('button','すべて選択'),none=node('button','選択を解除'),save=node('button','この図をPNG保存');save.disabled=true;tools.append(all,none,save);const trials=node('div',undefined,'trials');trialset.append(legend,tools,trials);root.append(trialset);
+ const status=node('div',undefined,'status');status.setAttribute('role','status');status.setAttribute('aria-live','polite');const plot=node('div',undefined,'plot'),img=node('img');img.alt=`${title}の実験タスクと選択した試行の軌跡`;img.hidden=true;plot.append(img);root.append(status,plot);
+ let rows=[],version=0,timer=null,token=null;
+ const context=()=>({revision:meta.revision,participant:selects.participant.value,condition:selects.condition.value,phase:selects.phase.value});
+ function invalidate(){version++;clearTimeout(timer);token=null;save.disabled=true;img.hidden=true;status.classList.remove('error');return version}
+ function report(error){status.textContent=error.message;status.classList.add('error')}
+ function schedule(){const v=invalidate();const ids=[...trials.querySelectorAll('input:checked')].map(e=>Number(e.value));if(!ids.length){status.textContent=rows.length?'試行が選択されていません。':'対象データがありません。';return}status.textContent='描画中…';timer=setTimeout(async()=>{try{const result=await api('/api/trajectory',{...context(),block:Number(selects.block.value),scope:selects.scope.value,ids});if(v!==version)return;token=result.token;img.src='data:image/png;base64,'+result.image;img.hidden=false;save.disabled=false;status.textContent=`${ids.length}記録を選択。`+(result.missing.length?` 表示不能（軌跡なし、またはcore境界の欠損・記録範囲外）：${result.missing.join(', ')}`:'');}catch(error){if(v===version)report(error)}},180)}
+ function fillTrials(){trials.replaceChildren();const start=Number(selects.block.value);for(const r of rows.filter(r=>r.n>=start&&r.n<start+10)){
+  const label=node('label',undefined,'trial'),check=node('input');label.style.setProperty('--color',palette[(r.n-1)%10]);check.type='checkbox';check.value=r.id;check.checked=true;check.setAttribute('aria-label',`${title} 試行${r.n} attempt ${r.attempt}`);check.onchange=schedule;
+  label.append(check,node('span',`試行${r.n} / attempt ${r.attempt}\n${r.success?'成功':'不成功'}・counted=${r.counted}・coreExit=${r.coreExit?'あり':'なし'}\n${r.error||'エラーなし'}`));label.title=`${r.source}:${r.line}`;trials.append(label);
+ }schedule()}
+ async function load(){const v=invalidate();rows=[];trials.replaceChildren();selects.block.replaceChildren();status.textContent='試行一覧を読み込み中…';try{const result=await api('/api/trajectory/catalog',context());if(v!==version)return;rows=result.rows;const blocks=[...new Set(rows.map(r=>Math.floor((r.n-1)/10)*10+1))].sort((a,b)=>a-b);for(const start of blocks)selects.block.add(new Option(`${start}–${start+9}試行`,start));fillTrials()}catch(error){if(v===version)report(error)}}
+ function syncCondition(){
+  const practice=selects.phase.value==='practice';selects.condition.hidden=practice;assigned.hidden=!practice;
+  if(practice){const conditions=meta.conditions.filter(c=>(meta.participantsByCondition[c]||[]).includes(selects.participant.value));selects.condition.value=conditions.length===1?conditions[0]:'';assigned.textContent=conditions.length===1?conditions[0]:(conditions.length?'割当条件が複数あります':'割当条件なし');}
+  else if(!selects.condition.value)selects.condition.selectedIndex=0;
+ }
+ for(const key of ['participant','phase'])selects[key].onchange=()=>{syncCondition();load()};
+ selects.condition.onchange=load;
+ selects.block.onchange=fillTrials;selects.scope.onchange=schedule;
+ all.onclick=()=>{trials.querySelectorAll('input').forEach(e=>e.checked=true);schedule()};none.onclick=()=>{trials.querySelectorAll('input').forEach(e=>e.checked=false);schedule()};
+ save.onclick=async()=>{const savedToken=token;save.disabled=true;try{const result=await api('/api/save',{token:savedToken,key:'trajectory'});if(token===savedToken)status.textContent=`保存しました：${result.path}`}catch(error){if(token===savedToken)report(error)}finally{if(token===savedToken)save.disabled=false}};
+ syncCondition();load();
+}
+api('/api/meta').then(meta=>{document.getElementById('dataset').textContent=`${meta.files} files / ${meta.participants.length} participants / ${meta.rows.toLocaleString()} records`;if(!meta.participants.length){document.getElementById('dataset').textContent='inputCSVにデータがありません。';return}panel(meta,'上段');panel(meta,'下段')}).catch(error=>{document.getElementById('dataset').textContent=error.message});
+</script>
+</html>

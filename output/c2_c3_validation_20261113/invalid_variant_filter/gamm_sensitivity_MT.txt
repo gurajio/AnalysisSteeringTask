@@ -1,0 +1,31 @@
+
+Family: gaussian 
+Link function: identity 
+
+Formula:
+y ~ condition * block + s(N, k = 10, bs = "cr") + s(N, by = ordered_condition, 
+    k = 10, bs = "cr") + s(N, participant, bs = "fs", k = 5)
+
+Parametric coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)          857.89     111.16   7.717 1.26e-14 ***
+conditionC3          445.93     155.66   2.865  0.00418 ** 
+block2               234.46      32.22   7.278 3.56e-13 ***
+block3               529.65      48.21  10.986  < 2e-16 ***
+block4               602.80      59.34  10.159  < 2e-16 ***
+conditionC3:block2  -333.02      41.39  -8.045 9.23e-16 ***
+conditionC3:block3  -509.20      59.28  -8.590  < 2e-16 ***
+conditionC3:block4  -567.52      72.10  -7.871 3.75e-15 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                            edf Ref.df       F  p-value    
+s(N)                      8.815  8.950  21.148  < 2e-16 ***
+s(N):ordered_conditionC3  6.130  7.259   4.498 2.23e-05 ***
+s(N,participant)         84.833 97.000 158.948  < 2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.668   Deviance explained =   67%
+fREML = 1.0499e+05  Scale est. = 69164     n = 15137

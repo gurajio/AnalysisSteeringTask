@@ -40,14 +40,21 @@ def clip_points(points, start, end):
     return np.vstack((edges[0], inner, edges[1]))
 
 
+def effective_width(points):
+    if points is None or len(points) < 2:
+        return None
+    perpendicular = points[:, 1:3] @ np.array([0.5, math.sqrt(3) / 2])
+    we = 4.133 * float(np.std(perpendicular, ddof=1))
+    return we if math.isfinite(we) else None
+
+
 def trajectory_metrics(points, mt):
     if points is None or len(points) < 2 or mt is None or mt <= 0:
         return None
     coords = points[:, 1:3]
-    perpendicular = coords @ np.array([0.5, math.sqrt(3) / 2])
-    we = 4.133 * float(np.std(perpendicular, ddof=1))
+    we = effective_width(points)
     ae = float(np.linalg.norm(np.diff(coords, axis=0), axis=1).sum())
-    if we <= 1e-9 or ae <= 0:
+    if we is None or we <= 1e-9 or ae <= 0:
         return None
     return ae / we / (mt / 1000)
 
@@ -98,6 +105,7 @@ def load_rows(folder):
                     points = np.array([[p['t'], p['x'], p['y']] for p in samples], dtype=float).reshape(-1, 3)
                     if not np.isfinite(points).all() or (len(points) and np.any(np.diff(points[:, 0]) < 0)):
                         raise ValueError('軌跡の座標または時刻が不正です')
+                    raw_points = points
                     if len(points):
                         keep = np.r_[np.diff(points[:, 0]) != 0, True]
                         points = points[keep]
@@ -115,12 +123,15 @@ def load_rows(folder):
                                      n=n, success=raw['success'].lower() == 'true',
                                      countedAsTrial=raw['countedAsTrial'].lower() == 'true', coreExitMs=exit_time,
                                      source=path.name, line=line,
+                                     trajectory=raw_points,
+                                     coreTrajectory=core, amplitude=number(raw.get('amplitude')),
+                                     width=number(raw.get('width')), experimentMode=raw.get('experimentMode', 'main'),
                                      attempt=raw['attemptNumber'], errorType=raw['errorType'], region=region,
                                      IP=core_ip(core_mt, raw.get('amplitude'), raw.get('width')),
                                      coreMtMs=dict(MT=core_mt if core_mt and core_mt > 0 else None,
-                                                   TPe=trajectory_metrics(core, core_mt), ER=core_error),
+                                                   TPe=trajectory_metrics(core, core_mt), We=effective_width(core), ER=core_error),
                                      mtMs=dict(MT=mt if mt and mt > 0 else None,
-                                               TPe=trajectory_metrics(points, mt), ER=int(deviation))))
+                                               TPe=trajectory_metrics(points, mt), We=effective_width(points), ER=int(deviation))))
                 except (ValueError, KeyError, TypeError) as exc:
                     raise ValueError(f'{path.name}:{line}: {exc}') from exc
     return rows
@@ -132,6 +143,11 @@ def average(values):
 
 
 def aggregate(rows, metric, scope):
+    if metric == 'MTVariance':
+        values = [r[scope]['MT'] for r in rows if r[scope]['MT'] is not None]
+        return float(np.var(values, ddof=1)) if len(values) >= 2 else None
+    if metric == 'We':
+        return average([r[scope].get('We') for r in rows])
     values = [r.get('IP') if metric == 'IP' else r[scope][metric] for r in rows]
     if metric == 'ER':
         return 100 * float(np.mean(values)) if values and all(v is not None for v in values) else None
@@ -420,7 +436,7 @@ def analyze(rows, options, include_fits=True):
                 summary[metric + 'Participants'] = sum(v is not None for v in estimates)
             summaries.append(summary)
             bins = sorted({(r['n'] - 1) // width for group in active.values() for r in group})
-            line = dict(condition=condition, participant=label, x=[], MT=[], ER=[], TPe=[], IP=[], counts=[])
+            line = dict(condition=condition, participant=label, x=[], MT=[], ER=[], TPe=[], IP=[], MTVariance=[], We=[], MTVarianceParticipants=[], WeParticipants=[], counts=[])
             for block in bins:
                 block_groups = [[r for r in group if (r['n'] - 1) // width == block] for group in active.values()]
                 block_groups = [g for g in block_groups if g]
@@ -428,9 +444,11 @@ def analyze(rows, options, include_fits=True):
                 right = min((block + 1) * width, end) if end is not None else (block + 1) * width
                 line['x'].append((left + right) / 2)
                 line['counts'].append(sum(map(len, block_groups)))
-                for metric in ('MT', 'ER', 'TPe', 'IP'):
+                for metric in ('MT', 'ER', 'TPe', 'IP', 'MTVariance', 'We'):
                     values = [aggregate(g, metric, scope) for g in block_groups]
                     line[metric].append(average(values) if metric != 'ER' or all(v is not None for v in values) else None)
+                    if metric in ('MTVariance', 'We'):
+                        line[metric + 'Participants'].append(sum(v is not None for v in values))
             series.append(line)
             if include_fits and phase == 'practice':
                 for metric, target in [('MT', fits), ('TPe', inverse_fits)]:
@@ -454,6 +472,7 @@ def analyze(rows, options, include_fits=True):
     regions = {key: sum(r['region'] == key for r in included if r['errorType'] == 'deviation')
                for key in ('inside', 'outside', 'both', 'unknown', 'none')}
     missing = {metric: sum(r[scope][metric] is None for r in included) for metric in ('MT', 'ER', 'TPe')}
+    missing['We'] = sum(r[scope].get('We') is None for r in included)
     missing['IP'] = sum(r.get('IP') is None for r in included)
     return dict(summary=summaries, series=series, fits=fits, inverseFits=inverse_fits, excluded=excluded, regions=regions,
                 trialRange=dict(start=start, end=end), missing=missing, selected=len(selected), included=len(included), options=options)

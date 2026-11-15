@@ -1,0 +1,28 @@
+{
+  "status": "Analysis plan fixed after previous results were viewed; exploratory, not preregistered confirmatory analysis",
+  "objective": "C2 versus C3 difference in improvement magnitude",
+  "scope": "practice; coreMtMs; C2 and C3; all available participants in those practice conditions",
+  "blocks": [[1,100],[101,200],[201,300],[301,400]],
+  "early": [1,100],
+  "late": [301,400],
+  "primary_pipeline": "basic exclusion only: countedAsTrial=true and finite coreExitMs; no success exclusion; no statistical MT exclusion; no boundary exclusion",
+  "sensitivity_pipeline": "same analysis, plus condition-by-original-trial-number MT mean +/- 1.5 sample SD exclusion, applied once after basic exclusion; rows shared across metrics",
+  "metrics": {"MT":"core MT in ms", "ER":"core deviation rate in percent; differences in percentage points", "TPe":"trialwise core IDe/MT in s^-1"},
+  "aggregation": "arithmetic mean of valid trial-row values within participant and block; equal participant weights; ER is unavailable if any included row has unknown ER",
+  "tests": {
+    "improvement": "3 Welch tests of participant late-minus-early scores: MT, ER, TPe; primary scientific question",
+    "early_late_performance": "6 Welch tests of participant means: each of MT, ER, TPe at early and late",
+    "within_condition_change": "6 paired t tests, equivalent to two-time-point RMANOVA: each metric in each condition; report F=t^2",
+    "slopes": "4 Welch tests: participant OLS slopes of trial-row metric against original trial number, separately early and late, for MT and TPe; units per trial",
+    "within_person_variability": "2 Welch tests on log residual SD from participant late-block OLS fits, MT and TPe; residual SD uses residual degrees of freedom m-2; report geometric mean ratio",
+    "between_person_variability": "4 median-centered Brown-Forsythe tests on participant late means and change scores, MT and TPe; no trial pooling",
+    "profile": "3 balanced 2-condition x 4-block mixed ANOVA interaction tests, one per metric; always Greenhouse-Geisser correct using pooled within-condition covariance; no preliminary sphericity-test selection; measures temporal profile differences, not functional-family identity"
+  },
+  "multiplicity": "28 planned tests in primary pipeline adjusted jointly with Holm at alpha=0.05; same 28 sensitivity tests adjusted separately for descriptive robustness, never used to replace primary results; additionally provide Holm across all 56 as a reference",
+  "inference": "nondirectional, two-sided mean contrasts; equal group variances not required for Welch; paired changes and mixed profile retain distribution assumptions; no test is selected according to observed p values",
+  "uncertainty": "unadjusted 95% contrast CIs; primary-pipeline improvement additionally receives 95% BCa participant bootstrap CIs with 10000 resamples, batch 1000, seed 20261113+metric index; leave-one-participant-out effect range, without selection by p value",
+  "diagnostics": "participant values, sample SD, skewness, ranges, zero counts, excluded row audit, unavailable metric audit, block counts, original input and analysis.py hashes; do not use normality tests to switch analysis methods",
+  "missing_policy": "no imputation or silent participant removal; stop if any required participant-block estimate is unavailable, fewer than 3 valid OLS rows, zero residual SD, or nonfinite test statistic",
+  "resource_limit": "one core and one BLAS thread; no nonlinear fitting or repeated model search; expected under one minute and below 500 MB",
+  "limitations": ["All results remain exploratory after prior analyses", "Only 10 participants per condition; resampling does not remove small-sample uncertainty", "ER proportion comparisons and mixed profile F tests are approximations", "GG correction does not solve covariance heterogeneity across groups", "No inference about long-term retention, transfer or asymptotic performance", "No separate inferential test of ER individual variability because binary variance depends on ER", "100-trial blocks respect rest boundaries but cannot separate rest effects from practice effects", "The basic exclusion defines the target population of attempts and is not equivalent to all attempted trials", "Sensitivity exclusion depends on participants jointly; inferential p values in that pipeline are descriptive"]
+}

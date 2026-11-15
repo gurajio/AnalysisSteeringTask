@@ -1,0 +1,1 @@
+INVALID: R subset NSE selected both base and sensitivity rows in each model. No results in this directory are valid. Corrected to explicit data-frame indexing with row-count and unique-participant-N assertions; valid outputs are in the parent directory. Python continuous analyses were unaffected.

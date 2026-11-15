@@ -1,0 +1,4 @@
+﻿metric,method,resamples,estimate,ci_low,ci_high
+MT,participant BCa bootstrap; unadjusted 95%,10000,-84.00533776595745,-313.4727562785003,136.33198662203435
+ER,participant BCa bootstrap; unadjusted 95%,10000,2.4681737588652486,-5.879954871295702,14.852468071964925
+TPe,participant BCa bootstrap; unadjusted 95%,10000,3.958095194678789,-9.880125293510476,16.09147438008928

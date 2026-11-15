@@ -1,0 +1,223 @@
+{
+  "settings": {
+    "phase": "practice",
+    "metric": "coreMtMs",
+    "early": [
+      1,
+      100
+    ],
+    "late": [
+      301,
+      400
+    ],
+    "basic_exclusion": true,
+    "outlier_exclusion": "trial1_5sd",
+    "boundary_exclusion": false,
+    "unit": "participant",
+    "aggregation": "arithmetic mean of valid rows within participant and half; equal participant weighting",
+    "alternative": "F upper-tail; nondirectional contrasts",
+    "alpha": 0.05,
+    "multiplicity": "Holm over all four tests",
+    "model": "balanced 2x2 mixed ANOVA; specific late error for simple effect; equal group variances; two time levels",
+    "ci": "unadjusted 95%",
+    "cores": 1,
+    "analysis_status": "additional analysis after viewing previous analyses; Holm covers these four tests only"
+  },
+  "summaries": {
+    "C2": {
+      "early_ms": {
+        "n": 10,
+        "mean": 1365.0635333985012,
+        "sd": 305.7743643577299,
+        "min": 940.8169014084507,
+        "max": 1882.75,
+        "skew": 0.3426499735591415
+      },
+      "late_ms": {
+        "n": 10,
+        "mean": 1028.2924217149532,
+        "sd": 206.7989930169462,
+        "min": 675.8985507246376,
+        "max": 1327.1707317073171,
+        "skew": -0.3067060889367718
+      },
+      "change_ms": {
+        "n": 10,
+        "mean": -336.771111683548,
+        "sd": 186.1408195270957,
+        "min": -640.4166666666667,
+        "max": 62.35309859154927,
+        "skew": 0.6997595775785949
+      }
+    },
+    "C3": {
+      "early_ms": {
+        "n": 10,
+        "mean": 1456.59240346639,
+        "sd": 477.0310067740846,
+        "min": 886.2061855670103,
+        "max": 2082.7625,
+        "skew": -0.13032008292409228
+      },
+      "late_ms": {
+        "n": 10,
+        "mean": 1213.8446210040834,
+        "sd": 387.11712883633265,
+        "min": 631.1428571428571,
+        "max": 1703.6307692307691,
+        "skew": -0.3117156437228984
+      },
+      "change_ms": {
+        "n": 10,
+        "mean": -242.7477824623067,
+        "sd": 256.27475650308014,
+        "min": -567.2878723404256,
+        "max": 230.00606060606071,
+        "skew": 0.601178442963812
+      }
+    }
+  },
+  "tests": [
+    {
+      "comparison": "C2: late - early",
+      "test": "one-factor RMANOVA",
+      "difference_ms": -336.77111168354804,
+      "ci95_low_ms": -469.92823241529516,
+      "ci95_high_ms": -203.61399095180101,
+      "F": 32.73304576804843,
+      "df1": 1,
+      "df2": 9,
+      "p_raw": 0.0002864913944242461,
+      "partial_eta_squared": 0.7843435619335849,
+      "SS_effect": 567073.908322864,
+      "SS_error": 155917.8211239846,
+      "p_holm": 0.0011459655776969843
+    },
+    {
+      "comparison": "C3: late - early",
+      "test": "one-factor RMANOVA",
+      "difference_ms": -242.74778246230653,
+      "ci95_low_ms": -426.0756993527355,
+      "ci95_high_ms": -59.41986557187764,
+      "F": 8.972198708676567,
+      "df1": 1,
+      "df2": 9,
+      "p_raw": 0.015069260188565099,
+      "partial_eta_squared": 0.4992265472974653,
+      "SS_effect": 294632.42945183703,
+      "SS_error": 295545.3786932086,
+      "p_holm": 0.0452077805656953
+    },
+    {
+      "comparison": "late: C2 - C3",
+      "test": "mixed-design simple condition effect at late; specific error",
+      "difference_ms": -185.55219928913016,
+      "ci95_low_ms": -477.13830184207353,
+      "ci95_high_ms": 106.03390326381316,
+      "F": 1.7873863825624992,
+      "df1": 1,
+      "df2": 18,
+      "p_raw": 0.19789738206849353,
+      "partial_eta_squared": 0.0903295841100885,
+      "SS_effect": 172148.09330516536,
+      "SS_error": 1733629.4545617788,
+      "p_holm": 0.39579476413698705
+    },
+    {
+      "comparison": "change: C2 - C3",
+      "test": "mixed ANOVA interaction",
+      "difference_ms": -94.02332922124128,
+      "ci95_low_ms": -304.45681923685436,
+      "ci95_high_ms": 116.41016079437173,
+      "F": 0.8811734596843134,
+      "df1": 1,
+      "df2": 18,
+      "p_raw": 0.36030698165980957,
+      "partial_eta_squared": 0.04666942240458853,
+      "SS_effect": 22100.966094614814,
+      "SS_error": 451463.1998171932,
+      "p_holm": 0.39579476413698705
+    }
+  ],
+  "mixed_components": [
+    {
+      "source": "condition",
+      "SS": 191934.79749007206,
+      "df": 1,
+      "MS": 191934.79749007206
+    },
+    {
+      "source": "subject(condition)",
+      "SS": 4171675.144645021,
+      "df": 18,
+      "MS": 231759.73025805672
+    },
+    {
+      "source": "time",
+      "SS": 839605.3716800842,
+      "df": 1,
+      "MS": 839605.3716800842
+    },
+    {
+      "source": "condition:time",
+      "SS": 22100.966094614814,
+      "df": 1,
+      "MS": 22100.966094614814
+    },
+    {
+      "source": "time:subject(condition)",
+      "SS": 451463.1998171932,
+      "df": 18,
+      "MS": 25081.288878732958
+    }
+  ],
+  "validation": [
+    {
+      "range": [
+        1,
+        100
+      ],
+      "selected": 2112,
+      "included": 1800,
+      "missing_mt": 0
+    },
+    {
+      "range": [
+        301,
+        400
+      ],
+      "selected": 2056,
+      "included": 1786,
+      "missing_mt": 0
+    }
+  ],
+  "outlier_rows": 404,
+  "input_sha256": {
+    "same_id_steering_main_001_C2_20261015_113254 (1).csv": "d16ef9e6aeac40de3c48b8824b7bee70c7f1b5fd0e4195e6ea0b6c16459ad6bf",
+    "same_id_steering_main_002_C3_20261015_133348 (1).csv": "4de441d2144dbb25e33bc27c45305b55ac342d815e662da90a851fc4b6d46a63",
+    "same_id_steering_main_003_C2_20261015_155913 (1).csv": "2a516995978f968eda458d52ec35375696546a432a1f89bd1cbb61990652f24a",
+    "same_id_steering_main_004_C3_20261016_093218.csv": "a2ad13978780fc91dd9e3ee358d02e8c6b736a7bf3f3b080a7926aa3016357a4",
+    "same_id_steering_main_005_C2_20261016_140835 (1).csv": "d28de05bc908c02bc4338d93741f974af55c8c0a0f6175becebc3042587f2b67",
+    "same_id_steering_main_006_C2_20261016_145713 (1).csv": "51aaeda35e8c5bd6b8ebad68a7014ece5558836a590312621972c3b58dcb95df",
+    "same_id_steering_main_007_C3_20261016_160828 (1).csv": "36380816efb958e20694c8f883554b64b50c3c14a2113027986f9a1f30f7a1a5",
+    "same_id_steering_main_008_C3_20261016_174334.csv": "2b90fe1016081ca58a530e92e5a0e5f80d650481c100d5ea25863f976267d0be",
+    "same_id_steering_main_009_C3_20261020_163612.csv": "b3527f300ed2ae23aa0ceb0a358512d16e0ad5ab98806f894df2d01b2ec6e2ad",
+    "same_id_steering_main_010_C2_20261020_170913.csv": "311786a2050ff30d4ce7b0639ea8d96ee4db411bb5d45f2f919b30ceddb0ffc4",
+    "same_id_steering_main_011_C1_20261105_115927.csv": "a366a6b2b7bc5043e6f2744631d44c8a34cb0b661f0d9e8ce48b41d2b55ad9d3",
+    "same_id_steering_main_012_C1_20261105_130113.csv": "83ac9bd05c827e19720cbc33593d1d465595bbc6d67c0b3cf8bcb9552f511e16",
+    "same_id_steering_main_013_C2_20261105_145720.csv": "6adb0464be5acaa0ef2a3d510357c001820e78f54ed5377de445367de38f1f34",
+    "same_id_steering_main_014_C3_20261105_155133.csv": "12757ab436902bf47fe8cef60405a6c53ae038476960db1b9fa88e5865b8e545",
+    "same_id_steering_main_015_C1_20261106_113032.csv": "cc83a1f300f391b76e06fd418e272452d3b501ae56aecc17425bffda747794af",
+    "same_id_steering_main_016_C3_20261106_122702.csv": "580598ff50835f007b13abb79c0af94b553711508d35f8fa298f188c70fcb073",
+    "same_id_steering_main_017_C2_20261106_140959.csv": "25e3ba854ffb60637b7d8a27711a0af041a4455c5de2375846736bd722a07711",
+    "same_id_steering_main_018_C3_20261110_143614.csv": "e85541082cc96851dd7fe6012c59d04cb8c70fa251b2415e076f585dabfca408",
+    "same_id_steering_main_019_C2_20261110_153210.csv": "1249094151edf3a43c23c1f5246f65fa526f1a1ab0accdc05f0dcd2f607f0d90",
+    "same_id_steering_main_020_C3_20261111_141409.csv": "46e996f172ea86c6bdca341488faf847e28b1adfd6e77d3900068c8b93c56956",
+    "same_id_steering_main_021_C2_20261111_160719.csv": "16a9a483f3e80e35496de1280cc475c49d739c08692d6a31801eca4446b59311",
+    "same_id_steering_main_022_C1_20261111_165050.csv": "32091106c50f81e7eccbb8df8e75431798c034b9a923ff895d062fbe7fdc0042",
+    "same_id_steering_main_023_C3_20261112_112921.csv": "dff5efef3612da4e8a631622ef90e67fd4e91c18c50a09d06f3f7c1507e167c7",
+    "same_id_steering_main_024_C1_20261111_125734.csv": "5124aee52f09aaa2a8c77ef2a8c543b9847f06b5485dff59e0197ab60f977729",
+    "same_id_steering_main_025_C1_20261112_141852.csv": "188cee04df10dc5e2aad57c87d1b4d929c749573de243bf1a231171fa2823ff9",
+    "same_id_steering_main_026_C2_20261112_123527.csv": "7fcc2c89e2cadab94be103337cef4a5c9e0236a97feb6688a48c3f0f673a992b"
+  }
+}

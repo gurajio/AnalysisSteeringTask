@@ -1,0 +1,21 @@
+"variant","metric","test","family","method","estimate","ci_low","ci_high","statistic","df2","p_raw","percentile_low","percentile_high"
+"base","ER","early_C2-C3","exploratory","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-14.437828470033,-24.9956464924593,-3.88001044760656,-2.68025303676604,,0.0073566526464288,-25.4253880265496,-4.27545432635251
+"base","ER","late_C2-C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-11.7403978560885,-23.1171362331398,-0.363659479037196,-2.02261458420465,,0.0431128993820344,-23.4509203949268,-0.771971957309101
+"base","ER","change_C2","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-2.17425024476941,-7.00766111726289,2.65916062772408,-0.881665615761528,,0.377957660323106,-6.76919552246351,2.76084405550823
+"base","ER","change_C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-4.87168085871384,-11.5568184467798,1.81345672935217,-1.4282905776386,,0.153208238751959,-11.6699294486148,1.69810564653413
+"base","ER","change_C2-C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",2.69743061394443,-5.49403776881967,10.8888989967085,0.645411372795028,,0.51866063532084,-5.4754530380705,10.8489404915496
+"base","MT","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,31.8191454953842,12,0.00147552618408584,,
+"base","TPe","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,3.38431957547917,11,0.984610663037103,,
+"base","ER","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,6.39154435772727,12,0.895073205734517,,
+"base","ER","early_slope_C2-C3","exploratory","binomial GAMM mean probability slope contrast; delta Wald",0.106653889285875,-0.0174829923457244,0.230790770917475,1.68396064290295,,0.0921892751382389,,
+"base","ER","late_slope_C2-C3","exploratory","binomial GAMM mean probability slope contrast; delta Wald",-0.0398913910201142,-0.136301316395527,0.0565185343552984,-0.810986276516337,,0.41737355180935,,
+"sensitivity","ER","early_C2-C3","exploratory","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-14.7053775280649,-25.5750139439625,-3.83574111216728,-2.65160758200869,,0.00801095874960197,-26.0700314650419,-4.22466499755653
+"sensitivity","ER","late_C2-C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-11.7685808983265,-23.7421554538971,0.204993657244202,-1.92640840901889,,0.0540533982742705,-24.0612772543435,0.0709470272675757
+"sensitivity","ER","change_C2","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-2.30178127437207,-7.7182659258274,3.11470337708327,-0.832903384457261,,0.404899220740564,-7.68156821103854,3.23570559297405
+"sensitivity","ER","change_C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",-5.23857790411047,-12.8253852919578,2.34822948373689,-1.3533260431404,,0.175951492761195,-12.7471314155814,2.84403600542386
+"sensitivity","ER","change_C2-C3","secondary","binomial GLMM marginal contrast; parametric-bootstrap SE Wald",2.9367966297384,-6.44413847380079,12.3177317332776,0.613586551945582,,0.53948857237013,-6.35824850958626,11.930086098356
+"sensitivity","MT","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,43.7931883117224,12,1.65611813392692e-05,,
+"sensitivity","TPe","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,3.30758862866065,12,0.992955256562258,,
+"sensitivity","ER","curve_shape","exploratory","GAMM centered-contrast joint approximate penalized Wald",,,,4.054239330047,12,0.982437632510844,,
+"sensitivity","ER","early_slope_C2-C3","exploratory","binomial GAMM mean probability slope contrast; delta Wald",0.122140756812354,-0.0312739154010077,0.275555429025715,1.56044972686363,,0.118653641445597,,
+"sensitivity","ER","late_slope_C2-C3","exploratory","binomial GAMM mean probability slope contrast; delta Wald",-0.0379138454603542,-0.155957333588093,0.0801296426673844,-0.629523392445671,,0.529006459135648,,

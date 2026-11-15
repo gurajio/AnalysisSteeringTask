@@ -1,0 +1,7 @@
+{
+  "results_match_prior": true,
+  "participant_means_match_prior": true,
+  "trial_audit_match_prior": true,
+  "prior_directory": "/Users/kazuho/Desktop/Programming/AnalysisSteeringTask/output/c2_c3_mt_paired_20261114",
+  "independent_new_sample": false
+}

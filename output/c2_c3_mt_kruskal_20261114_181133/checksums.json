@@ -1,0 +1,14 @@
+{
+  "README.txt": "a32d86476c6f605cdb207e711fcb3ec87a8703a6de42d353c98aa3ff81fc719d",
+  "exclusion_summary.csv": "c8e56f7e9110158aba124732a7dca14d6e197ee235dc6946825c7e8dbd7f29c4",
+  "manifest.json": "18fd4e15e24964433044fd6cbf0f2a5d5c4389d6c084bbee0e6060b408c8fa1b",
+  "participant_means.csv": "812e8722d7c14cd5a92f941d7860d02ac5de5b07e6e30be8f77d06697677124d",
+  "participant_ranks.csv": "01186ba74818105653a162e4d7cbb947183b7e52e517612c1b03419565557eaa",
+  "protocol.json": "bb5f32f0f5e5074a51affbff40517088d30a69cb233da4920c3d1b379fbb6def",
+  "report_ja.txt": "e0d3e47ccd36a66be81791c2de4244f3fe3b66dd060918cef572e46e5c9d03a0",
+  "requirements.txt": "ccbd8229d222a361c760f829c0e3e62beb09d9afe392e7ce5bfd1f46a96aa368",
+  "results.json": "4b7ef89fc3987adf241f091bbb564e7b2ea8e96d80c5a6fa362beb947f4f69a0",
+  "run_analysis.py": "7e119a704f82ff09acfc520b8d0302c66b736f0eb940cd33348135c64485cc9c",
+  "tests.csv": "3b54016fe383399cad373a3a4b0d56180189dc1d006f6f845cb0fa83fdafed21",
+  "trial_audit.csv": "83b722352da3e0b65b4575f6aa99142600d3bb16d48af687ff6b3dd3a2aedf72"
+}

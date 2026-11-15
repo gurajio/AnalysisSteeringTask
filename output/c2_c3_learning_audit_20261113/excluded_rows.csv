@@ -1,0 +1,1482 @@
+﻿pipeline,participant,condition,trial,source,line,reason
+basic_only,001,C2,110,same_id_steering_main_001_C2_20261015_113254 (1).csv,111,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,5,same_id_steering_main_002_C3_20261015_133348 (1).csv,6,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,6,same_id_steering_main_002_C3_20261015_133348 (1).csv,8,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,6,same_id_steering_main_002_C3_20261015_133348 (1).csv,9,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,8,same_id_steering_main_002_C3_20261015_133348 (1).csv,12,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,12,same_id_steering_main_002_C3_20261015_133348 (1).csv,17,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,22,same_id_steering_main_002_C3_20261015_133348 (1).csv,28,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,28,same_id_steering_main_002_C3_20261015_133348 (1).csv,35,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,34,same_id_steering_main_002_C3_20261015_133348 (1).csv,42,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,34,same_id_steering_main_002_C3_20261015_133348 (1).csv,43,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,36,same_id_steering_main_002_C3_20261015_133348 (1).csv,46,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,39,same_id_steering_main_002_C3_20261015_133348 (1).csv,50,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,49,same_id_steering_main_002_C3_20261015_133348 (1).csv,61,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,64,same_id_steering_main_002_C3_20261015_133348 (1).csv,77,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,64,same_id_steering_main_002_C3_20261015_133348 (1).csv,78,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,76,same_id_steering_main_002_C3_20261015_133348 (1).csv,91,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,80,same_id_steering_main_002_C3_20261015_133348 (1).csv,96,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,83,same_id_steering_main_002_C3_20261015_133348 (1).csv,100,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,87,same_id_steering_main_002_C3_20261015_133348 (1).csv,105,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,89,same_id_steering_main_002_C3_20261015_133348 (1).csv,108,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,90,same_id_steering_main_002_C3_20261015_133348 (1).csv,110,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,90,same_id_steering_main_002_C3_20261015_133348 (1).csv,111,countedAsTrial=false
+basic_only,002,C3,92,same_id_steering_main_002_C3_20261015_133348 (1).csv,114,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,99,same_id_steering_main_002_C3_20261015_133348 (1).csv,122,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,101,same_id_steering_main_002_C3_20261015_133348 (1).csv,125,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,111,same_id_steering_main_002_C3_20261015_133348 (1).csv,136,coreExitMs missing
+basic_only,002,C3,121,same_id_steering_main_002_C3_20261015_133348 (1).csv,146,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,121,same_id_steering_main_002_C3_20261015_133348 (1).csv,147,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,144,same_id_steering_main_002_C3_20261015_133348 (1).csv,171,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,151,same_id_steering_main_002_C3_20261015_133348 (1).csv,179,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,160,same_id_steering_main_002_C3_20261015_133348 (1).csv,189,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,162,same_id_steering_main_002_C3_20261015_133348 (1).csv,192,coreExitMs missing
+basic_only,002,C3,168,same_id_steering_main_002_C3_20261015_133348 (1).csv,198,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,169,same_id_steering_main_002_C3_20261015_133348 (1).csv,200,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,169,same_id_steering_main_002_C3_20261015_133348 (1).csv,201,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,170,same_id_steering_main_002_C3_20261015_133348 (1).csv,203,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,189,same_id_steering_main_002_C3_20261015_133348 (1).csv,223,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,189,same_id_steering_main_002_C3_20261015_133348 (1).csv,224,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,202,same_id_steering_main_002_C3_20261015_133348 (1).csv,238,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,208,same_id_steering_main_002_C3_20261015_133348 (1).csv,245,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,214,same_id_steering_main_002_C3_20261015_133348 (1).csv,252,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,220,same_id_steering_main_002_C3_20261015_133348 (1).csv,259,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,236,same_id_steering_main_002_C3_20261015_133348 (1).csv,276,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,237,same_id_steering_main_002_C3_20261015_133348 (1).csv,278,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,238,same_id_steering_main_002_C3_20261015_133348 (1).csv,280,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,245,same_id_steering_main_002_C3_20261015_133348 (1).csv,288,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,247,same_id_steering_main_002_C3_20261015_133348 (1).csv,291,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,254,same_id_steering_main_002_C3_20261015_133348 (1).csv,299,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,255,same_id_steering_main_002_C3_20261015_133348 (1).csv,301,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,257,same_id_steering_main_002_C3_20261015_133348 (1).csv,304,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,262,same_id_steering_main_002_C3_20261015_133348 (1).csv,310,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,263,same_id_steering_main_002_C3_20261015_133348 (1).csv,312,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,263,same_id_steering_main_002_C3_20261015_133348 (1).csv,313,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,270,same_id_steering_main_002_C3_20261015_133348 (1).csv,321,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,281,same_id_steering_main_002_C3_20261015_133348 (1).csv,333,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,281,same_id_steering_main_002_C3_20261015_133348 (1).csv,334,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,283,same_id_steering_main_002_C3_20261015_133348 (1).csv,337,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,284,same_id_steering_main_002_C3_20261015_133348 (1).csv,339,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,294,same_id_steering_main_002_C3_20261015_133348 (1).csv,350,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,301,same_id_steering_main_002_C3_20261015_133348 (1).csv,358,coreExitMs missing
+basic_only,002,C3,305,same_id_steering_main_002_C3_20261015_133348 (1).csv,362,coreExitMs missing
+basic_only,002,C3,323,same_id_steering_main_002_C3_20261015_133348 (1).csv,380,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,324,same_id_steering_main_002_C3_20261015_133348 (1).csv,382,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,330,same_id_steering_main_002_C3_20261015_133348 (1).csv,389,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,332,same_id_steering_main_002_C3_20261015_133348 (1).csv,392,coreExitMs missing
+basic_only,002,C3,349,same_id_steering_main_002_C3_20261015_133348 (1).csv,409,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,351,same_id_steering_main_002_C3_20261015_133348 (1).csv,412,coreExitMs missing
+basic_only,002,C3,357,same_id_steering_main_002_C3_20261015_133348 (1).csv,418,coreExitMs missing
+basic_only,002,C3,370,same_id_steering_main_002_C3_20261015_133348 (1).csv,431,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,375,same_id_steering_main_002_C3_20261015_133348 (1).csv,437,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,380,same_id_steering_main_002_C3_20261015_133348 (1).csv,443,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,383,same_id_steering_main_002_C3_20261015_133348 (1).csv,447,coreExitMs missing
+basic_only,002,C3,389,same_id_steering_main_002_C3_20261015_133348 (1).csv,453,countedAsTrial=false; coreExitMs missing
+basic_only,002,C3,393,same_id_steering_main_002_C3_20261015_133348 (1).csv,458,countedAsTrial=false; coreExitMs missing
+basic_only,003,C2,83,same_id_steering_main_003_C2_20261015_155913 (1).csv,84,countedAsTrial=false; coreExitMs missing
+basic_only,003,C2,117,same_id_steering_main_003_C2_20261015_155913 (1).csv,119,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,8,same_id_steering_main_005_C2_20261016_140835 (1).csv,9,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,17,same_id_steering_main_005_C2_20261016_140835 (1).csv,19,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,17,same_id_steering_main_005_C2_20261016_140835 (1).csv,20,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,20,same_id_steering_main_005_C2_20261016_140835 (1).csv,24,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,22,same_id_steering_main_005_C2_20261016_140835 (1).csv,27,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,24,same_id_steering_main_005_C2_20261016_140835 (1).csv,30,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,30,same_id_steering_main_005_C2_20261016_140835 (1).csv,37,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,37,same_id_steering_main_005_C2_20261016_140835 (1).csv,45,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,45,same_id_steering_main_005_C2_20261016_140835 (1).csv,54,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,46,same_id_steering_main_005_C2_20261016_140835 (1).csv,56,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,55,same_id_steering_main_005_C2_20261016_140835 (1).csv,66,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,59,same_id_steering_main_005_C2_20261016_140835 (1).csv,71,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,59,same_id_steering_main_005_C2_20261016_140835 (1).csv,72,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,63,same_id_steering_main_005_C2_20261016_140835 (1).csv,77,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,68,same_id_steering_main_005_C2_20261016_140835 (1).csv,83,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,76,same_id_steering_main_005_C2_20261016_140835 (1).csv,92,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,78,same_id_steering_main_005_C2_20261016_140835 (1).csv,95,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,94,same_id_steering_main_005_C2_20261016_140835 (1).csv,112,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,98,same_id_steering_main_005_C2_20261016_140835 (1).csv,117,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,99,same_id_steering_main_005_C2_20261016_140835 (1).csv,119,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,115,same_id_steering_main_005_C2_20261016_140835 (1).csv,136,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,129,same_id_steering_main_005_C2_20261016_140835 (1).csv,151,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,143,same_id_steering_main_005_C2_20261016_140835 (1).csv,166,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,155,same_id_steering_main_005_C2_20261016_140835 (1).csv,179,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,163,same_id_steering_main_005_C2_20261016_140835 (1).csv,188,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,165,same_id_steering_main_005_C2_20261016_140835 (1).csv,191,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,169,same_id_steering_main_005_C2_20261016_140835 (1).csv,196,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,171,same_id_steering_main_005_C2_20261016_140835 (1).csv,199,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,174,same_id_steering_main_005_C2_20261016_140835 (1).csv,203,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,175,same_id_steering_main_005_C2_20261016_140835 (1).csv,205,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,181,same_id_steering_main_005_C2_20261016_140835 (1).csv,212,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,182,same_id_steering_main_005_C2_20261016_140835 (1).csv,214,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,194,same_id_steering_main_005_C2_20261016_140835 (1).csv,227,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,194,same_id_steering_main_005_C2_20261016_140835 (1).csv,228,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,203,same_id_steering_main_005_C2_20261016_140835 (1).csv,238,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,211,same_id_steering_main_005_C2_20261016_140835 (1).csv,247,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,216,same_id_steering_main_005_C2_20261016_140835 (1).csv,253,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,217,same_id_steering_main_005_C2_20261016_140835 (1).csv,255,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,236,same_id_steering_main_005_C2_20261016_140835 (1).csv,275,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,240,same_id_steering_main_005_C2_20261016_140835 (1).csv,280,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,247,same_id_steering_main_005_C2_20261016_140835 (1).csv,288,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,248,same_id_steering_main_005_C2_20261016_140835 (1).csv,290,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,271,same_id_steering_main_005_C2_20261016_140835 (1).csv,314,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,272,same_id_steering_main_005_C2_20261016_140835 (1).csv,316,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,285,same_id_steering_main_005_C2_20261016_140835 (1).csv,330,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,288,same_id_steering_main_005_C2_20261016_140835 (1).csv,334,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,291,same_id_steering_main_005_C2_20261016_140835 (1).csv,338,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,295,same_id_steering_main_005_C2_20261016_140835 (1).csv,343,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,298,same_id_steering_main_005_C2_20261016_140835 (1).csv,347,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,300,same_id_steering_main_005_C2_20261016_140835 (1).csv,350,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,325,same_id_steering_main_005_C2_20261016_140835 (1).csv,376,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,346,same_id_steering_main_005_C2_20261016_140835 (1).csv,398,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,346,same_id_steering_main_005_C2_20261016_140835 (1).csv,399,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,355,same_id_steering_main_005_C2_20261016_140835 (1).csv,409,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,356,same_id_steering_main_005_C2_20261016_140835 (1).csv,411,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,363,same_id_steering_main_005_C2_20261016_140835 (1).csv,419,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,366,same_id_steering_main_005_C2_20261016_140835 (1).csv,423,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,369,same_id_steering_main_005_C2_20261016_140835 (1).csv,427,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,390,same_id_steering_main_005_C2_20261016_140835 (1).csv,449,countedAsTrial=false; coreExitMs missing
+basic_only,005,C2,398,same_id_steering_main_005_C2_20261016_140835 (1).csv,458,countedAsTrial=false; coreExitMs missing
+basic_only,007,C3,71,same_id_steering_main_007_C3_20261016_160828 (1).csv,72,countedAsTrial=false; coreExitMs missing
+basic_only,007,C3,163,same_id_steering_main_007_C3_20261016_160828 (1).csv,165,countedAsTrial=false; coreExitMs missing
+basic_only,007,C3,163,same_id_steering_main_007_C3_20261016_160828 (1).csv,166,countedAsTrial=false; coreExitMs missing
+basic_only,007,C3,273,same_id_steering_main_007_C3_20261016_160828 (1).csv,277,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,162,same_id_steering_main_008_C3_20261016_174334.csv,163,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,230,same_id_steering_main_008_C3_20261016_174334.csv,232,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,367,same_id_steering_main_008_C3_20261016_174334.csv,370,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,369,same_id_steering_main_008_C3_20261016_174334.csv,373,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,389,same_id_steering_main_008_C3_20261016_174334.csv,394,countedAsTrial=false; coreExitMs missing
+basic_only,008,C3,400,same_id_steering_main_008_C3_20261016_174334.csv,406,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,66,same_id_steering_main_009_C3_20261020_163612.csv,67,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,80,same_id_steering_main_009_C3_20261020_163612.csv,82,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,229,same_id_steering_main_009_C3_20261020_163612.csv,232,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,243,same_id_steering_main_009_C3_20261020_163612.csv,247,countedAsTrial=false
+basic_only,009,C3,245,same_id_steering_main_009_C3_20261020_163612.csv,250,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,245,same_id_steering_main_009_C3_20261020_163612.csv,251,countedAsTrial=false; coreExitMs missing
+basic_only,009,C3,260,same_id_steering_main_009_C3_20261020_163612.csv,267,countedAsTrial=false
+basic_only,009,C3,271,same_id_steering_main_009_C3_20261020_163612.csv,279,coreExitMs missing
+basic_only,009,C3,400,same_id_steering_main_009_C3_20261020_163612.csv,408,countedAsTrial=false; coreExitMs missing
+basic_only,010,C2,34,same_id_steering_main_010_C2_20261020_170913.csv,35,countedAsTrial=false; coreExitMs missing
+basic_only,010,C2,61,same_id_steering_main_010_C2_20261020_170913.csv,63,countedAsTrial=false; coreExitMs missing
+basic_only,010,C2,144,same_id_steering_main_010_C2_20261020_170913.csv,147,countedAsTrial=false; coreExitMs missing
+basic_only,010,C2,175,same_id_steering_main_010_C2_20261020_170913.csv,179,countedAsTrial=false; coreExitMs missing
+basic_only,010,C2,382,same_id_steering_main_010_C2_20261020_170913.csv,387,countedAsTrial=false; coreExitMs missing
+basic_only,013,C2,68,same_id_steering_main_013_C2_20261105_145720.csv,69,countedAsTrial=false; coreExitMs missing
+basic_only,013,C2,141,same_id_steering_main_013_C2_20261105_145720.csv,143,countedAsTrial=false; coreExitMs missing
+basic_only,013,C2,383,same_id_steering_main_013_C2_20261105_145720.csv,386,countedAsTrial=false; coreExitMs missing
+basic_only,014,C3,189,same_id_steering_main_014_C3_20261105_155133.csv,190,countedAsTrial=false; coreExitMs missing
+basic_only,016,C3,60,same_id_steering_main_016_C3_20261106_122702.csv,61,countedAsTrial=false; coreExitMs missing
+basic_only,016,C3,60,same_id_steering_main_016_C3_20261106_122702.csv,62,countedAsTrial=false; coreExitMs missing
+basic_only,016,C3,141,same_id_steering_main_016_C3_20261106_122702.csv,144,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,1,same_id_steering_main_017_C2_20261106_140959.csv,2,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,7,same_id_steering_main_017_C2_20261106_140959.csv,9,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,12,same_id_steering_main_017_C2_20261106_140959.csv,15,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,26,same_id_steering_main_017_C2_20261106_140959.csv,30,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,66,same_id_steering_main_017_C2_20261106_140959.csv,71,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,68,same_id_steering_main_017_C2_20261106_140959.csv,74,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,69,same_id_steering_main_017_C2_20261106_140959.csv,76,countedAsTrial=false
+basic_only,017,C2,73,same_id_steering_main_017_C2_20261106_140959.csv,81,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,101,same_id_steering_main_017_C2_20261106_140959.csv,110,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,108,same_id_steering_main_017_C2_20261106_140959.csv,118,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,108,same_id_steering_main_017_C2_20261106_140959.csv,119,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,149,same_id_steering_main_017_C2_20261106_140959.csv,161,coreExitMs missing
+basic_only,017,C2,150,same_id_steering_main_017_C2_20261106_140959.csv,162,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,195,same_id_steering_main_017_C2_20261106_140959.csv,208,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,195,same_id_steering_main_017_C2_20261106_140959.csv,209,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,329,same_id_steering_main_017_C2_20261106_140959.csv,344,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,329,same_id_steering_main_017_C2_20261106_140959.csv,345,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,354,same_id_steering_main_017_C2_20261106_140959.csv,371,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,357,same_id_steering_main_017_C2_20261106_140959.csv,375,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,357,same_id_steering_main_017_C2_20261106_140959.csv,376,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,376,same_id_steering_main_017_C2_20261106_140959.csv,396,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,378,same_id_steering_main_017_C2_20261106_140959.csv,399,countedAsTrial=false; coreExitMs missing
+basic_only,017,C2,393,same_id_steering_main_017_C2_20261106_140959.csv,415,countedAsTrial=false; coreExitMs missing
+basic_only,020,C3,1,same_id_steering_main_020_C3_20261111_141409.csv,2,countedAsTrial=false; coreExitMs missing
+basic_only,020,C3,15,same_id_steering_main_020_C3_20261111_141409.csv,17,countedAsTrial=false; coreExitMs missing
+basic_only,020,C3,85,same_id_steering_main_020_C3_20261111_141409.csv,88,countedAsTrial=false; coreExitMs missing
+basic_only,020,C3,275,same_id_steering_main_020_C3_20261111_141409.csv,279,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,1,same_id_steering_main_021_C2_20261111_160719.csv,2,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,1,same_id_steering_main_021_C2_20261111_160719.csv,3,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,2,same_id_steering_main_021_C2_20261111_160719.csv,5,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,2,same_id_steering_main_021_C2_20261111_160719.csv,6,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,7,same_id_steering_main_021_C2_20261111_160719.csv,12,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,11,same_id_steering_main_021_C2_20261111_160719.csv,17,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,12,same_id_steering_main_021_C2_20261111_160719.csv,19,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,21,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,22,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,23,coreExitMs missing
+basic_only,021,C2,15,same_id_steering_main_021_C2_20261111_160719.csv,25,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,15,same_id_steering_main_021_C2_20261111_160719.csv,26,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,16,same_id_steering_main_021_C2_20261111_160719.csv,28,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,21,same_id_steering_main_021_C2_20261111_160719.csv,34,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,29,same_id_steering_main_021_C2_20261111_160719.csv,43,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,46,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,47,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,48,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,49,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,50,coreExitMs missing
+basic_only,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,51,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,52,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,53,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,33,same_id_steering_main_021_C2_20261111_160719.csv,55,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,33,same_id_steering_main_021_C2_20261111_160719.csv,56,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,35,same_id_steering_main_021_C2_20261111_160719.csv,59,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,35,same_id_steering_main_021_C2_20261111_160719.csv,60,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,36,same_id_steering_main_021_C2_20261111_160719.csv,62,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,36,same_id_steering_main_021_C2_20261111_160719.csv,63,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,37,same_id_steering_main_021_C2_20261111_160719.csv,65,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,39,same_id_steering_main_021_C2_20261111_160719.csv,68,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,43,same_id_steering_main_021_C2_20261111_160719.csv,73,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,47,same_id_steering_main_021_C2_20261111_160719.csv,78,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,81,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,82,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,83,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,52,same_id_steering_main_021_C2_20261111_160719.csv,87,coreExitMs missing
+basic_only,021,C2,57,same_id_steering_main_021_C2_20261111_160719.csv,92,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,58,same_id_steering_main_021_C2_20261111_160719.csv,94,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,58,same_id_steering_main_021_C2_20261111_160719.csv,95,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,59,same_id_steering_main_021_C2_20261111_160719.csv,97,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,60,same_id_steering_main_021_C2_20261111_160719.csv,99,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,68,same_id_steering_main_021_C2_20261111_160719.csv,108,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,70,same_id_steering_main_021_C2_20261111_160719.csv,111,coreExitMs missing
+basic_only,021,C2,74,same_id_steering_main_021_C2_20261111_160719.csv,115,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,80,same_id_steering_main_021_C2_20261111_160719.csv,122,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,84,same_id_steering_main_021_C2_20261111_160719.csv,127,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,89,same_id_steering_main_021_C2_20261111_160719.csv,133,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,91,same_id_steering_main_021_C2_20261111_160719.csv,136,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,109,same_id_steering_main_021_C2_20261111_160719.csv,155,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,121,same_id_steering_main_021_C2_20261111_160719.csv,168,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,121,same_id_steering_main_021_C2_20261111_160719.csv,169,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,122,same_id_steering_main_021_C2_20261111_160719.csv,171,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,131,same_id_steering_main_021_C2_20261111_160719.csv,181,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,143,same_id_steering_main_021_C2_20261111_160719.csv,194,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,144,same_id_steering_main_021_C2_20261111_160719.csv,196,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,149,same_id_steering_main_021_C2_20261111_160719.csv,202,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,149,same_id_steering_main_021_C2_20261111_160719.csv,203,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,153,same_id_steering_main_021_C2_20261111_160719.csv,208,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,153,same_id_steering_main_021_C2_20261111_160719.csv,209,coreExitMs missing
+basic_only,021,C2,154,same_id_steering_main_021_C2_20261111_160719.csv,210,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,154,same_id_steering_main_021_C2_20261111_160719.csv,211,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,156,same_id_steering_main_021_C2_20261111_160719.csv,214,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,158,same_id_steering_main_021_C2_20261111_160719.csv,217,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,167,same_id_steering_main_021_C2_20261111_160719.csv,227,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,167,same_id_steering_main_021_C2_20261111_160719.csv,228,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,171,same_id_steering_main_021_C2_20261111_160719.csv,233,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,174,same_id_steering_main_021_C2_20261111_160719.csv,237,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,174,same_id_steering_main_021_C2_20261111_160719.csv,238,coreExitMs missing
+basic_only,021,C2,181,same_id_steering_main_021_C2_20261111_160719.csv,245,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,187,same_id_steering_main_021_C2_20261111_160719.csv,252,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,188,same_id_steering_main_021_C2_20261111_160719.csv,254,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,189,same_id_steering_main_021_C2_20261111_160719.csv,256,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,193,same_id_steering_main_021_C2_20261111_160719.csv,261,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,215,same_id_steering_main_021_C2_20261111_160719.csv,284,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,217,same_id_steering_main_021_C2_20261111_160719.csv,287,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,222,same_id_steering_main_021_C2_20261111_160719.csv,293,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,226,same_id_steering_main_021_C2_20261111_160719.csv,298,coreExitMs missing
+basic_only,021,C2,230,same_id_steering_main_021_C2_20261111_160719.csv,302,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,233,same_id_steering_main_021_C2_20261111_160719.csv,306,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,237,same_id_steering_main_021_C2_20261111_160719.csv,311,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,241,same_id_steering_main_021_C2_20261111_160719.csv,316,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,244,same_id_steering_main_021_C2_20261111_160719.csv,320,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,247,same_id_steering_main_021_C2_20261111_160719.csv,324,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,249,same_id_steering_main_021_C2_20261111_160719.csv,327,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,251,same_id_steering_main_021_C2_20261111_160719.csv,330,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,255,same_id_steering_main_021_C2_20261111_160719.csv,335,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,345,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,346,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,347,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,269,same_id_steering_main_021_C2_20261111_160719.csv,353,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,271,same_id_steering_main_021_C2_20261111_160719.csv,356,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,273,same_id_steering_main_021_C2_20261111_160719.csv,359,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,275,same_id_steering_main_021_C2_20261111_160719.csv,362,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,275,same_id_steering_main_021_C2_20261111_160719.csv,363,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,278,same_id_steering_main_021_C2_20261111_160719.csv,367,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,288,same_id_steering_main_021_C2_20261111_160719.csv,378,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,289,same_id_steering_main_021_C2_20261111_160719.csv,380,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,296,same_id_steering_main_021_C2_20261111_160719.csv,388,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,334,same_id_steering_main_021_C2_20261111_160719.csv,427,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,345,same_id_steering_main_021_C2_20261111_160719.csv,439,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,345,same_id_steering_main_021_C2_20261111_160719.csv,440,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,355,same_id_steering_main_021_C2_20261111_160719.csv,451,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,358,same_id_steering_main_021_C2_20261111_160719.csv,455,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,365,same_id_steering_main_021_C2_20261111_160719.csv,463,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,369,same_id_steering_main_021_C2_20261111_160719.csv,468,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,370,same_id_steering_main_021_C2_20261111_160719.csv,470,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,474,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,475,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,476,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,374,same_id_steering_main_021_C2_20261111_160719.csv,478,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,374,same_id_steering_main_021_C2_20261111_160719.csv,479,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,379,same_id_steering_main_021_C2_20261111_160719.csv,485,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,379,same_id_steering_main_021_C2_20261111_160719.csv,486,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,381,same_id_steering_main_021_C2_20261111_160719.csv,489,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,382,same_id_steering_main_021_C2_20261111_160719.csv,491,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,386,same_id_steering_main_021_C2_20261111_160719.csv,496,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,502,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,503,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,504,countedAsTrial=false; coreExitMs missing
+basic_only,021,C2,397,same_id_steering_main_021_C2_20261111_160719.csv,511,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,62,same_id_steering_main_023_C3_20261112_112921.csv,63,countedAsTrial=false
+basic_only,023,C3,80,same_id_steering_main_023_C3_20261112_112921.csv,82,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,86,same_id_steering_main_023_C3_20261112_112921.csv,89,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,219,same_id_steering_main_023_C3_20261112_112921.csv,223,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,233,same_id_steering_main_023_C3_20261112_112921.csv,238,countedAsTrial=false
+basic_only,023,C3,236,same_id_steering_main_023_C3_20261112_112921.csv,242,countedAsTrial=false
+basic_only,023,C3,243,same_id_steering_main_023_C3_20261112_112921.csv,250,countedAsTrial=false
+basic_only,023,C3,262,same_id_steering_main_023_C3_20261112_112921.csv,270,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,265,same_id_steering_main_023_C3_20261112_112921.csv,274,countedAsTrial=false; coreExitMs missing
+basic_only,023,C3,265,same_id_steering_main_023_C3_20261112_112921.csv,275,countedAsTrial=false; coreExitMs missing
+basic_only,026,C2,4,same_id_steering_main_026_C2_20261112_123527.csv,5,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,001,C2,8,same_id_steering_main_001_C2_20261015_113254 (1).csv,9,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,11,same_id_steering_main_001_C2_20261015_113254 (1).csv,12,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,28,same_id_steering_main_001_C2_20261015_113254 (1).csv,29,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,33,same_id_steering_main_001_C2_20261015_113254 (1).csv,34,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,36,same_id_steering_main_001_C2_20261015_113254 (1).csv,37,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,41,same_id_steering_main_001_C2_20261015_113254 (1).csv,42,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,42,same_id_steering_main_001_C2_20261015_113254 (1).csv,43,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,66,same_id_steering_main_001_C2_20261015_113254 (1).csv,67,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,88,same_id_steering_main_001_C2_20261015_113254 (1).csv,89,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,99,same_id_steering_main_001_C2_20261015_113254 (1).csv,100,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,110,same_id_steering_main_001_C2_20261015_113254 (1).csv,111,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,001,C2,136,same_id_steering_main_001_C2_20261015_113254 (1).csv,138,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,140,same_id_steering_main_001_C2_20261015_113254 (1).csv,142,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,141,same_id_steering_main_001_C2_20261015_113254 (1).csv,143,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,142,same_id_steering_main_001_C2_20261015_113254 (1).csv,144,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,143,same_id_steering_main_001_C2_20261015_113254 (1).csv,145,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,145,same_id_steering_main_001_C2_20261015_113254 (1).csv,147,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,173,same_id_steering_main_001_C2_20261015_113254 (1).csv,175,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,174,same_id_steering_main_001_C2_20261015_113254 (1).csv,176,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,285,same_id_steering_main_001_C2_20261015_113254 (1).csv,287,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,286,same_id_steering_main_001_C2_20261015_113254 (1).csv,288,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,303,same_id_steering_main_001_C2_20261015_113254 (1).csv,305,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,313,same_id_steering_main_001_C2_20261015_113254 (1).csv,315,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,314,same_id_steering_main_001_C2_20261015_113254 (1).csv,316,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,315,same_id_steering_main_001_C2_20261015_113254 (1).csv,317,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,316,same_id_steering_main_001_C2_20261015_113254 (1).csv,318,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,317,same_id_steering_main_001_C2_20261015_113254 (1).csv,319,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,318,same_id_steering_main_001_C2_20261015_113254 (1).csv,320,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,322,same_id_steering_main_001_C2_20261015_113254 (1).csv,324,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,324,same_id_steering_main_001_C2_20261015_113254 (1).csv,326,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,326,same_id_steering_main_001_C2_20261015_113254 (1).csv,328,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,327,same_id_steering_main_001_C2_20261015_113254 (1).csv,329,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,328,same_id_steering_main_001_C2_20261015_113254 (1).csv,330,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,329,same_id_steering_main_001_C2_20261015_113254 (1).csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,332,same_id_steering_main_001_C2_20261015_113254 (1).csv,334,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,347,same_id_steering_main_001_C2_20261015_113254 (1).csv,349,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,364,same_id_steering_main_001_C2_20261015_113254 (1).csv,366,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,398,same_id_steering_main_001_C2_20261015_113254 (1).csv,400,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,001,C2,400,same_id_steering_main_001_C2_20261015_113254 (1).csv,402,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,5,same_id_steering_main_002_C3_20261015_133348 (1).csv,6,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,6,same_id_steering_main_002_C3_20261015_133348 (1).csv,8,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,6,same_id_steering_main_002_C3_20261015_133348 (1).csv,9,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,8,same_id_steering_main_002_C3_20261015_133348 (1).csv,12,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,12,same_id_steering_main_002_C3_20261015_133348 (1).csv,17,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,22,same_id_steering_main_002_C3_20261015_133348 (1).csv,28,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,28,same_id_steering_main_002_C3_20261015_133348 (1).csv,35,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,34,same_id_steering_main_002_C3_20261015_133348 (1).csv,42,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,34,same_id_steering_main_002_C3_20261015_133348 (1).csv,43,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,36,same_id_steering_main_002_C3_20261015_133348 (1).csv,46,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,39,same_id_steering_main_002_C3_20261015_133348 (1).csv,50,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,49,same_id_steering_main_002_C3_20261015_133348 (1).csv,61,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,64,same_id_steering_main_002_C3_20261015_133348 (1).csv,77,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,64,same_id_steering_main_002_C3_20261015_133348 (1).csv,78,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,76,same_id_steering_main_002_C3_20261015_133348 (1).csv,91,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,80,same_id_steering_main_002_C3_20261015_133348 (1).csv,96,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,83,same_id_steering_main_002_C3_20261015_133348 (1).csv,100,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,87,same_id_steering_main_002_C3_20261015_133348 (1).csv,105,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,89,same_id_steering_main_002_C3_20261015_133348 (1).csv,108,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,90,same_id_steering_main_002_C3_20261015_133348 (1).csv,110,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,90,same_id_steering_main_002_C3_20261015_133348 (1).csv,111,countedAsTrial=false
+sensitivity_1_5sd,002,C3,92,same_id_steering_main_002_C3_20261015_133348 (1).csv,114,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,99,same_id_steering_main_002_C3_20261015_133348 (1).csv,122,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,101,same_id_steering_main_002_C3_20261015_133348 (1).csv,125,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,111,same_id_steering_main_002_C3_20261015_133348 (1).csv,136,coreExitMs missing
+sensitivity_1_5sd,002,C3,121,same_id_steering_main_002_C3_20261015_133348 (1).csv,146,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,121,same_id_steering_main_002_C3_20261015_133348 (1).csv,147,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,126,same_id_steering_main_002_C3_20261015_133348 (1).csv,153,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,128,same_id_steering_main_002_C3_20261015_133348 (1).csv,155,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,130,same_id_steering_main_002_C3_20261015_133348 (1).csv,157,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,142,same_id_steering_main_002_C3_20261015_133348 (1).csv,169,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,144,same_id_steering_main_002_C3_20261015_133348 (1).csv,171,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,151,same_id_steering_main_002_C3_20261015_133348 (1).csv,179,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,160,same_id_steering_main_002_C3_20261015_133348 (1).csv,189,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,162,same_id_steering_main_002_C3_20261015_133348 (1).csv,192,coreExitMs missing
+sensitivity_1_5sd,002,C3,168,same_id_steering_main_002_C3_20261015_133348 (1).csv,198,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,169,same_id_steering_main_002_C3_20261015_133348 (1).csv,200,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,169,same_id_steering_main_002_C3_20261015_133348 (1).csv,201,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,170,same_id_steering_main_002_C3_20261015_133348 (1).csv,203,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,189,same_id_steering_main_002_C3_20261015_133348 (1).csv,223,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,189,same_id_steering_main_002_C3_20261015_133348 (1).csv,224,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,202,same_id_steering_main_002_C3_20261015_133348 (1).csv,238,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,208,same_id_steering_main_002_C3_20261015_133348 (1).csv,245,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,214,same_id_steering_main_002_C3_20261015_133348 (1).csv,252,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,220,same_id_steering_main_002_C3_20261015_133348 (1).csv,259,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,236,same_id_steering_main_002_C3_20261015_133348 (1).csv,276,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,237,same_id_steering_main_002_C3_20261015_133348 (1).csv,278,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,238,same_id_steering_main_002_C3_20261015_133348 (1).csv,280,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,245,same_id_steering_main_002_C3_20261015_133348 (1).csv,288,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,247,same_id_steering_main_002_C3_20261015_133348 (1).csv,291,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,254,same_id_steering_main_002_C3_20261015_133348 (1).csv,299,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,255,same_id_steering_main_002_C3_20261015_133348 (1).csv,301,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,257,same_id_steering_main_002_C3_20261015_133348 (1).csv,304,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,262,same_id_steering_main_002_C3_20261015_133348 (1).csv,310,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,263,same_id_steering_main_002_C3_20261015_133348 (1).csv,312,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,263,same_id_steering_main_002_C3_20261015_133348 (1).csv,313,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,270,same_id_steering_main_002_C3_20261015_133348 (1).csv,321,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,278,same_id_steering_main_002_C3_20261015_133348 (1).csv,330,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,002,C3,281,same_id_steering_main_002_C3_20261015_133348 (1).csv,333,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,281,same_id_steering_main_002_C3_20261015_133348 (1).csv,334,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,283,same_id_steering_main_002_C3_20261015_133348 (1).csv,337,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,284,same_id_steering_main_002_C3_20261015_133348 (1).csv,339,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,294,same_id_steering_main_002_C3_20261015_133348 (1).csv,350,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,301,same_id_steering_main_002_C3_20261015_133348 (1).csv,358,coreExitMs missing
+sensitivity_1_5sd,002,C3,305,same_id_steering_main_002_C3_20261015_133348 (1).csv,362,coreExitMs missing
+sensitivity_1_5sd,002,C3,323,same_id_steering_main_002_C3_20261015_133348 (1).csv,380,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,324,same_id_steering_main_002_C3_20261015_133348 (1).csv,382,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,330,same_id_steering_main_002_C3_20261015_133348 (1).csv,389,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,332,same_id_steering_main_002_C3_20261015_133348 (1).csv,392,coreExitMs missing
+sensitivity_1_5sd,002,C3,349,same_id_steering_main_002_C3_20261015_133348 (1).csv,409,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,351,same_id_steering_main_002_C3_20261015_133348 (1).csv,412,coreExitMs missing
+sensitivity_1_5sd,002,C3,357,same_id_steering_main_002_C3_20261015_133348 (1).csv,418,coreExitMs missing
+sensitivity_1_5sd,002,C3,370,same_id_steering_main_002_C3_20261015_133348 (1).csv,431,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,375,same_id_steering_main_002_C3_20261015_133348 (1).csv,437,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,380,same_id_steering_main_002_C3_20261015_133348 (1).csv,443,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,383,same_id_steering_main_002_C3_20261015_133348 (1).csv,447,coreExitMs missing
+sensitivity_1_5sd,002,C3,389,same_id_steering_main_002_C3_20261015_133348 (1).csv,453,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,002,C3,393,same_id_steering_main_002_C3_20261015_133348 (1).csv,458,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,003,C2,83,same_id_steering_main_003_C2_20261015_155913 (1).csv,84,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,003,C2,117,same_id_steering_main_003_C2_20261015_155913 (1).csv,119,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,003,C2,267,same_id_steering_main_003_C2_20261015_155913 (1).csv,270,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,87,same_id_steering_main_004_C3_20261016_093218.csv,88,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,88,same_id_steering_main_004_C3_20261016_093218.csv,89,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,89,same_id_steering_main_004_C3_20261016_093218.csv,90,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,94,same_id_steering_main_004_C3_20261016_093218.csv,95,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,97,same_id_steering_main_004_C3_20261016_093218.csv,98,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,100,same_id_steering_main_004_C3_20261016_093218.csv,101,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,123,same_id_steering_main_004_C3_20261016_093218.csv,124,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,144,same_id_steering_main_004_C3_20261016_093218.csv,145,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,145,same_id_steering_main_004_C3_20261016_093218.csv,146,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,151,same_id_steering_main_004_C3_20261016_093218.csv,152,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,154,same_id_steering_main_004_C3_20261016_093218.csv,155,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,155,same_id_steering_main_004_C3_20261016_093218.csv,156,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,156,same_id_steering_main_004_C3_20261016_093218.csv,157,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,173,same_id_steering_main_004_C3_20261016_093218.csv,174,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,174,same_id_steering_main_004_C3_20261016_093218.csv,175,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,249,same_id_steering_main_004_C3_20261016_093218.csv,250,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,256,same_id_steering_main_004_C3_20261016_093218.csv,257,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,257,same_id_steering_main_004_C3_20261016_093218.csv,258,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,258,same_id_steering_main_004_C3_20261016_093218.csv,259,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,281,same_id_steering_main_004_C3_20261016_093218.csv,282,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,282,same_id_steering_main_004_C3_20261016_093218.csv,283,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,283,same_id_steering_main_004_C3_20261016_093218.csv,284,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,284,same_id_steering_main_004_C3_20261016_093218.csv,285,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,285,same_id_steering_main_004_C3_20261016_093218.csv,286,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,286,same_id_steering_main_004_C3_20261016_093218.csv,287,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,288,same_id_steering_main_004_C3_20261016_093218.csv,289,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,305,same_id_steering_main_004_C3_20261016_093218.csv,306,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,320,same_id_steering_main_004_C3_20261016_093218.csv,321,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,329,same_id_steering_main_004_C3_20261016_093218.csv,330,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,330,same_id_steering_main_004_C3_20261016_093218.csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,349,same_id_steering_main_004_C3_20261016_093218.csv,350,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,359,same_id_steering_main_004_C3_20261016_093218.csv,360,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,363,same_id_steering_main_004_C3_20261016_093218.csv,364,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,364,same_id_steering_main_004_C3_20261016_093218.csv,365,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,370,same_id_steering_main_004_C3_20261016_093218.csv,371,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,374,same_id_steering_main_004_C3_20261016_093218.csv,375,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,376,same_id_steering_main_004_C3_20261016_093218.csv,377,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,377,same_id_steering_main_004_C3_20261016_093218.csv,378,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,382,same_id_steering_main_004_C3_20261016_093218.csv,383,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,383,same_id_steering_main_004_C3_20261016_093218.csv,384,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,385,same_id_steering_main_004_C3_20261016_093218.csv,386,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,004,C3,399,same_id_steering_main_004_C3_20261016_093218.csv,400,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,6,same_id_steering_main_005_C2_20261016_140835 (1).csv,7,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,8,same_id_steering_main_005_C2_20261016_140835 (1).csv,9,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,9,same_id_steering_main_005_C2_20261016_140835 (1).csv,11,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,10,same_id_steering_main_005_C2_20261016_140835 (1).csv,12,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,13,same_id_steering_main_005_C2_20261016_140835 (1).csv,15,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,17,same_id_steering_main_005_C2_20261016_140835 (1).csv,19,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,17,same_id_steering_main_005_C2_20261016_140835 (1).csv,20,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,19,same_id_steering_main_005_C2_20261016_140835 (1).csv,23,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,20,same_id_steering_main_005_C2_20261016_140835 (1).csv,24,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,20,same_id_steering_main_005_C2_20261016_140835 (1).csv,25,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,21,same_id_steering_main_005_C2_20261016_140835 (1).csv,26,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,22,same_id_steering_main_005_C2_20261016_140835 (1).csv,27,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,22,same_id_steering_main_005_C2_20261016_140835 (1).csv,28,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,24,same_id_steering_main_005_C2_20261016_140835 (1).csv,30,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,30,same_id_steering_main_005_C2_20261016_140835 (1).csv,37,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,31,same_id_steering_main_005_C2_20261016_140835 (1).csv,39,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,37,same_id_steering_main_005_C2_20261016_140835 (1).csv,45,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,37,same_id_steering_main_005_C2_20261016_140835 (1).csv,46,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,45,same_id_steering_main_005_C2_20261016_140835 (1).csv,54,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,45,same_id_steering_main_005_C2_20261016_140835 (1).csv,55,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,46,same_id_steering_main_005_C2_20261016_140835 (1).csv,56,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,46,same_id_steering_main_005_C2_20261016_140835 (1).csv,57,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,47,same_id_steering_main_005_C2_20261016_140835 (1).csv,58,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,48,same_id_steering_main_005_C2_20261016_140835 (1).csv,59,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,49,same_id_steering_main_005_C2_20261016_140835 (1).csv,60,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,52,same_id_steering_main_005_C2_20261016_140835 (1).csv,63,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,54,same_id_steering_main_005_C2_20261016_140835 (1).csv,65,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,55,same_id_steering_main_005_C2_20261016_140835 (1).csv,66,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,55,same_id_steering_main_005_C2_20261016_140835 (1).csv,67,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,57,same_id_steering_main_005_C2_20261016_140835 (1).csv,69,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,59,same_id_steering_main_005_C2_20261016_140835 (1).csv,71,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,59,same_id_steering_main_005_C2_20261016_140835 (1).csv,72,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,59,same_id_steering_main_005_C2_20261016_140835 (1).csv,73,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,60,same_id_steering_main_005_C2_20261016_140835 (1).csv,74,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,61,same_id_steering_main_005_C2_20261016_140835 (1).csv,75,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,62,same_id_steering_main_005_C2_20261016_140835 (1).csv,76,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,63,same_id_steering_main_005_C2_20261016_140835 (1).csv,77,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,63,same_id_steering_main_005_C2_20261016_140835 (1).csv,78,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,64,same_id_steering_main_005_C2_20261016_140835 (1).csv,79,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,65,same_id_steering_main_005_C2_20261016_140835 (1).csv,80,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,66,same_id_steering_main_005_C2_20261016_140835 (1).csv,81,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,67,same_id_steering_main_005_C2_20261016_140835 (1).csv,82,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,68,same_id_steering_main_005_C2_20261016_140835 (1).csv,83,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,68,same_id_steering_main_005_C2_20261016_140835 (1).csv,84,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,69,same_id_steering_main_005_C2_20261016_140835 (1).csv,85,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,70,same_id_steering_main_005_C2_20261016_140835 (1).csv,86,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,71,same_id_steering_main_005_C2_20261016_140835 (1).csv,87,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,72,same_id_steering_main_005_C2_20261016_140835 (1).csv,88,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,76,same_id_steering_main_005_C2_20261016_140835 (1).csv,92,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,78,same_id_steering_main_005_C2_20261016_140835 (1).csv,95,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,78,same_id_steering_main_005_C2_20261016_140835 (1).csv,96,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,79,same_id_steering_main_005_C2_20261016_140835 (1).csv,97,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,81,same_id_steering_main_005_C2_20261016_140835 (1).csv,99,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,82,same_id_steering_main_005_C2_20261016_140835 (1).csv,100,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,83,same_id_steering_main_005_C2_20261016_140835 (1).csv,101,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,84,same_id_steering_main_005_C2_20261016_140835 (1).csv,102,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,86,same_id_steering_main_005_C2_20261016_140835 (1).csv,104,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,87,same_id_steering_main_005_C2_20261016_140835 (1).csv,105,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,91,same_id_steering_main_005_C2_20261016_140835 (1).csv,109,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,92,same_id_steering_main_005_C2_20261016_140835 (1).csv,110,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,93,same_id_steering_main_005_C2_20261016_140835 (1).csv,111,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,94,same_id_steering_main_005_C2_20261016_140835 (1).csv,112,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,94,same_id_steering_main_005_C2_20261016_140835 (1).csv,113,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,95,same_id_steering_main_005_C2_20261016_140835 (1).csv,114,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,96,same_id_steering_main_005_C2_20261016_140835 (1).csv,115,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,97,same_id_steering_main_005_C2_20261016_140835 (1).csv,116,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,98,same_id_steering_main_005_C2_20261016_140835 (1).csv,117,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,99,same_id_steering_main_005_C2_20261016_140835 (1).csv,119,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,101,same_id_steering_main_005_C2_20261016_140835 (1).csv,122,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,102,same_id_steering_main_005_C2_20261016_140835 (1).csv,123,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,103,same_id_steering_main_005_C2_20261016_140835 (1).csv,124,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,104,same_id_steering_main_005_C2_20261016_140835 (1).csv,125,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,106,same_id_steering_main_005_C2_20261016_140835 (1).csv,127,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,107,same_id_steering_main_005_C2_20261016_140835 (1).csv,128,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,108,same_id_steering_main_005_C2_20261016_140835 (1).csv,129,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,109,same_id_steering_main_005_C2_20261016_140835 (1).csv,130,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,110,same_id_steering_main_005_C2_20261016_140835 (1).csv,131,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,113,same_id_steering_main_005_C2_20261016_140835 (1).csv,134,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,114,same_id_steering_main_005_C2_20261016_140835 (1).csv,135,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,115,same_id_steering_main_005_C2_20261016_140835 (1).csv,136,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,115,same_id_steering_main_005_C2_20261016_140835 (1).csv,137,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,116,same_id_steering_main_005_C2_20261016_140835 (1).csv,138,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,117,same_id_steering_main_005_C2_20261016_140835 (1).csv,139,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,118,same_id_steering_main_005_C2_20261016_140835 (1).csv,140,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,119,same_id_steering_main_005_C2_20261016_140835 (1).csv,141,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,121,same_id_steering_main_005_C2_20261016_140835 (1).csv,143,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,122,same_id_steering_main_005_C2_20261016_140835 (1).csv,144,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,123,same_id_steering_main_005_C2_20261016_140835 (1).csv,145,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,125,same_id_steering_main_005_C2_20261016_140835 (1).csv,147,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,127,same_id_steering_main_005_C2_20261016_140835 (1).csv,149,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,128,same_id_steering_main_005_C2_20261016_140835 (1).csv,150,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,129,same_id_steering_main_005_C2_20261016_140835 (1).csv,151,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,129,same_id_steering_main_005_C2_20261016_140835 (1).csv,152,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,130,same_id_steering_main_005_C2_20261016_140835 (1).csv,153,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,132,same_id_steering_main_005_C2_20261016_140835 (1).csv,155,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,134,same_id_steering_main_005_C2_20261016_140835 (1).csv,157,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,135,same_id_steering_main_005_C2_20261016_140835 (1).csv,158,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,137,same_id_steering_main_005_C2_20261016_140835 (1).csv,160,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,143,same_id_steering_main_005_C2_20261016_140835 (1).csv,166,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,143,same_id_steering_main_005_C2_20261016_140835 (1).csv,167,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,144,same_id_steering_main_005_C2_20261016_140835 (1).csv,168,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,145,same_id_steering_main_005_C2_20261016_140835 (1).csv,169,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,146,same_id_steering_main_005_C2_20261016_140835 (1).csv,170,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,147,same_id_steering_main_005_C2_20261016_140835 (1).csv,171,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,148,same_id_steering_main_005_C2_20261016_140835 (1).csv,172,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,149,same_id_steering_main_005_C2_20261016_140835 (1).csv,173,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,150,same_id_steering_main_005_C2_20261016_140835 (1).csv,174,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,151,same_id_steering_main_005_C2_20261016_140835 (1).csv,175,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,152,same_id_steering_main_005_C2_20261016_140835 (1).csv,176,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,153,same_id_steering_main_005_C2_20261016_140835 (1).csv,177,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,154,same_id_steering_main_005_C2_20261016_140835 (1).csv,178,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,155,same_id_steering_main_005_C2_20261016_140835 (1).csv,179,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,155,same_id_steering_main_005_C2_20261016_140835 (1).csv,180,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,156,same_id_steering_main_005_C2_20261016_140835 (1).csv,181,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,157,same_id_steering_main_005_C2_20261016_140835 (1).csv,182,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,158,same_id_steering_main_005_C2_20261016_140835 (1).csv,183,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,159,same_id_steering_main_005_C2_20261016_140835 (1).csv,184,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,160,same_id_steering_main_005_C2_20261016_140835 (1).csv,185,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,161,same_id_steering_main_005_C2_20261016_140835 (1).csv,186,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,163,same_id_steering_main_005_C2_20261016_140835 (1).csv,188,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,164,same_id_steering_main_005_C2_20261016_140835 (1).csv,190,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,165,same_id_steering_main_005_C2_20261016_140835 (1).csv,191,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,166,same_id_steering_main_005_C2_20261016_140835 (1).csv,193,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,168,same_id_steering_main_005_C2_20261016_140835 (1).csv,195,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,169,same_id_steering_main_005_C2_20261016_140835 (1).csv,196,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,169,same_id_steering_main_005_C2_20261016_140835 (1).csv,197,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,170,same_id_steering_main_005_C2_20261016_140835 (1).csv,198,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,171,same_id_steering_main_005_C2_20261016_140835 (1).csv,199,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,171,same_id_steering_main_005_C2_20261016_140835 (1).csv,200,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,174,same_id_steering_main_005_C2_20261016_140835 (1).csv,203,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,175,same_id_steering_main_005_C2_20261016_140835 (1).csv,205,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,175,same_id_steering_main_005_C2_20261016_140835 (1).csv,206,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,177,same_id_steering_main_005_C2_20261016_140835 (1).csv,208,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,178,same_id_steering_main_005_C2_20261016_140835 (1).csv,209,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,180,same_id_steering_main_005_C2_20261016_140835 (1).csv,211,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,181,same_id_steering_main_005_C2_20261016_140835 (1).csv,212,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,181,same_id_steering_main_005_C2_20261016_140835 (1).csv,213,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,182,same_id_steering_main_005_C2_20261016_140835 (1).csv,214,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,182,same_id_steering_main_005_C2_20261016_140835 (1).csv,215,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,183,same_id_steering_main_005_C2_20261016_140835 (1).csv,216,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,187,same_id_steering_main_005_C2_20261016_140835 (1).csv,220,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,189,same_id_steering_main_005_C2_20261016_140835 (1).csv,222,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,190,same_id_steering_main_005_C2_20261016_140835 (1).csv,223,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,191,same_id_steering_main_005_C2_20261016_140835 (1).csv,224,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,192,same_id_steering_main_005_C2_20261016_140835 (1).csv,225,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,194,same_id_steering_main_005_C2_20261016_140835 (1).csv,227,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,194,same_id_steering_main_005_C2_20261016_140835 (1).csv,228,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,194,same_id_steering_main_005_C2_20261016_140835 (1).csv,229,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,197,same_id_steering_main_005_C2_20261016_140835 (1).csv,232,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,199,same_id_steering_main_005_C2_20261016_140835 (1).csv,234,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,200,same_id_steering_main_005_C2_20261016_140835 (1).csv,235,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,201,same_id_steering_main_005_C2_20261016_140835 (1).csv,236,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,202,same_id_steering_main_005_C2_20261016_140835 (1).csv,237,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,203,same_id_steering_main_005_C2_20261016_140835 (1).csv,238,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,203,same_id_steering_main_005_C2_20261016_140835 (1).csv,239,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,205,same_id_steering_main_005_C2_20261016_140835 (1).csv,241,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,209,same_id_steering_main_005_C2_20261016_140835 (1).csv,245,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,210,same_id_steering_main_005_C2_20261016_140835 (1).csv,246,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,211,same_id_steering_main_005_C2_20261016_140835 (1).csv,247,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,211,same_id_steering_main_005_C2_20261016_140835 (1).csv,248,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,212,same_id_steering_main_005_C2_20261016_140835 (1).csv,249,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,213,same_id_steering_main_005_C2_20261016_140835 (1).csv,250,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,214,same_id_steering_main_005_C2_20261016_140835 (1).csv,251,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,216,same_id_steering_main_005_C2_20261016_140835 (1).csv,253,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,216,same_id_steering_main_005_C2_20261016_140835 (1).csv,254,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,217,same_id_steering_main_005_C2_20261016_140835 (1).csv,255,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,217,same_id_steering_main_005_C2_20261016_140835 (1).csv,256,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,218,same_id_steering_main_005_C2_20261016_140835 (1).csv,257,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,219,same_id_steering_main_005_C2_20261016_140835 (1).csv,258,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,220,same_id_steering_main_005_C2_20261016_140835 (1).csv,259,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,221,same_id_steering_main_005_C2_20261016_140835 (1).csv,260,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,222,same_id_steering_main_005_C2_20261016_140835 (1).csv,261,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,223,same_id_steering_main_005_C2_20261016_140835 (1).csv,262,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,224,same_id_steering_main_005_C2_20261016_140835 (1).csv,263,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,225,same_id_steering_main_005_C2_20261016_140835 (1).csv,264,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,226,same_id_steering_main_005_C2_20261016_140835 (1).csv,265,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,228,same_id_steering_main_005_C2_20261016_140835 (1).csv,267,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,229,same_id_steering_main_005_C2_20261016_140835 (1).csv,268,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,230,same_id_steering_main_005_C2_20261016_140835 (1).csv,269,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,231,same_id_steering_main_005_C2_20261016_140835 (1).csv,270,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,232,same_id_steering_main_005_C2_20261016_140835 (1).csv,271,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,233,same_id_steering_main_005_C2_20261016_140835 (1).csv,272,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,234,same_id_steering_main_005_C2_20261016_140835 (1).csv,273,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,235,same_id_steering_main_005_C2_20261016_140835 (1).csv,274,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,236,same_id_steering_main_005_C2_20261016_140835 (1).csv,275,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,236,same_id_steering_main_005_C2_20261016_140835 (1).csv,276,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,237,same_id_steering_main_005_C2_20261016_140835 (1).csv,277,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,239,same_id_steering_main_005_C2_20261016_140835 (1).csv,279,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,240,same_id_steering_main_005_C2_20261016_140835 (1).csv,280,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,240,same_id_steering_main_005_C2_20261016_140835 (1).csv,281,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,244,same_id_steering_main_005_C2_20261016_140835 (1).csv,285,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,247,same_id_steering_main_005_C2_20261016_140835 (1).csv,288,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,247,same_id_steering_main_005_C2_20261016_140835 (1).csv,289,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,248,same_id_steering_main_005_C2_20261016_140835 (1).csv,290,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,248,same_id_steering_main_005_C2_20261016_140835 (1).csv,291,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,249,same_id_steering_main_005_C2_20261016_140835 (1).csv,292,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,253,same_id_steering_main_005_C2_20261016_140835 (1).csv,296,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,254,same_id_steering_main_005_C2_20261016_140835 (1).csv,297,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,255,same_id_steering_main_005_C2_20261016_140835 (1).csv,298,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,256,same_id_steering_main_005_C2_20261016_140835 (1).csv,299,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,257,same_id_steering_main_005_C2_20261016_140835 (1).csv,300,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,258,same_id_steering_main_005_C2_20261016_140835 (1).csv,301,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,259,same_id_steering_main_005_C2_20261016_140835 (1).csv,302,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,260,same_id_steering_main_005_C2_20261016_140835 (1).csv,303,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,261,same_id_steering_main_005_C2_20261016_140835 (1).csv,304,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,262,same_id_steering_main_005_C2_20261016_140835 (1).csv,305,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,263,same_id_steering_main_005_C2_20261016_140835 (1).csv,306,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,268,same_id_steering_main_005_C2_20261016_140835 (1).csv,311,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,269,same_id_steering_main_005_C2_20261016_140835 (1).csv,312,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,271,same_id_steering_main_005_C2_20261016_140835 (1).csv,314,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,271,same_id_steering_main_005_C2_20261016_140835 (1).csv,315,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,272,same_id_steering_main_005_C2_20261016_140835 (1).csv,316,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,272,same_id_steering_main_005_C2_20261016_140835 (1).csv,317,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,273,same_id_steering_main_005_C2_20261016_140835 (1).csv,318,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,274,same_id_steering_main_005_C2_20261016_140835 (1).csv,319,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,275,same_id_steering_main_005_C2_20261016_140835 (1).csv,320,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,276,same_id_steering_main_005_C2_20261016_140835 (1).csv,321,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,277,same_id_steering_main_005_C2_20261016_140835 (1).csv,322,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,278,same_id_steering_main_005_C2_20261016_140835 (1).csv,323,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,279,same_id_steering_main_005_C2_20261016_140835 (1).csv,324,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,280,same_id_steering_main_005_C2_20261016_140835 (1).csv,325,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,281,same_id_steering_main_005_C2_20261016_140835 (1).csv,326,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,282,same_id_steering_main_005_C2_20261016_140835 (1).csv,327,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,283,same_id_steering_main_005_C2_20261016_140835 (1).csv,328,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,284,same_id_steering_main_005_C2_20261016_140835 (1).csv,329,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,285,same_id_steering_main_005_C2_20261016_140835 (1).csv,330,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,285,same_id_steering_main_005_C2_20261016_140835 (1).csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,287,same_id_steering_main_005_C2_20261016_140835 (1).csv,333,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,288,same_id_steering_main_005_C2_20261016_140835 (1).csv,334,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,288,same_id_steering_main_005_C2_20261016_140835 (1).csv,335,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,289,same_id_steering_main_005_C2_20261016_140835 (1).csv,336,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,291,same_id_steering_main_005_C2_20261016_140835 (1).csv,338,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,291,same_id_steering_main_005_C2_20261016_140835 (1).csv,339,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,292,same_id_steering_main_005_C2_20261016_140835 (1).csv,340,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,293,same_id_steering_main_005_C2_20261016_140835 (1).csv,341,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,294,same_id_steering_main_005_C2_20261016_140835 (1).csv,342,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,295,same_id_steering_main_005_C2_20261016_140835 (1).csv,343,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,295,same_id_steering_main_005_C2_20261016_140835 (1).csv,344,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,296,same_id_steering_main_005_C2_20261016_140835 (1).csv,345,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,297,same_id_steering_main_005_C2_20261016_140835 (1).csv,346,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,298,same_id_steering_main_005_C2_20261016_140835 (1).csv,347,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,298,same_id_steering_main_005_C2_20261016_140835 (1).csv,348,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,299,same_id_steering_main_005_C2_20261016_140835 (1).csv,349,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,300,same_id_steering_main_005_C2_20261016_140835 (1).csv,350,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,300,same_id_steering_main_005_C2_20261016_140835 (1).csv,351,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,301,same_id_steering_main_005_C2_20261016_140835 (1).csv,352,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,304,same_id_steering_main_005_C2_20261016_140835 (1).csv,355,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,305,same_id_steering_main_005_C2_20261016_140835 (1).csv,356,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,306,same_id_steering_main_005_C2_20261016_140835 (1).csv,357,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,307,same_id_steering_main_005_C2_20261016_140835 (1).csv,358,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,308,same_id_steering_main_005_C2_20261016_140835 (1).csv,359,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,309,same_id_steering_main_005_C2_20261016_140835 (1).csv,360,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,310,same_id_steering_main_005_C2_20261016_140835 (1).csv,361,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,325,same_id_steering_main_005_C2_20261016_140835 (1).csv,376,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,325,same_id_steering_main_005_C2_20261016_140835 (1).csv,377,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,333,same_id_steering_main_005_C2_20261016_140835 (1).csv,385,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,334,same_id_steering_main_005_C2_20261016_140835 (1).csv,386,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,335,same_id_steering_main_005_C2_20261016_140835 (1).csv,387,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,336,same_id_steering_main_005_C2_20261016_140835 (1).csv,388,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,338,same_id_steering_main_005_C2_20261016_140835 (1).csv,390,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,342,same_id_steering_main_005_C2_20261016_140835 (1).csv,394,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,343,same_id_steering_main_005_C2_20261016_140835 (1).csv,395,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,346,same_id_steering_main_005_C2_20261016_140835 (1).csv,398,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,346,same_id_steering_main_005_C2_20261016_140835 (1).csv,399,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,351,same_id_steering_main_005_C2_20261016_140835 (1).csv,405,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,352,same_id_steering_main_005_C2_20261016_140835 (1).csv,406,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,353,same_id_steering_main_005_C2_20261016_140835 (1).csv,407,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,354,same_id_steering_main_005_C2_20261016_140835 (1).csv,408,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,355,same_id_steering_main_005_C2_20261016_140835 (1).csv,409,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,355,same_id_steering_main_005_C2_20261016_140835 (1).csv,410,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,356,same_id_steering_main_005_C2_20261016_140835 (1).csv,411,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,356,same_id_steering_main_005_C2_20261016_140835 (1).csv,412,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,357,same_id_steering_main_005_C2_20261016_140835 (1).csv,413,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,358,same_id_steering_main_005_C2_20261016_140835 (1).csv,414,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,359,same_id_steering_main_005_C2_20261016_140835 (1).csv,415,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,360,same_id_steering_main_005_C2_20261016_140835 (1).csv,416,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,361,same_id_steering_main_005_C2_20261016_140835 (1).csv,417,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,362,same_id_steering_main_005_C2_20261016_140835 (1).csv,418,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,363,same_id_steering_main_005_C2_20261016_140835 (1).csv,419,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,363,same_id_steering_main_005_C2_20261016_140835 (1).csv,420,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,365,same_id_steering_main_005_C2_20261016_140835 (1).csv,422,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,366,same_id_steering_main_005_C2_20261016_140835 (1).csv,423,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,366,same_id_steering_main_005_C2_20261016_140835 (1).csv,424,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,367,same_id_steering_main_005_C2_20261016_140835 (1).csv,425,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,369,same_id_steering_main_005_C2_20261016_140835 (1).csv,427,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,370,same_id_steering_main_005_C2_20261016_140835 (1).csv,429,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,371,same_id_steering_main_005_C2_20261016_140835 (1).csv,430,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,372,same_id_steering_main_005_C2_20261016_140835 (1).csv,431,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,375,same_id_steering_main_005_C2_20261016_140835 (1).csv,434,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,378,same_id_steering_main_005_C2_20261016_140835 (1).csv,437,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,379,same_id_steering_main_005_C2_20261016_140835 (1).csv,438,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,380,same_id_steering_main_005_C2_20261016_140835 (1).csv,439,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,381,same_id_steering_main_005_C2_20261016_140835 (1).csv,440,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,382,same_id_steering_main_005_C2_20261016_140835 (1).csv,441,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,383,same_id_steering_main_005_C2_20261016_140835 (1).csv,442,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,384,same_id_steering_main_005_C2_20261016_140835 (1).csv,443,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,385,same_id_steering_main_005_C2_20261016_140835 (1).csv,444,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,386,same_id_steering_main_005_C2_20261016_140835 (1).csv,445,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,387,same_id_steering_main_005_C2_20261016_140835 (1).csv,446,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,390,same_id_steering_main_005_C2_20261016_140835 (1).csv,449,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,005,C2,390,same_id_steering_main_005_C2_20261016_140835 (1).csv,450,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,394,same_id_steering_main_005_C2_20261016_140835 (1).csv,454,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,395,same_id_steering_main_005_C2_20261016_140835 (1).csv,455,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,005,C2,398,same_id_steering_main_005_C2_20261016_140835 (1).csv,458,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,006,C2,19,same_id_steering_main_006_C2_20261016_145713 (1).csv,20,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,29,same_id_steering_main_006_C2_20261016_145713 (1).csv,30,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,36,same_id_steering_main_006_C2_20261016_145713 (1).csv,37,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,37,same_id_steering_main_006_C2_20261016_145713 (1).csv,38,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,42,same_id_steering_main_006_C2_20261016_145713 (1).csv,43,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,54,same_id_steering_main_006_C2_20261016_145713 (1).csv,55,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,57,same_id_steering_main_006_C2_20261016_145713 (1).csv,58,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,58,same_id_steering_main_006_C2_20261016_145713 (1).csv,59,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,74,same_id_steering_main_006_C2_20261016_145713 (1).csv,75,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,77,same_id_steering_main_006_C2_20261016_145713 (1).csv,78,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,78,same_id_steering_main_006_C2_20261016_145713 (1).csv,79,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,80,same_id_steering_main_006_C2_20261016_145713 (1).csv,81,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,81,same_id_steering_main_006_C2_20261016_145713 (1).csv,82,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,82,same_id_steering_main_006_C2_20261016_145713 (1).csv,83,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,84,same_id_steering_main_006_C2_20261016_145713 (1).csv,85,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,85,same_id_steering_main_006_C2_20261016_145713 (1).csv,86,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,86,same_id_steering_main_006_C2_20261016_145713 (1).csv,87,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,87,same_id_steering_main_006_C2_20261016_145713 (1).csv,88,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,88,same_id_steering_main_006_C2_20261016_145713 (1).csv,89,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,89,same_id_steering_main_006_C2_20261016_145713 (1).csv,90,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,90,same_id_steering_main_006_C2_20261016_145713 (1).csv,91,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,91,same_id_steering_main_006_C2_20261016_145713 (1).csv,92,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,94,same_id_steering_main_006_C2_20261016_145713 (1).csv,95,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,95,same_id_steering_main_006_C2_20261016_145713 (1).csv,96,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,96,same_id_steering_main_006_C2_20261016_145713 (1).csv,97,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,97,same_id_steering_main_006_C2_20261016_145713 (1).csv,98,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,98,same_id_steering_main_006_C2_20261016_145713 (1).csv,99,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,99,same_id_steering_main_006_C2_20261016_145713 (1).csv,100,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,100,same_id_steering_main_006_C2_20261016_145713 (1).csv,101,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,103,same_id_steering_main_006_C2_20261016_145713 (1).csv,104,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,105,same_id_steering_main_006_C2_20261016_145713 (1).csv,106,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,106,same_id_steering_main_006_C2_20261016_145713 (1).csv,107,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,107,same_id_steering_main_006_C2_20261016_145713 (1).csv,108,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,110,same_id_steering_main_006_C2_20261016_145713 (1).csv,111,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,111,same_id_steering_main_006_C2_20261016_145713 (1).csv,112,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,112,same_id_steering_main_006_C2_20261016_145713 (1).csv,113,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,113,same_id_steering_main_006_C2_20261016_145713 (1).csv,114,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,119,same_id_steering_main_006_C2_20261016_145713 (1).csv,120,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,121,same_id_steering_main_006_C2_20261016_145713 (1).csv,122,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,124,same_id_steering_main_006_C2_20261016_145713 (1).csv,125,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,131,same_id_steering_main_006_C2_20261016_145713 (1).csv,132,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,132,same_id_steering_main_006_C2_20261016_145713 (1).csv,133,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,133,same_id_steering_main_006_C2_20261016_145713 (1).csv,134,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,134,same_id_steering_main_006_C2_20261016_145713 (1).csv,135,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,135,same_id_steering_main_006_C2_20261016_145713 (1).csv,136,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,138,same_id_steering_main_006_C2_20261016_145713 (1).csv,139,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,139,same_id_steering_main_006_C2_20261016_145713 (1).csv,140,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,140,same_id_steering_main_006_C2_20261016_145713 (1).csv,141,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,141,same_id_steering_main_006_C2_20261016_145713 (1).csv,142,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,167,same_id_steering_main_006_C2_20261016_145713 (1).csv,168,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,172,same_id_steering_main_006_C2_20261016_145713 (1).csv,173,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,187,same_id_steering_main_006_C2_20261016_145713 (1).csv,188,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,188,same_id_steering_main_006_C2_20261016_145713 (1).csv,189,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,189,same_id_steering_main_006_C2_20261016_145713 (1).csv,190,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,216,same_id_steering_main_006_C2_20261016_145713 (1).csv,217,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,227,same_id_steering_main_006_C2_20261016_145713 (1).csv,228,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,241,same_id_steering_main_006_C2_20261016_145713 (1).csv,242,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,242,same_id_steering_main_006_C2_20261016_145713 (1).csv,243,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,006,C2,243,same_id_steering_main_006_C2_20261016_145713 (1).csv,244,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,7,same_id_steering_main_007_C3_20261016_160828 (1).csv,8,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,8,same_id_steering_main_007_C3_20261016_160828 (1).csv,9,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,13,same_id_steering_main_007_C3_20261016_160828 (1).csv,14,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,23,same_id_steering_main_007_C3_20261016_160828 (1).csv,24,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,25,same_id_steering_main_007_C3_20261016_160828 (1).csv,26,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,34,same_id_steering_main_007_C3_20261016_160828 (1).csv,35,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,71,same_id_steering_main_007_C3_20261016_160828 (1).csv,72,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,007,C3,74,same_id_steering_main_007_C3_20261016_160828 (1).csv,76,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,77,same_id_steering_main_007_C3_20261016_160828 (1).csv,79,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,104,same_id_steering_main_007_C3_20261016_160828 (1).csv,106,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,106,same_id_steering_main_007_C3_20261016_160828 (1).csv,108,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,110,same_id_steering_main_007_C3_20261016_160828 (1).csv,112,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,111,same_id_steering_main_007_C3_20261016_160828 (1).csv,113,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,112,same_id_steering_main_007_C3_20261016_160828 (1).csv,114,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,113,same_id_steering_main_007_C3_20261016_160828 (1).csv,115,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,117,same_id_steering_main_007_C3_20261016_160828 (1).csv,119,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,118,same_id_steering_main_007_C3_20261016_160828 (1).csv,120,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,119,same_id_steering_main_007_C3_20261016_160828 (1).csv,121,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,120,same_id_steering_main_007_C3_20261016_160828 (1).csv,122,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,121,same_id_steering_main_007_C3_20261016_160828 (1).csv,123,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,122,same_id_steering_main_007_C3_20261016_160828 (1).csv,124,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,125,same_id_steering_main_007_C3_20261016_160828 (1).csv,127,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,127,same_id_steering_main_007_C3_20261016_160828 (1).csv,129,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,129,same_id_steering_main_007_C3_20261016_160828 (1).csv,131,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,135,same_id_steering_main_007_C3_20261016_160828 (1).csv,137,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,138,same_id_steering_main_007_C3_20261016_160828 (1).csv,140,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,139,same_id_steering_main_007_C3_20261016_160828 (1).csv,141,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,140,same_id_steering_main_007_C3_20261016_160828 (1).csv,142,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,152,same_id_steering_main_007_C3_20261016_160828 (1).csv,154,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,153,same_id_steering_main_007_C3_20261016_160828 (1).csv,155,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,159,same_id_steering_main_007_C3_20261016_160828 (1).csv,161,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,160,same_id_steering_main_007_C3_20261016_160828 (1).csv,162,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,163,same_id_steering_main_007_C3_20261016_160828 (1).csv,165,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,007,C3,163,same_id_steering_main_007_C3_20261016_160828 (1).csv,166,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,007,C3,170,same_id_steering_main_007_C3_20261016_160828 (1).csv,174,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,175,same_id_steering_main_007_C3_20261016_160828 (1).csv,179,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,180,same_id_steering_main_007_C3_20261016_160828 (1).csv,184,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,188,same_id_steering_main_007_C3_20261016_160828 (1).csv,192,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,227,same_id_steering_main_007_C3_20261016_160828 (1).csv,231,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,273,same_id_steering_main_007_C3_20261016_160828 (1).csv,277,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,007,C3,294,same_id_steering_main_007_C3_20261016_160828 (1).csv,299,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,295,same_id_steering_main_007_C3_20261016_160828 (1).csv,300,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,321,same_id_steering_main_007_C3_20261016_160828 (1).csv,326,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,007,C3,382,same_id_steering_main_007_C3_20261016_160828 (1).csv,387,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,49,same_id_steering_main_008_C3_20261016_174334.csv,50,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,59,same_id_steering_main_008_C3_20261016_174334.csv,60,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,61,same_id_steering_main_008_C3_20261016_174334.csv,62,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,70,same_id_steering_main_008_C3_20261016_174334.csv,71,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,73,same_id_steering_main_008_C3_20261016_174334.csv,74,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,98,same_id_steering_main_008_C3_20261016_174334.csv,99,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,109,same_id_steering_main_008_C3_20261016_174334.csv,110,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,122,same_id_steering_main_008_C3_20261016_174334.csv,123,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,141,same_id_steering_main_008_C3_20261016_174334.csv,142,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,162,same_id_steering_main_008_C3_20261016_174334.csv,163,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,008,C3,198,same_id_steering_main_008_C3_20261016_174334.csv,200,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,205,same_id_steering_main_008_C3_20261016_174334.csv,207,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,214,same_id_steering_main_008_C3_20261016_174334.csv,216,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,215,same_id_steering_main_008_C3_20261016_174334.csv,217,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,217,same_id_steering_main_008_C3_20261016_174334.csv,219,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,224,same_id_steering_main_008_C3_20261016_174334.csv,226,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,229,same_id_steering_main_008_C3_20261016_174334.csv,231,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,230,same_id_steering_main_008_C3_20261016_174334.csv,232,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,008,C3,230,same_id_steering_main_008_C3_20261016_174334.csv,233,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,231,same_id_steering_main_008_C3_20261016_174334.csv,234,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,239,same_id_steering_main_008_C3_20261016_174334.csv,242,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,241,same_id_steering_main_008_C3_20261016_174334.csv,244,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,260,same_id_steering_main_008_C3_20261016_174334.csv,263,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,261,same_id_steering_main_008_C3_20261016_174334.csv,264,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,262,same_id_steering_main_008_C3_20261016_174334.csv,265,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,263,same_id_steering_main_008_C3_20261016_174334.csv,266,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,264,same_id_steering_main_008_C3_20261016_174334.csv,267,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,274,same_id_steering_main_008_C3_20261016_174334.csv,277,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,275,same_id_steering_main_008_C3_20261016_174334.csv,278,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,276,same_id_steering_main_008_C3_20261016_174334.csv,279,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,278,same_id_steering_main_008_C3_20261016_174334.csv,281,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,287,same_id_steering_main_008_C3_20261016_174334.csv,290,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,288,same_id_steering_main_008_C3_20261016_174334.csv,291,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,289,same_id_steering_main_008_C3_20261016_174334.csv,292,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,290,same_id_steering_main_008_C3_20261016_174334.csv,293,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,310,same_id_steering_main_008_C3_20261016_174334.csv,313,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,313,same_id_steering_main_008_C3_20261016_174334.csv,316,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,316,same_id_steering_main_008_C3_20261016_174334.csv,319,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,318,same_id_steering_main_008_C3_20261016_174334.csv,321,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,322,same_id_steering_main_008_C3_20261016_174334.csv,325,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,324,same_id_steering_main_008_C3_20261016_174334.csv,327,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,326,same_id_steering_main_008_C3_20261016_174334.csv,329,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,328,same_id_steering_main_008_C3_20261016_174334.csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,331,same_id_steering_main_008_C3_20261016_174334.csv,334,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,333,same_id_steering_main_008_C3_20261016_174334.csv,336,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,345,same_id_steering_main_008_C3_20261016_174334.csv,348,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,367,same_id_steering_main_008_C3_20261016_174334.csv,370,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,008,C3,369,same_id_steering_main_008_C3_20261016_174334.csv,373,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,008,C3,373,same_id_steering_main_008_C3_20261016_174334.csv,378,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,381,same_id_steering_main_008_C3_20261016_174334.csv,386,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,389,same_id_steering_main_008_C3_20261016_174334.csv,394,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,008,C3,399,same_id_steering_main_008_C3_20261016_174334.csv,405,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,008,C3,400,same_id_steering_main_008_C3_20261016_174334.csv,406,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,17,same_id_steering_main_009_C3_20261020_163612.csv,18,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,19,same_id_steering_main_009_C3_20261020_163612.csv,20,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,20,same_id_steering_main_009_C3_20261020_163612.csv,21,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,21,same_id_steering_main_009_C3_20261020_163612.csv,22,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,41,same_id_steering_main_009_C3_20261020_163612.csv,42,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,45,same_id_steering_main_009_C3_20261020_163612.csv,46,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,52,same_id_steering_main_009_C3_20261020_163612.csv,53,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,53,same_id_steering_main_009_C3_20261020_163612.csv,54,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,66,same_id_steering_main_009_C3_20261020_163612.csv,67,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,80,same_id_steering_main_009_C3_20261020_163612.csv,82,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,96,same_id_steering_main_009_C3_20261020_163612.csv,99,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,100,same_id_steering_main_009_C3_20261020_163612.csv,103,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,114,same_id_steering_main_009_C3_20261020_163612.csv,117,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,115,same_id_steering_main_009_C3_20261020_163612.csv,118,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,116,same_id_steering_main_009_C3_20261020_163612.csv,119,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,117,same_id_steering_main_009_C3_20261020_163612.csv,120,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,123,same_id_steering_main_009_C3_20261020_163612.csv,126,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,124,same_id_steering_main_009_C3_20261020_163612.csv,127,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,125,same_id_steering_main_009_C3_20261020_163612.csv,128,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,131,same_id_steering_main_009_C3_20261020_163612.csv,134,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,132,same_id_steering_main_009_C3_20261020_163612.csv,135,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,133,same_id_steering_main_009_C3_20261020_163612.csv,136,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,134,same_id_steering_main_009_C3_20261020_163612.csv,137,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,142,same_id_steering_main_009_C3_20261020_163612.csv,145,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,150,same_id_steering_main_009_C3_20261020_163612.csv,153,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,151,same_id_steering_main_009_C3_20261020_163612.csv,154,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,229,same_id_steering_main_009_C3_20261020_163612.csv,232,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,233,same_id_steering_main_009_C3_20261020_163612.csv,237,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,235,same_id_steering_main_009_C3_20261020_163612.csv,239,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,236,same_id_steering_main_009_C3_20261020_163612.csv,240,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,243,same_id_steering_main_009_C3_20261020_163612.csv,247,countedAsTrial=false
+sensitivity_1_5sd,009,C3,245,same_id_steering_main_009_C3_20261020_163612.csv,250,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,245,same_id_steering_main_009_C3_20261020_163612.csv,251,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,260,same_id_steering_main_009_C3_20261020_163612.csv,267,countedAsTrial=false
+sensitivity_1_5sd,009,C3,271,same_id_steering_main_009_C3_20261020_163612.csv,279,coreExitMs missing
+sensitivity_1_5sd,009,C3,348,same_id_steering_main_009_C3_20261020_163612.csv,356,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,357,same_id_steering_main_009_C3_20261020_163612.csv,365,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,393,same_id_steering_main_009_C3_20261020_163612.csv,401,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,394,same_id_steering_main_009_C3_20261020_163612.csv,402,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,009,C3,400,same_id_steering_main_009_C3_20261020_163612.csv,408,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,009,C3,400,same_id_steering_main_009_C3_20261020_163612.csv,409,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,2,same_id_steering_main_010_C2_20261020_170913.csv,3,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,3,same_id_steering_main_010_C2_20261020_170913.csv,4,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,4,same_id_steering_main_010_C2_20261020_170913.csv,5,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,5,same_id_steering_main_010_C2_20261020_170913.csv,6,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,10,same_id_steering_main_010_C2_20261020_170913.csv,11,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,33,same_id_steering_main_010_C2_20261020_170913.csv,34,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,34,same_id_steering_main_010_C2_20261020_170913.csv,35,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,010,C2,34,same_id_steering_main_010_C2_20261020_170913.csv,36,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,61,same_id_steering_main_010_C2_20261020_170913.csv,63,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,010,C2,123,same_id_steering_main_010_C2_20261020_170913.csv,126,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,144,same_id_steering_main_010_C2_20261020_170913.csv,147,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,010,C2,153,same_id_steering_main_010_C2_20261020_170913.csv,157,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,175,same_id_steering_main_010_C2_20261020_170913.csv,179,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,010,C2,179,same_id_steering_main_010_C2_20261020_170913.csv,184,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,207,same_id_steering_main_010_C2_20261020_170913.csv,212,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,233,same_id_steering_main_010_C2_20261020_170913.csv,238,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,243,same_id_steering_main_010_C2_20261020_170913.csv,248,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,290,same_id_steering_main_010_C2_20261020_170913.csv,295,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,292,same_id_steering_main_010_C2_20261020_170913.csv,297,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,302,same_id_steering_main_010_C2_20261020_170913.csv,307,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,320,same_id_steering_main_010_C2_20261020_170913.csv,325,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,321,same_id_steering_main_010_C2_20261020_170913.csv,326,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,323,same_id_steering_main_010_C2_20261020_170913.csv,328,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,324,same_id_steering_main_010_C2_20261020_170913.csv,329,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,326,same_id_steering_main_010_C2_20261020_170913.csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,327,same_id_steering_main_010_C2_20261020_170913.csv,332,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,328,same_id_steering_main_010_C2_20261020_170913.csv,333,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,329,same_id_steering_main_010_C2_20261020_170913.csv,334,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,330,same_id_steering_main_010_C2_20261020_170913.csv,335,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,331,same_id_steering_main_010_C2_20261020_170913.csv,336,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,332,same_id_steering_main_010_C2_20261020_170913.csv,337,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,335,same_id_steering_main_010_C2_20261020_170913.csv,340,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,337,same_id_steering_main_010_C2_20261020_170913.csv,342,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,345,same_id_steering_main_010_C2_20261020_170913.csv,350,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,347,same_id_steering_main_010_C2_20261020_170913.csv,352,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,348,same_id_steering_main_010_C2_20261020_170913.csv,353,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,350,same_id_steering_main_010_C2_20261020_170913.csv,355,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,354,same_id_steering_main_010_C2_20261020_170913.csv,359,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,358,same_id_steering_main_010_C2_20261020_170913.csv,363,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,362,same_id_steering_main_010_C2_20261020_170913.csv,367,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,364,same_id_steering_main_010_C2_20261020_170913.csv,369,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,367,same_id_steering_main_010_C2_20261020_170913.csv,372,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,369,same_id_steering_main_010_C2_20261020_170913.csv,374,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,378,same_id_steering_main_010_C2_20261020_170913.csv,383,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,382,same_id_steering_main_010_C2_20261020_170913.csv,387,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,010,C2,388,same_id_steering_main_010_C2_20261020_170913.csv,394,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,389,same_id_steering_main_010_C2_20261020_170913.csv,395,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,391,same_id_steering_main_010_C2_20261020_170913.csv,397,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,392,same_id_steering_main_010_C2_20261020_170913.csv,398,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,393,same_id_steering_main_010_C2_20261020_170913.csv,399,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,010,C2,397,same_id_steering_main_010_C2_20261020_170913.csv,403,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,68,same_id_steering_main_013_C2_20261105_145720.csv,69,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,013,C2,141,same_id_steering_main_013_C2_20261105_145720.csv,143,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,013,C2,162,same_id_steering_main_013_C2_20261105_145720.csv,165,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,165,same_id_steering_main_013_C2_20261105_145720.csv,168,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,167,same_id_steering_main_013_C2_20261105_145720.csv,170,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,169,same_id_steering_main_013_C2_20261105_145720.csv,172,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,173,same_id_steering_main_013_C2_20261105_145720.csv,176,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,174,same_id_steering_main_013_C2_20261105_145720.csv,177,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,183,same_id_steering_main_013_C2_20261105_145720.csv,186,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,184,same_id_steering_main_013_C2_20261105_145720.csv,187,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,185,same_id_steering_main_013_C2_20261105_145720.csv,188,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,198,same_id_steering_main_013_C2_20261105_145720.csv,201,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,013,C2,383,same_id_steering_main_013_C2_20261105_145720.csv,386,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,014,C3,189,same_id_steering_main_014_C3_20261105_155133.csv,190,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,016,C3,2,same_id_steering_main_016_C3_20261106_122702.csv,3,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,6,same_id_steering_main_016_C3_20261106_122702.csv,7,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,8,same_id_steering_main_016_C3_20261106_122702.csv,9,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,60,same_id_steering_main_016_C3_20261106_122702.csv,61,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,016,C3,60,same_id_steering_main_016_C3_20261106_122702.csv,62,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,016,C3,141,same_id_steering_main_016_C3_20261106_122702.csv,144,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,016,C3,308,same_id_steering_main_016_C3_20261106_122702.csv,312,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,329,same_id_steering_main_016_C3_20261106_122702.csv,333,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,330,same_id_steering_main_016_C3_20261106_122702.csv,334,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,332,same_id_steering_main_016_C3_20261106_122702.csv,336,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,336,same_id_steering_main_016_C3_20261106_122702.csv,340,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,380,same_id_steering_main_016_C3_20261106_122702.csv,384,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,383,same_id_steering_main_016_C3_20261106_122702.csv,387,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,384,same_id_steering_main_016_C3_20261106_122702.csv,388,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,385,same_id_steering_main_016_C3_20261106_122702.csv,389,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,387,same_id_steering_main_016_C3_20261106_122702.csv,391,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,388,same_id_steering_main_016_C3_20261106_122702.csv,392,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,396,same_id_steering_main_016_C3_20261106_122702.csv,400,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,397,same_id_steering_main_016_C3_20261106_122702.csv,401,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,016,C3,398,same_id_steering_main_016_C3_20261106_122702.csv,402,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,1,same_id_steering_main_017_C2_20261106_140959.csv,2,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,7,same_id_steering_main_017_C2_20261106_140959.csv,9,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,12,same_id_steering_main_017_C2_20261106_140959.csv,15,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,26,same_id_steering_main_017_C2_20261106_140959.csv,30,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,66,same_id_steering_main_017_C2_20261106_140959.csv,71,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,68,same_id_steering_main_017_C2_20261106_140959.csv,74,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,69,same_id_steering_main_017_C2_20261106_140959.csv,76,countedAsTrial=false
+sensitivity_1_5sd,017,C2,73,same_id_steering_main_017_C2_20261106_140959.csv,81,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,101,same_id_steering_main_017_C2_20261106_140959.csv,110,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,108,same_id_steering_main_017_C2_20261106_140959.csv,118,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,108,same_id_steering_main_017_C2_20261106_140959.csv,119,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,126,same_id_steering_main_017_C2_20261106_140959.csv,138,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,131,same_id_steering_main_017_C2_20261106_140959.csv,143,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,149,same_id_steering_main_017_C2_20261106_140959.csv,161,coreExitMs missing
+sensitivity_1_5sd,017,C2,150,same_id_steering_main_017_C2_20261106_140959.csv,162,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,164,same_id_steering_main_017_C2_20261106_140959.csv,177,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,185,same_id_steering_main_017_C2_20261106_140959.csv,198,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,186,same_id_steering_main_017_C2_20261106_140959.csv,199,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,195,same_id_steering_main_017_C2_20261106_140959.csv,208,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,195,same_id_steering_main_017_C2_20261106_140959.csv,209,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,195,same_id_steering_main_017_C2_20261106_140959.csv,210,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,266,same_id_steering_main_017_C2_20261106_140959.csv,281,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,301,same_id_steering_main_017_C2_20261106_140959.csv,316,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,302,same_id_steering_main_017_C2_20261106_140959.csv,317,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,311,same_id_steering_main_017_C2_20261106_140959.csv,326,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,320,same_id_steering_main_017_C2_20261106_140959.csv,335,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,321,same_id_steering_main_017_C2_20261106_140959.csv,336,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,329,same_id_steering_main_017_C2_20261106_140959.csv,344,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,329,same_id_steering_main_017_C2_20261106_140959.csv,345,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,346,same_id_steering_main_017_C2_20261106_140959.csv,363,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,354,same_id_steering_main_017_C2_20261106_140959.csv,371,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,357,same_id_steering_main_017_C2_20261106_140959.csv,375,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,357,same_id_steering_main_017_C2_20261106_140959.csv,376,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,374,same_id_steering_main_017_C2_20261106_140959.csv,394,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,375,same_id_steering_main_017_C2_20261106_140959.csv,395,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,376,same_id_steering_main_017_C2_20261106_140959.csv,396,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,376,same_id_steering_main_017_C2_20261106_140959.csv,397,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,377,same_id_steering_main_017_C2_20261106_140959.csv,398,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,378,same_id_steering_main_017_C2_20261106_140959.csv,399,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,017,C2,388,same_id_steering_main_017_C2_20261106_140959.csv,410,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,391,same_id_steering_main_017_C2_20261106_140959.csv,413,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,392,same_id_steering_main_017_C2_20261106_140959.csv,414,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,017,C2,393,same_id_steering_main_017_C2_20261106_140959.csv,415,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,018,C3,1,same_id_steering_main_018_C3_20261110_143614.csv,2,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,2,same_id_steering_main_018_C3_20261110_143614.csv,3,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,3,same_id_steering_main_018_C3_20261110_143614.csv,4,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,10,same_id_steering_main_018_C3_20261110_143614.csv,11,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,11,same_id_steering_main_018_C3_20261110_143614.csv,12,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,12,same_id_steering_main_018_C3_20261110_143614.csv,13,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,14,same_id_steering_main_018_C3_20261110_143614.csv,15,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,16,same_id_steering_main_018_C3_20261110_143614.csv,17,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,28,same_id_steering_main_018_C3_20261110_143614.csv,29,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,31,same_id_steering_main_018_C3_20261110_143614.csv,32,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,32,same_id_steering_main_018_C3_20261110_143614.csv,33,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,35,same_id_steering_main_018_C3_20261110_143614.csv,36,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,36,same_id_steering_main_018_C3_20261110_143614.csv,37,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,37,same_id_steering_main_018_C3_20261110_143614.csv,38,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,38,same_id_steering_main_018_C3_20261110_143614.csv,39,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,39,same_id_steering_main_018_C3_20261110_143614.csv,40,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,40,same_id_steering_main_018_C3_20261110_143614.csv,41,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,42,same_id_steering_main_018_C3_20261110_143614.csv,43,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,47,same_id_steering_main_018_C3_20261110_143614.csv,48,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,50,same_id_steering_main_018_C3_20261110_143614.csv,51,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,201,same_id_steering_main_018_C3_20261110_143614.csv,202,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,202,same_id_steering_main_018_C3_20261110_143614.csv,203,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,203,same_id_steering_main_018_C3_20261110_143614.csv,204,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,228,same_id_steering_main_018_C3_20261110_143614.csv,229,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,272,same_id_steering_main_018_C3_20261110_143614.csv,273,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,293,same_id_steering_main_018_C3_20261110_143614.csv,294,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,361,same_id_steering_main_018_C3_20261110_143614.csv,362,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,362,same_id_steering_main_018_C3_20261110_143614.csv,363,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,365,same_id_steering_main_018_C3_20261110_143614.csv,366,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,366,same_id_steering_main_018_C3_20261110_143614.csv,367,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,018,C3,367,same_id_steering_main_018_C3_20261110_143614.csv,368,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,019,C2,2,same_id_steering_main_019_C2_20261110_153210.csv,3,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,019,C2,339,same_id_steering_main_019_C2_20261110_153210.csv,340,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,019,C2,393,same_id_steering_main_019_C2_20261110_153210.csv,394,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,1,same_id_steering_main_020_C3_20261111_141409.csv,2,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,020,C3,15,same_id_steering_main_020_C3_20261111_141409.csv,17,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,020,C3,57,same_id_steering_main_020_C3_20261111_141409.csv,60,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,67,same_id_steering_main_020_C3_20261111_141409.csv,70,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,70,same_id_steering_main_020_C3_20261111_141409.csv,73,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,75,same_id_steering_main_020_C3_20261111_141409.csv,78,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,80,same_id_steering_main_020_C3_20261111_141409.csv,83,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,84,same_id_steering_main_020_C3_20261111_141409.csv,87,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,85,same_id_steering_main_020_C3_20261111_141409.csv,88,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,020,C3,85,same_id_steering_main_020_C3_20261111_141409.csv,89,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,90,same_id_steering_main_020_C3_20261111_141409.csv,94,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,91,same_id_steering_main_020_C3_20261111_141409.csv,95,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,92,same_id_steering_main_020_C3_20261111_141409.csv,96,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,93,same_id_steering_main_020_C3_20261111_141409.csv,97,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,94,same_id_steering_main_020_C3_20261111_141409.csv,98,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,105,same_id_steering_main_020_C3_20261111_141409.csv,109,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,107,same_id_steering_main_020_C3_20261111_141409.csv,111,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,108,same_id_steering_main_020_C3_20261111_141409.csv,112,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,143,same_id_steering_main_020_C3_20261111_141409.csv,147,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,146,same_id_steering_main_020_C3_20261111_141409.csv,150,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,147,same_id_steering_main_020_C3_20261111_141409.csv,151,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,154,same_id_steering_main_020_C3_20261111_141409.csv,158,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,160,same_id_steering_main_020_C3_20261111_141409.csv,164,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,161,same_id_steering_main_020_C3_20261111_141409.csv,165,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,162,same_id_steering_main_020_C3_20261111_141409.csv,166,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,163,same_id_steering_main_020_C3_20261111_141409.csv,167,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,164,same_id_steering_main_020_C3_20261111_141409.csv,168,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,165,same_id_steering_main_020_C3_20261111_141409.csv,169,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,166,same_id_steering_main_020_C3_20261111_141409.csv,170,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,167,same_id_steering_main_020_C3_20261111_141409.csv,171,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,168,same_id_steering_main_020_C3_20261111_141409.csv,172,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,169,same_id_steering_main_020_C3_20261111_141409.csv,173,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,170,same_id_steering_main_020_C3_20261111_141409.csv,174,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,172,same_id_steering_main_020_C3_20261111_141409.csv,176,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,173,same_id_steering_main_020_C3_20261111_141409.csv,177,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,174,same_id_steering_main_020_C3_20261111_141409.csv,178,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,175,same_id_steering_main_020_C3_20261111_141409.csv,179,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,176,same_id_steering_main_020_C3_20261111_141409.csv,180,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,177,same_id_steering_main_020_C3_20261111_141409.csv,181,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,178,same_id_steering_main_020_C3_20261111_141409.csv,182,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,179,same_id_steering_main_020_C3_20261111_141409.csv,183,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,181,same_id_steering_main_020_C3_20261111_141409.csv,185,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,182,same_id_steering_main_020_C3_20261111_141409.csv,186,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,183,same_id_steering_main_020_C3_20261111_141409.csv,187,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,184,same_id_steering_main_020_C3_20261111_141409.csv,188,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,185,same_id_steering_main_020_C3_20261111_141409.csv,189,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,186,same_id_steering_main_020_C3_20261111_141409.csv,190,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,187,same_id_steering_main_020_C3_20261111_141409.csv,191,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,188,same_id_steering_main_020_C3_20261111_141409.csv,192,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,189,same_id_steering_main_020_C3_20261111_141409.csv,193,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,190,same_id_steering_main_020_C3_20261111_141409.csv,194,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,191,same_id_steering_main_020_C3_20261111_141409.csv,195,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,192,same_id_steering_main_020_C3_20261111_141409.csv,196,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,193,same_id_steering_main_020_C3_20261111_141409.csv,197,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,194,same_id_steering_main_020_C3_20261111_141409.csv,198,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,195,same_id_steering_main_020_C3_20261111_141409.csv,199,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,196,same_id_steering_main_020_C3_20261111_141409.csv,200,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,197,same_id_steering_main_020_C3_20261111_141409.csv,201,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,198,same_id_steering_main_020_C3_20261111_141409.csv,202,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,199,same_id_steering_main_020_C3_20261111_141409.csv,203,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,200,same_id_steering_main_020_C3_20261111_141409.csv,204,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,203,same_id_steering_main_020_C3_20261111_141409.csv,207,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,204,same_id_steering_main_020_C3_20261111_141409.csv,208,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,205,same_id_steering_main_020_C3_20261111_141409.csv,209,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,206,same_id_steering_main_020_C3_20261111_141409.csv,210,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,207,same_id_steering_main_020_C3_20261111_141409.csv,211,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,208,same_id_steering_main_020_C3_20261111_141409.csv,212,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,209,same_id_steering_main_020_C3_20261111_141409.csv,213,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,210,same_id_steering_main_020_C3_20261111_141409.csv,214,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,211,same_id_steering_main_020_C3_20261111_141409.csv,215,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,212,same_id_steering_main_020_C3_20261111_141409.csv,216,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,213,same_id_steering_main_020_C3_20261111_141409.csv,217,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,215,same_id_steering_main_020_C3_20261111_141409.csv,219,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,216,same_id_steering_main_020_C3_20261111_141409.csv,220,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,217,same_id_steering_main_020_C3_20261111_141409.csv,221,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,218,same_id_steering_main_020_C3_20261111_141409.csv,222,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,219,same_id_steering_main_020_C3_20261111_141409.csv,223,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,220,same_id_steering_main_020_C3_20261111_141409.csv,224,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,221,same_id_steering_main_020_C3_20261111_141409.csv,225,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,222,same_id_steering_main_020_C3_20261111_141409.csv,226,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,243,same_id_steering_main_020_C3_20261111_141409.csv,247,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,244,same_id_steering_main_020_C3_20261111_141409.csv,248,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,245,same_id_steering_main_020_C3_20261111_141409.csv,249,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,246,same_id_steering_main_020_C3_20261111_141409.csv,250,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,247,same_id_steering_main_020_C3_20261111_141409.csv,251,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,248,same_id_steering_main_020_C3_20261111_141409.csv,252,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,249,same_id_steering_main_020_C3_20261111_141409.csv,253,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,250,same_id_steering_main_020_C3_20261111_141409.csv,254,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,251,same_id_steering_main_020_C3_20261111_141409.csv,255,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,252,same_id_steering_main_020_C3_20261111_141409.csv,256,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,253,same_id_steering_main_020_C3_20261111_141409.csv,257,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,254,same_id_steering_main_020_C3_20261111_141409.csv,258,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,255,same_id_steering_main_020_C3_20261111_141409.csv,259,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,265,same_id_steering_main_020_C3_20261111_141409.csv,269,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,267,same_id_steering_main_020_C3_20261111_141409.csv,271,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,269,same_id_steering_main_020_C3_20261111_141409.csv,273,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,270,same_id_steering_main_020_C3_20261111_141409.csv,274,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,275,same_id_steering_main_020_C3_20261111_141409.csv,279,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,020,C3,277,same_id_steering_main_020_C3_20261111_141409.csv,282,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,282,same_id_steering_main_020_C3_20261111_141409.csv,287,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,284,same_id_steering_main_020_C3_20261111_141409.csv,289,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,299,same_id_steering_main_020_C3_20261111_141409.csv,304,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,301,same_id_steering_main_020_C3_20261111_141409.csv,306,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,302,same_id_steering_main_020_C3_20261111_141409.csv,307,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,303,same_id_steering_main_020_C3_20261111_141409.csv,308,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,304,same_id_steering_main_020_C3_20261111_141409.csv,309,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,306,same_id_steering_main_020_C3_20261111_141409.csv,311,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,307,same_id_steering_main_020_C3_20261111_141409.csv,312,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,308,same_id_steering_main_020_C3_20261111_141409.csv,313,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,309,same_id_steering_main_020_C3_20261111_141409.csv,314,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,310,same_id_steering_main_020_C3_20261111_141409.csv,315,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,311,same_id_steering_main_020_C3_20261111_141409.csv,316,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,312,same_id_steering_main_020_C3_20261111_141409.csv,317,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,315,same_id_steering_main_020_C3_20261111_141409.csv,320,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,335,same_id_steering_main_020_C3_20261111_141409.csv,340,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,336,same_id_steering_main_020_C3_20261111_141409.csv,341,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,337,same_id_steering_main_020_C3_20261111_141409.csv,342,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,338,same_id_steering_main_020_C3_20261111_141409.csv,343,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,339,same_id_steering_main_020_C3_20261111_141409.csv,344,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,340,same_id_steering_main_020_C3_20261111_141409.csv,345,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,341,same_id_steering_main_020_C3_20261111_141409.csv,346,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,343,same_id_steering_main_020_C3_20261111_141409.csv,348,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,344,same_id_steering_main_020_C3_20261111_141409.csv,349,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,346,same_id_steering_main_020_C3_20261111_141409.csv,351,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,347,same_id_steering_main_020_C3_20261111_141409.csv,352,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,353,same_id_steering_main_020_C3_20261111_141409.csv,358,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,356,same_id_steering_main_020_C3_20261111_141409.csv,361,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,357,same_id_steering_main_020_C3_20261111_141409.csv,362,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,358,same_id_steering_main_020_C3_20261111_141409.csv,363,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,363,same_id_steering_main_020_C3_20261111_141409.csv,368,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,366,same_id_steering_main_020_C3_20261111_141409.csv,371,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,367,same_id_steering_main_020_C3_20261111_141409.csv,372,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,379,same_id_steering_main_020_C3_20261111_141409.csv,384,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,389,same_id_steering_main_020_C3_20261111_141409.csv,394,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,390,same_id_steering_main_020_C3_20261111_141409.csv,395,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,391,same_id_steering_main_020_C3_20261111_141409.csv,396,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,020,C3,392,same_id_steering_main_020_C3_20261111_141409.csv,397,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,1,same_id_steering_main_021_C2_20261111_160719.csv,2,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,1,same_id_steering_main_021_C2_20261111_160719.csv,3,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,2,same_id_steering_main_021_C2_20261111_160719.csv,5,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,2,same_id_steering_main_021_C2_20261111_160719.csv,6,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,7,same_id_steering_main_021_C2_20261111_160719.csv,12,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,11,same_id_steering_main_021_C2_20261111_160719.csv,17,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,12,same_id_steering_main_021_C2_20261111_160719.csv,19,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,12,same_id_steering_main_021_C2_20261111_160719.csv,20,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,21,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,22,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,13,same_id_steering_main_021_C2_20261111_160719.csv,23,coreExitMs missing
+sensitivity_1_5sd,021,C2,14,same_id_steering_main_021_C2_20261111_160719.csv,24,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,15,same_id_steering_main_021_C2_20261111_160719.csv,25,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,15,same_id_steering_main_021_C2_20261111_160719.csv,26,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,15,same_id_steering_main_021_C2_20261111_160719.csv,27,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,16,same_id_steering_main_021_C2_20261111_160719.csv,28,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,16,same_id_steering_main_021_C2_20261111_160719.csv,29,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,17,same_id_steering_main_021_C2_20261111_160719.csv,30,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,18,same_id_steering_main_021_C2_20261111_160719.csv,31,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,19,same_id_steering_main_021_C2_20261111_160719.csv,32,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,20,same_id_steering_main_021_C2_20261111_160719.csv,33,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,21,same_id_steering_main_021_C2_20261111_160719.csv,34,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,21,same_id_steering_main_021_C2_20261111_160719.csv,35,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,23,same_id_steering_main_021_C2_20261111_160719.csv,37,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,26,same_id_steering_main_021_C2_20261111_160719.csv,40,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,27,same_id_steering_main_021_C2_20261111_160719.csv,41,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,29,same_id_steering_main_021_C2_20261111_160719.csv,43,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,30,same_id_steering_main_021_C2_20261111_160719.csv,45,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,46,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,47,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,48,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,49,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,31,same_id_steering_main_021_C2_20261111_160719.csv,50,coreExitMs missing
+sensitivity_1_5sd,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,51,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,52,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,53,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,32,same_id_steering_main_021_C2_20261111_160719.csv,54,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,33,same_id_steering_main_021_C2_20261111_160719.csv,55,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,33,same_id_steering_main_021_C2_20261111_160719.csv,56,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,34,same_id_steering_main_021_C2_20261111_160719.csv,58,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,35,same_id_steering_main_021_C2_20261111_160719.csv,59,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,35,same_id_steering_main_021_C2_20261111_160719.csv,60,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,35,same_id_steering_main_021_C2_20261111_160719.csv,61,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,36,same_id_steering_main_021_C2_20261111_160719.csv,62,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,36,same_id_steering_main_021_C2_20261111_160719.csv,63,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,36,same_id_steering_main_021_C2_20261111_160719.csv,64,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,37,same_id_steering_main_021_C2_20261111_160719.csv,65,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,38,same_id_steering_main_021_C2_20261111_160719.csv,67,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,39,same_id_steering_main_021_C2_20261111_160719.csv,68,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,39,same_id_steering_main_021_C2_20261111_160719.csv,69,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,43,same_id_steering_main_021_C2_20261111_160719.csv,73,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,43,same_id_steering_main_021_C2_20261111_160719.csv,74,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,47,same_id_steering_main_021_C2_20261111_160719.csv,78,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,81,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,82,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,49,same_id_steering_main_021_C2_20261111_160719.csv,83,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,50,same_id_steering_main_021_C2_20261111_160719.csv,85,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,52,same_id_steering_main_021_C2_20261111_160719.csv,87,coreExitMs missing
+sensitivity_1_5sd,021,C2,53,same_id_steering_main_021_C2_20261111_160719.csv,88,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,57,same_id_steering_main_021_C2_20261111_160719.csv,92,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,58,same_id_steering_main_021_C2_20261111_160719.csv,94,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,58,same_id_steering_main_021_C2_20261111_160719.csv,95,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,59,same_id_steering_main_021_C2_20261111_160719.csv,97,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,60,same_id_steering_main_021_C2_20261111_160719.csv,99,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,62,same_id_steering_main_021_C2_20261111_160719.csv,102,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,68,same_id_steering_main_021_C2_20261111_160719.csv,108,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,70,same_id_steering_main_021_C2_20261111_160719.csv,111,coreExitMs missing
+sensitivity_1_5sd,021,C2,74,same_id_steering_main_021_C2_20261111_160719.csv,115,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,76,same_id_steering_main_021_C2_20261111_160719.csv,118,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,80,same_id_steering_main_021_C2_20261111_160719.csv,122,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,80,same_id_steering_main_021_C2_20261111_160719.csv,123,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,84,same_id_steering_main_021_C2_20261111_160719.csv,127,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,89,same_id_steering_main_021_C2_20261111_160719.csv,133,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,91,same_id_steering_main_021_C2_20261111_160719.csv,136,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,109,same_id_steering_main_021_C2_20261111_160719.csv,155,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,111,same_id_steering_main_021_C2_20261111_160719.csv,158,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,112,same_id_steering_main_021_C2_20261111_160719.csv,159,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,121,same_id_steering_main_021_C2_20261111_160719.csv,168,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,121,same_id_steering_main_021_C2_20261111_160719.csv,169,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,122,same_id_steering_main_021_C2_20261111_160719.csv,171,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,131,same_id_steering_main_021_C2_20261111_160719.csv,181,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,143,same_id_steering_main_021_C2_20261111_160719.csv,194,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,144,same_id_steering_main_021_C2_20261111_160719.csv,196,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,149,same_id_steering_main_021_C2_20261111_160719.csv,202,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,149,same_id_steering_main_021_C2_20261111_160719.csv,203,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,153,same_id_steering_main_021_C2_20261111_160719.csv,208,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,153,same_id_steering_main_021_C2_20261111_160719.csv,209,coreExitMs missing
+sensitivity_1_5sd,021,C2,154,same_id_steering_main_021_C2_20261111_160719.csv,210,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,154,same_id_steering_main_021_C2_20261111_160719.csv,211,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,156,same_id_steering_main_021_C2_20261111_160719.csv,214,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,156,same_id_steering_main_021_C2_20261111_160719.csv,215,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,157,same_id_steering_main_021_C2_20261111_160719.csv,216,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,158,same_id_steering_main_021_C2_20261111_160719.csv,217,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,163,same_id_steering_main_021_C2_20261111_160719.csv,223,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,167,same_id_steering_main_021_C2_20261111_160719.csv,227,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,167,same_id_steering_main_021_C2_20261111_160719.csv,228,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,171,same_id_steering_main_021_C2_20261111_160719.csv,233,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,174,same_id_steering_main_021_C2_20261111_160719.csv,237,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,174,same_id_steering_main_021_C2_20261111_160719.csv,238,coreExitMs missing
+sensitivity_1_5sd,021,C2,176,same_id_steering_main_021_C2_20261111_160719.csv,240,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,177,same_id_steering_main_021_C2_20261111_160719.csv,241,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,181,same_id_steering_main_021_C2_20261111_160719.csv,245,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,187,same_id_steering_main_021_C2_20261111_160719.csv,252,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,188,same_id_steering_main_021_C2_20261111_160719.csv,254,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,189,same_id_steering_main_021_C2_20261111_160719.csv,256,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,193,same_id_steering_main_021_C2_20261111_160719.csv,261,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,193,same_id_steering_main_021_C2_20261111_160719.csv,262,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,204,same_id_steering_main_021_C2_20261111_160719.csv,273,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,208,same_id_steering_main_021_C2_20261111_160719.csv,277,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,215,same_id_steering_main_021_C2_20261111_160719.csv,284,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,217,same_id_steering_main_021_C2_20261111_160719.csv,287,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,221,same_id_steering_main_021_C2_20261111_160719.csv,292,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,222,same_id_steering_main_021_C2_20261111_160719.csv,293,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,226,same_id_steering_main_021_C2_20261111_160719.csv,298,coreExitMs missing
+sensitivity_1_5sd,021,C2,230,same_id_steering_main_021_C2_20261111_160719.csv,302,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,233,same_id_steering_main_021_C2_20261111_160719.csv,306,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,237,same_id_steering_main_021_C2_20261111_160719.csv,311,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,238,same_id_steering_main_021_C2_20261111_160719.csv,313,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,241,same_id_steering_main_021_C2_20261111_160719.csv,316,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,244,same_id_steering_main_021_C2_20261111_160719.csv,320,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,246,same_id_steering_main_021_C2_20261111_160719.csv,323,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,247,same_id_steering_main_021_C2_20261111_160719.csv,324,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,249,same_id_steering_main_021_C2_20261111_160719.csv,327,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,250,same_id_steering_main_021_C2_20261111_160719.csv,329,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,251,same_id_steering_main_021_C2_20261111_160719.csv,330,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,251,same_id_steering_main_021_C2_20261111_160719.csv,331,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,252,same_id_steering_main_021_C2_20261111_160719.csv,332,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,255,same_id_steering_main_021_C2_20261111_160719.csv,335,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,345,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,346,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,347,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,264,same_id_steering_main_021_C2_20261111_160719.csv,348,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,265,same_id_steering_main_021_C2_20261111_160719.csv,349,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,269,same_id_steering_main_021_C2_20261111_160719.csv,353,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,270,same_id_steering_main_021_C2_20261111_160719.csv,355,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,271,same_id_steering_main_021_C2_20261111_160719.csv,356,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,273,same_id_steering_main_021_C2_20261111_160719.csv,359,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,275,same_id_steering_main_021_C2_20261111_160719.csv,362,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,275,same_id_steering_main_021_C2_20261111_160719.csv,363,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,278,same_id_steering_main_021_C2_20261111_160719.csv,367,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,288,same_id_steering_main_021_C2_20261111_160719.csv,378,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,289,same_id_steering_main_021_C2_20261111_160719.csv,380,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,296,same_id_steering_main_021_C2_20261111_160719.csv,388,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,319,same_id_steering_main_021_C2_20261111_160719.csv,412,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,334,same_id_steering_main_021_C2_20261111_160719.csv,427,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,345,same_id_steering_main_021_C2_20261111_160719.csv,439,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,345,same_id_steering_main_021_C2_20261111_160719.csv,440,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,355,same_id_steering_main_021_C2_20261111_160719.csv,451,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,358,same_id_steering_main_021_C2_20261111_160719.csv,455,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,365,same_id_steering_main_021_C2_20261111_160719.csv,463,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,369,same_id_steering_main_021_C2_20261111_160719.csv,468,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,370,same_id_steering_main_021_C2_20261111_160719.csv,470,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,474,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,475,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,373,same_id_steering_main_021_C2_20261111_160719.csv,476,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,374,same_id_steering_main_021_C2_20261111_160719.csv,478,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,374,same_id_steering_main_021_C2_20261111_160719.csv,479,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,379,same_id_steering_main_021_C2_20261111_160719.csv,485,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,379,same_id_steering_main_021_C2_20261111_160719.csv,486,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,381,same_id_steering_main_021_C2_20261111_160719.csv,489,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,382,same_id_steering_main_021_C2_20261111_160719.csv,491,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,386,same_id_steering_main_021_C2_20261111_160719.csv,496,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,502,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,503,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,391,same_id_steering_main_021_C2_20261111_160719.csv,504,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,397,same_id_steering_main_021_C2_20261111_160719.csv,511,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,021,C2,397,same_id_steering_main_021_C2_20261111_160719.csv,512,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,021,C2,399,same_id_steering_main_021_C2_20261111_160719.csv,514,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,47,same_id_steering_main_023_C3_20261112_112921.csv,48,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,48,same_id_steering_main_023_C3_20261112_112921.csv,49,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,51,same_id_steering_main_023_C3_20261112_112921.csv,52,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,54,same_id_steering_main_023_C3_20261112_112921.csv,55,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,56,same_id_steering_main_023_C3_20261112_112921.csv,57,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,58,same_id_steering_main_023_C3_20261112_112921.csv,59,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,60,same_id_steering_main_023_C3_20261112_112921.csv,61,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,62,same_id_steering_main_023_C3_20261112_112921.csv,63,countedAsTrial=false
+sensitivity_1_5sd,023,C3,66,same_id_steering_main_023_C3_20261112_112921.csv,68,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,67,same_id_steering_main_023_C3_20261112_112921.csv,69,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,73,same_id_steering_main_023_C3_20261112_112921.csv,75,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,80,same_id_steering_main_023_C3_20261112_112921.csv,82,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,86,same_id_steering_main_023_C3_20261112_112921.csv,89,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,219,same_id_steering_main_023_C3_20261112_112921.csv,223,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,229,same_id_steering_main_023_C3_20261112_112921.csv,234,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,023,C3,233,same_id_steering_main_023_C3_20261112_112921.csv,238,countedAsTrial=false
+sensitivity_1_5sd,023,C3,236,same_id_steering_main_023_C3_20261112_112921.csv,242,countedAsTrial=false
+sensitivity_1_5sd,023,C3,243,same_id_steering_main_023_C3_20261112_112921.csv,250,countedAsTrial=false
+sensitivity_1_5sd,023,C3,262,same_id_steering_main_023_C3_20261112_112921.csv,270,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,265,same_id_steering_main_023_C3_20261112_112921.csv,274,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,265,same_id_steering_main_023_C3_20261112_112921.csv,275,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,023,C3,352,same_id_steering_main_023_C3_20261112_112921.csv,363,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,026,C2,4,same_id_steering_main_026_C2_20261112_123527.csv,5,countedAsTrial=false; coreExitMs missing
+sensitivity_1_5sd,026,C2,50,same_id_steering_main_026_C2_20261112_123527.csv,52,condition/trial MT outside mean +/- 1.5 sample SD
+sensitivity_1_5sd,026,C2,274,same_id_steering_main_026_C2_20261112_123527.csv,276,condition/trial MT outside mean +/- 1.5 sample SD

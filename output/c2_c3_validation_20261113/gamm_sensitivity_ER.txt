@@ -1,0 +1,31 @@
+
+Family: binomial 
+Link function: logit 
+
+Formula:
+y ~ condition * block + s(N, k = 10, bs = "cr") + s(N, by = ordered_condition, 
+    k = 10, bs = "cr") + s(N, participant, bs = "fs", k = 5)
+
+Parametric coefficients:
+                   Estimate Std. Error z value Pr(>|z|)    
+(Intercept)        -1.91153    0.36739  -5.203 1.96e-07 ***
+conditionC3         0.84173    0.49663   1.695   0.0901 .  
+block2             -0.06917    0.23723  -0.292   0.7706    
+block3             -0.28971    0.39293  -0.737   0.4609    
+block4             -0.14983    0.55839  -0.268   0.7884    
+conditionC3:block2  0.12744    0.33498   0.380   0.7036    
+conditionC3:block3  0.32291    0.53372   0.605   0.5452    
+conditionC3:block4 -0.05993    0.72442  -0.083   0.9341    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Approximate significance of smooth terms:
+                            edf Ref.df  Chi.sq p-value    
+s(N)                      1.241  1.419   0.055   0.917    
+s(N):ordered_conditionC3  3.421  4.268   7.982   0.191    
+s(N,participant)         32.639 96.000 388.383  <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+R-sq.(adj) =  0.0944   Deviance explained =   10%
+fREML =   3328  Scale est. = 1         n = 7154

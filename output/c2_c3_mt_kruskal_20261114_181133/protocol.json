@@ -1,0 +1,37 @@
+{
+  "created_jst": "2026-11-14T18:13:25.737680+09:00",
+  "status": "User-requested exploratory rank analysis after Welch results were viewed; does not replace the original tests.",
+  "phase": "practice",
+  "metric": "coreMtMs",
+  "unit": "ms",
+  "conditions": [
+    "C2",
+    "C3"
+  ],
+  "participants_each": 10,
+  "early": [
+    1,
+    100
+  ],
+  "late": [
+    301,
+    400
+  ],
+  "base": "countedAsTrial=true AND finite coreExitMs",
+  "valid_MT": "finite and positive",
+  "additional_exclusions": "none",
+  "imputation": "none",
+  "transformation": "none",
+  "aggregation": "Arithmetic mean of valid MT rows per participant and period; retain valid retries; participants equally weighted.",
+  "endpoints": [
+    "participant change = late mean minus early mean",
+    "participant late mean"
+  ],
+  "test": "Kruskal-Wallis H, independent samples; tie correction; nondirectional; chi-square approximation with df=1.",
+  "null": "Identical group distributions; not generally a test of arithmetic means or medians alone.",
+  "multiplicity": "Holm across the two additional Kruskal-Wallis tests only.",
+  "alpha": 0.05,
+  "interpretation": "No replacement of original Welch conclusions; no claim that historical analytic multiplicity is eliminated.",
+  "source": "output/c2_c3_mt_between_20261114_152209",
+  "numeric_cores": 1
+}

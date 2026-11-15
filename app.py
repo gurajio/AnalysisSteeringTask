@@ -18,12 +18,15 @@ from collections import OrderedDict
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, HTTPServer
 
+import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 from matplotlib.figure import Figure
+from matplotlib.patches import Polygon
 from analysis import MT_OUTLIERS, REGRESSION_MODELS, analyze, analyze_regressions, load_rows, trial_range
 
 ROWS = []
+REVISION = secrets.token_hex(16)
 RESULTS = OrderedDict()
 COLORS = {}
 CONDITION_COLORS = {'C1': '#1f77b4', 'C2': '#ff7f0e', 'C3': '#2ca02c'}
@@ -77,10 +80,11 @@ def plot_result(result, key):
             [start] + [x for line in result['series'] for x in line['x']]
             + [x for fit in result['fits'] for x in fit['observedX']])
         ax.set_xlim(start - 1, max(last, start))
-    unit = {'MT': 'ms', 'ER': '%', 'TPe': '1/s', '1/TPe': 's', 'IP': 'ms'}[metric]
-    ax.set_ylabel(f'{metric} ({unit})')
+    unit = {'MT': 'ms', 'ER': '%', 'TPe': '1/s', '1/TPe': 's', 'IP': 'ms', 'MTVariance': 'ms²', 'We': 'px'}[metric]
+    metric_label = {'MTVariance': 'Within-participant MT sample variance', 'We': 'Mean trial We'}.get(metric, metric)
+    ax.set_ylabel(f'{metric_label} ({unit})')
     plot_scope = 'coreMtMs / (amplitude / width)' if metric == 'IP' else options['scope']
-    ax.set_title(f"{'Learning curve: ' + metric if learning else key.replace('_', ' ').title()} | {options['phase']} | {plot_scope}", loc='left', fontsize=20)
+    ax.set_title(f"{'Learning curve: ' + metric if learning else metric_label + ' trend' if metric in ('MTVariance', 'We') else key.replace('_', ' ').title()} | {options['phase']} | {plot_scope}", loc='left', fontsize=20)
     ax.spines[['top', 'right']].set_visible(False)
     ax.grid(axis='y', alpha=.18)
     if metric == 'ER':
@@ -94,6 +98,8 @@ def plot_result(result, key):
         ax.text(.5, .5, 'No data for the current selection', transform=ax.transAxes, ha='center')
     if metric == 'IP' and result['summary'] and all(v is None for line in result['series'] for v in line['IP']):
         ax.text(.5, .5, 'IP unavailable: valid core MT and nominal ID required', transform=ax.transAxes, ha='center')
+    if metric in ('MTVariance', 'We') and result['summary'] and all(v is None for line in result['series'] for v in line[metric]):
+        ax.text(.5, .5, 'Insufficient valid data for ' + metric_label, transform=ax.transAxes, ha='center')
     boundary_note = 'Exclude boundary trials' if options['excludeBoundaryTrials'] else 'Keep boundary trials'
     outlier_note = {'none': 'MT outliers: none', 'trial3sd': 'MT outliers: trial mean ±3SD',
                     'curve3sd': 'MT outliers: curve residual ±3SD',
@@ -151,6 +157,99 @@ def plot_regression(result, model):
     return data.getvalue()
 
 
+def trajectory_rows(data):
+    if data.get('revision') != REVISION:
+        raise ValueError('データが再読み込みされました。ページを再読み込みしてください')
+    meta = metadata()
+    if data.get('participant') not in meta['participants'] or data.get('condition') not in meta['conditions']:
+        raise ValueError('参加者または条件が不正です')
+    if data.get('phase') not in ('practice', 'post'):
+        raise ValueError('phaseが不正です')
+    return [(i, r) for i, r in enumerate(ROWS) if r['participant'] == data['participant']
+            and r['condition'] == data['condition'] and r['phase'] == data['phase']]
+
+
+def trajectory_catalog(data):
+    return dict(rows=[dict(id=i, n=r['n'], attempt=r['attempt'], success=r['success'],
+                          counted=r['countedAsTrial'], coreExit=r['coreExitMs'] is not None,
+                          error=r['errorType'], source=r['source'], line=r['line'])
+                      for i, r in trajectory_rows(data)])
+
+
+def task_geometry(amplitude, width):
+    if amplitude is None or width is None or amplitude <= 0 or width <= 0:
+        raise ValueError('通路のamplitudeまたはwidthが不正です')
+    direction = np.array([np.sqrt(3) / 2, -.5])
+    size = np.maximum([2560, 1440], np.ceil(np.abs(direction) * (amplitude + 200) + 176))
+    return size, size / 2 - direction * amplitude / 2, direction, np.array([.5, np.sqrt(3) / 2])
+
+
+def plot_trajectory(data):
+    rows = trajectory_rows(data)
+    block = data.get('block')
+    ids = data.get('ids')
+    if type(block) is not int or block < 1 or (block - 1) % 10:
+        raise ValueError('10試行ブロックが不正です')
+    if not isinstance(ids, list) or any(type(i) is not int for i in ids) or len(ids) != len(set(ids)):
+        raise ValueError('試行の選択が不正です')
+    if data.get('scope') not in ('full', 'core'):
+        raise ValueError('軌跡の区間が不正です')
+    available = {i: r for i, r in rows if block <= r['n'] < block + 10}
+    if not ids or any(i not in available for i in ids):
+        raise ValueError('ブロック内の試行を選択してください')
+    selected = [available[i] for i in ids]
+    shapes = {(r['amplitude'], r['width'], r['experimentMode']) for r in selected}
+    if len(shapes) != 1:
+        raise ValueError('通路形状または実験モードが異なる記録は重ねられません')
+    amplitude, width, mode = next(iter(shapes))
+    size, origin, direction, normal = task_geometry(amplitude, width)
+    fig = Figure(figsize=(16, 10), dpi=100)
+    ax = fig.add_axes([.06, .19, .90, .73])
+    ax.set_facecolor('#d8dce3')
+    half = max(width, 8) / 2
+    corners = np.array([[0, 0], [size[0], 0], [0, size[1]], size])
+    along = (corners - origin) @ direction
+    segments = [(along.min() - width, -100, '#e8f7ee', '#16794c'),
+                (-100, amplitude + 100, '#eaf1ff', '#2f68c7'),
+                (amplitude + 100, along.max() + width, '#fff2e3', '#c87300')]
+    if mode == 'pilot':
+        segments[1:2] = [(-100, 0, '#fff3ad', '#d6a500'), (0, amplitude, '#eaf1ff', '#2f68c7'),
+                         (amplitude, amplitude + 100, '#fff3ad', '#d6a500')]
+    for start, end, fill, edge in segments:
+        a, b = origin + direction * start, origin + direction * end
+        ax.add_patch(Polygon([a + normal * half, b + normal * half, b - normal * half, a - normal * half],
+                             facecolor=fill, edgecolor=edge, linewidth=1))
+    for value, label in [(0, 'core start'), (amplitude, 'core end')]:
+        point = origin + direction * value
+        ends = np.array([point - normal * half, point + normal * half])
+        ax.plot(ends[:, 0], ends[:, 1], '--', color='#64748b', linewidth=.8)
+        ax.text(*(point - normal * (half + 18)), label, fontsize=9, ha='center')
+    missing, rendered = [], 0
+    palette = matplotlib.colormaps['tab10']
+    for r in selected:
+        points = r['trajectory' if data['scope'] == 'full' else 'coreTrajectory']
+        label = f"N={r['n']} / attempt={r['attempt']}"
+        if points is None or len(points) == 0:
+            missing.append(label)
+            continue
+        ax.plot(points[:, 1], points[:, 2], color=palette((r['n'] - 1) % 10), alpha=.8,
+                linewidth=1.3, marker='.' if len(points) == 1 else None, label=label)
+        rendered += 1
+    ax.set(xlim=(0, size[0]), ylim=(size[1], 0), xlabel='Canvas X (px)', ylabel='Canvas Y (px)')
+    ax.set_aspect('equal')
+    ax.set_title(f"P{data['participant']} / {data['condition']} / {data['phase']} / N={block}-{block + 9}\n"
+                 f"{data['scope']} trajectory | A={amplitude:g}px, W={width:g}px | all records selectable")
+    if rendered:
+        ax.legend(loc='upper center', bbox_to_anchor=(.5, -.09), ncol=5, fontsize=8)
+    else:
+        ax.text(.5, .5, 'No drawable trajectories', transform=ax.transAxes, ha='center')
+    fig.text(.06, .025, f"Canvas coordinates: 2560x1440 px | core boundaries: dashed | selected={len(selected)}, drawn={rendered}\n"
+             'Retries share the color of their original trial number. No analysis exclusions applied.', fontsize=9)
+    stream = io.BytesIO()
+    fig.savefig(stream, format='png', dpi=100)
+    return stream.getvalue(), missing
+
+
 def metadata():
     participants = sorted({r['participant'] for r in ROWS})
     conditions = sorted({r['condition'] for r in ROWS})
@@ -159,7 +258,7 @@ def metadata():
                     for condition in conditions}
     assigned = {participant for members in by_condition.values() for participant in members}
     unassigned = sorted(set(participants) - assigned)
-    return dict(participants=participants, conditions=conditions, participantsByCondition=by_condition,
+    return dict(revision=REVISION, participants=participants, conditions=conditions, participantsByCondition=by_condition,
                 unassignedParticipants=unassigned, rows=len(ROWS),
                 files=len({r['source'] for r in ROWS}))
 
@@ -216,13 +315,15 @@ class Handler(BaseHTTPRequestHandler):
             self.respond(200, (ROOT / 'index.html').read_bytes(), 'text/html; charset=utf-8')
         elif self.path == '/regression':
             self.respond(200, (ROOT / 'regression.html').read_bytes(), 'text/html; charset=utf-8')
+        elif self.path == '/trajectory':
+            self.respond(200, (ROOT / 'trajectory.html').read_bytes(), 'text/html; charset=utf-8')
         elif self.path == '/api/meta':
             self.respond(200, metadata())
         else:
             self.respond(404, dict(error='Not found'))
 
     def do_POST(self):
-        global ROWS
+        global ROWS, REVISION
         if not self.trusted():
             return self.respond(403, dict(error='ローカル接続のみ許可しています'))
         try:
@@ -233,14 +334,24 @@ class Handler(BaseHTTPRequestHandler):
             if self.path == '/api/reload':
                 loaded = load_rows(ROOT / 'inputCSV')
                 ROWS = loaded
+                REVISION = secrets.token_hex(16)
                 set_colors()
                 RESULTS.clear()
                 return self.respond(200, metadata())
+            if self.path == '/api/trajectory/catalog':
+                return self.respond(200, trajectory_catalog(data))
+            if self.path == '/api/trajectory':
+                png, missing = plot_trajectory(data)
+                token = secrets.token_hex(16)
+                RESULTS[token] = (dict(data, trajectory=True), {'trajectory': png})
+                while len(RESULTS) > 12:
+                    RESULTS.popitem(last=False)
+                return self.respond(200, dict(token=token, image=base64.b64encode(png).decode(), missing=missing))
             if self.path == '/api/analyze':
                 options = validate(data)
                 result = analyze(ROWS, options, include_fits=False)
                 keys = [f'{kind}_{metric}' for kind in ('mean', 'trend') for metric in ('MT', 'ER', 'TPe')]
-                keys.append('trend_IP')
+                keys.extend(('trend_IP', 'trend_MTVariance', 'trend_We'))
                 charts = {k: plot_result(result, k) for k in keys}
                 result.pop('fits')
                 result.pop('inverseFits')
@@ -271,6 +382,15 @@ class Handler(BaseHTTPRequestHandler):
                 if key not in charts:
                     raise ValueError('図が見つかりません')
                 stamp = datetime.now().astimezone().strftime('%Y%m%d_%H%M%S_%f')
+                if options.get('trajectory'):
+                    name = f"trajectory_P{options['participant']}_{options['condition']}_{options['phase']}_{options['scope']}_trials{options['block']}-{options['block'] + 9}_all-records_{stamp}.png"
+                    name = re.sub(r'[^a-zA-Z0-9_.-]', '_', name)
+                    folder = ROOT / 'output'
+                    folder.mkdir(exist_ok=True)
+                    path = folder / name
+                    with path.open('xb') as stream:
+                        stream.write(charts[key])
+                    return self.respond(200, dict(path=str(path)))
                 boundary = 'boundary-excluded' if options['excludeBoundaryTrials'] else 'boundary-kept'
                 if key == 'trend_IP':
                     key_name = 'trend_IP_coreMtMs_nominalID_ms'
