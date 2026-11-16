@@ -1,0 +1,47 @@
+Members: {'C2': ['001', '003', '005', '006', '010', '013', '017', '019', '021', '026'], 'C3': ['002', '004', '007', '008', '009', '014', '016', '018', '020', '023']} cores=1
+Benchmark 20 fits=0.06s; 4092 fits estimated=12.5s
+power_rate C2 size=10 done; elapsed=1.7s
+power_rate C2 size=9 done; elapsed=1.7s
+power_rate C2 size=8 done; elapsed=1.8s
+power_rate C2 size=7 done; elapsed=2.1s
+power_rate C2 size=6 done; elapsed=2.6s
+power_rate C2 size=5 done; elapsed=3.2s
+power_rate C2 size=4 done; elapsed=3.6s
+power_rate C2 size=3 done; elapsed=3.9s
+power_rate C2 size=2 done; elapsed=4.0s
+power_rate C2 size=1 done; elapsed=4.0s
+power_rate C3 size=10 done; elapsed=4.0s
+power_rate C3 size=9 done; elapsed=4.1s
+power_rate C3 size=8 done; elapsed=4.2s
+power_rate C3 size=7 done; elapsed=4.5s
+power_rate C3 size=6 done; elapsed=5.0s
+power_rate C3 size=5 done; elapsed=5.6s
+power_rate C3 size=4 done; elapsed=6.2s
+power_rate C3 size=3 done; elapsed=6.5s
+power_rate C3 size=2 done; elapsed=6.6s
+power_rate C3 size=1 done; elapsed=6.6s
+exponential C2 size=10 done; elapsed=6.7s
+exponential C2 size=9 done; elapsed=6.7s
+exponential C2 size=8 done; elapsed=6.9s
+exponential C2 size=7 done; elapsed=7.3s
+exponential C2 size=6 done; elapsed=8.1s
+exponential C2 size=5 done; elapsed=9.1s
+exponential C2 size=4 done; elapsed=10.0s
+exponential C2 size=3 done; elapsed=10.5s
+exponential C2 size=2 done; elapsed=10.8s
+exponential C2 size=1 done; elapsed=10.8s
+exponential C3 size=10 done; elapsed=10.8s
+exponential C3 size=9 done; elapsed=10.9s
+exponential C3 size=8 done; elapsed=11.0s
+exponential C3 size=7 done; elapsed=11.4s
+exponential C3 size=6 done; elapsed=12.2s
+exponential C3 size=5 done; elapsed=13.2s
+exponential C3 size=4 done; elapsed=14.2s
+exponential C3 size=3 done; elapsed=14.7s
+exponential C3 size=2 done; elapsed=15.0s
+exponential C3 size=1 done; elapsed=15.0s
+{"model": "power_rate", "objective": "total", "total": 16, "C2": {"model": "power_rate", "condition": "C2", "participants": ["001", "003", "005", "006", "010", "013", "017", "019", "021", "026"], "count": 10, "ok": true, "parameters": {"a": 2894.583230709529, "b": -0.09392537139409937, "r": 0.936969913768013}, "r2": 0.6517990253452164, "rmse": 133.6476078276127, "points": 400, "warning": "", "endpoint": 1648.870661707515}, "C3": {"model": "power_rate", "condition": "C3", "participants": ["002", "004", "014", "016", "018", "023"], "count": 6, "ok": true, "parameters": {"a": 2677.991644821787, "b": -0.08145491479548966, "r": 0.9451040568012005}, "r2": 0.6133445965732258, "rmse": 121.53226229675913, "points": 400, "warning": "", "endpoint": 1643.8365887895416}, "difference": 5.03407291797339}
+{"model": "power_rate", "objective": "equal", "total": 14, "C2": {"model": "power_rate", "condition": "C2", "participants": ["001", "003", "005", "017", "019", "021", "026"], "count": 7, "ok": true, "parameters": {"a": 3263.0016879943905, "b": -0.09943946180041005, "r": 0.9333955783855297}, "r2": 0.5771809024038227, "rmse": 183.96096525943813, "points": 400, "warning": "", "endpoint": 1798.3319215020247}, "C3": {"model": "power_rate", "condition": "C3", "participants": ["002", "004", "008", "014", "016", "018", "023"], "count": 7, "ok": true, "parameters": {"a": 2636.92799813261, "b": -0.06387775861195726, "r": 0.9566892161533487}, "r2": 0.467663492252265, "rmse": 135.3715782655253, "points": 400, "warning": "", "endpoint": 1798.392618925584}, "difference": -0.0606974235593043}
+{"model": "exponential", "objective": "total", "total": 16, "C2": {"model": "exponential", "condition": "C2", "participants": ["001", "003", "005", "006", "010", "013", "017", "019", "021", "026"], "count": 10, "ok": true, "parameters": {"a": 1609.523749602064, "b": 715.1063705780973, "c": 0.008253047722585182}, "r2": 0.6538162785543831, "rmse": 133.25991121766268, "points": 400, "warning": "", "endpoint": 1635.8670032228383}, "C3": {"model": "exponential", "condition": "C3", "participants": ["002", "004", "009", "014", "016", "023"], "count": 6, "ok": true, "parameters": {"a": 1621.5023400351047, "b": 537.2234328250413, "c": 0.00901960100798168}, "r2": 0.5130681155235235, "rmse": 133.61286050328695, "points": 400, "warning": "", "endpoint": 1636.0666451612615}, "difference": -0.1996419384231558}
+{"model": "exponential", "objective": "equal", "total": 14, "C2": {"model": "exponential", "condition": "C2", "participants": ["001", "003", "005", "006", "017", "019", "021"], "count": 7, "ok": true, "parameters": {"a": 1789.528521223872, "b": 740.0909302200425, "c": 0.010054264239981693}, "r2": 0.5563827289592972, "rmse": 167.1912247919447, "points": 400, "warning": "", "endpoint": 1802.792703776756}, "C3": {"model": "exponential", "condition": "C3", "participants": ["002", "004", "007", "008", "014", "016", "023"], "count": 7, "ok": true, "parameters": {"a": 1759.0447959125468, "b": 469.95780962049713, "c": 0.005909591410422517}, "r2": 0.4051321246049422, "rmse": 142.25093379414517, "points": 400, "warning": "", "endpoint": 1803.2484014826505}, "difference": -0.4556977058944085}
+{"fits": 4092, "failures": 0, "elapsedSeconds": 17.68324133399983, "representativeChecks": "observations and fit parameters matched analysis.analyze and fit_regression_model", "inputHashesUnchanged": true}
