@@ -1,9 +1,0 @@
-{
-  "total_files": 26,
-  "total_rows": 13137,
-  "candidate_rows": 8309,
-  "included_rows": 7983,
-  "excluded_rows": 326,
-  "sensitivity_removed": 829,
-  "tests_existing": 28
-}

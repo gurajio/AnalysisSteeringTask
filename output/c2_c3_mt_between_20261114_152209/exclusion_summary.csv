@@ -1,5 +1,0 @@
-﻿condition,period,records,counted_false,core_exit_missing,both_reasons,excluded_unique,included_rows,invalid_MT_included,valid_MT_rows,included_success_false
-C2,early,1078,78,81,77,82,996,0,996,33
-C2,late,1042,42,42,42,42,1000,0,1000,37
-C3,early,1034,34,32,32,34,1000,0,1000,52
-C3,late,1014,14,20,14,20,994,0,994,51
