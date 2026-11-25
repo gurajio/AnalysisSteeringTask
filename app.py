@@ -71,8 +71,10 @@ def plot_result(result, key):
             y = [v if v is not None else float('nan') for v in line[metric]]
             color = (CONDITION_COLORS.get(line['condition'], '#0f766e') if options['mode'] == 'mean'
                      else COLORS.get(line['participant'], '#0f766e'))
+            linestyle = ('-' if key == 'trend_MT' and options['mode'] == 'mean'
+                         else styles[conditions.index(line['condition']) % len(styles)])
             ax.plot(line['x'], y, marker='o', markersize=4, color=color,
-                    linestyle=styles[conditions.index(line['condition']) % 4], label=f"{line['participant']} / {line['condition']}")
+                    linestyle=linestyle, label=f"{line['participant']} / {line['condition']}")
         ax.set_xlabel(f"Original trial number / {options['bin']}-trial bins (midpoint)")
     start, end = trial_range(options)
     if not key.startswith('mean_') and (start > 1 or end is not None):
