@@ -23,7 +23,7 @@ import matplotlib
 matplotlib.use('Agg')
 from matplotlib.figure import Figure
 from matplotlib.patches import Polygon
-from analysis import MT_OUTLIERS, REGRESSION_MODELS, analyze, analyze_regressions, load_rows, trial_range
+from analysis import MT_OUTLIERS, analyze, analyze_regressions, load_rows, trial_range
 
 ROWS = []
 REVISION = secrets.token_hex(16)
@@ -137,9 +137,9 @@ def plot_regression(result, model):
     if start > 1 or end is not None:
         last = end if end is not None else max([start] + [x for fit in result['regressionFits'][model] for x in fit['observedX']])
         ax.set_xlim(start - 1, max(last, start))
-    details = REGRESSION_MODELS[model]
+    details = next(item for item in result['regressionModels'] if item['key'] == model)
     ax.set_xlabel('Original trial number within condition (N)')
-    ax.set_ylabel('MT (ms)')
+    ax.set_ylabel('1/TPe (s)' if options.get('regressionMetric') == '1/TPe' else 'MT (ms)')
     ax.set_title(f"{details['plotTitle']} | {details['formula']} | {options['scope']}", loc='left', fontsize=20)
     ax.set_ylim(bottom=0)
     ax.spines[['top', 'right']].set_visible(False)
@@ -366,8 +366,9 @@ class Handler(BaseHTTPRequestHandler):
                 return self.respond(200, result)
             if self.path == '/api/regression':
                 options = validate(data)
+                options['regressionMetric'] = data.get('regressionMetric', 'MT')
                 result = analyze_regressions(ROWS, options)
-                charts = ({f'regression_{key}': plot_regression(result, key) for key in REGRESSION_MODELS}
+                charts = ({f'regression_{key}': plot_regression(result, key) for key in result['regressionFits']}
                           if options['phase'] == 'practice' else {})
                 token = secrets.token_hex(16)
                 RESULTS[token] = (options, charts)

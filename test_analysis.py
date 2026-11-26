@@ -213,6 +213,37 @@ class AnalysisTests(unittest.TestCase):
             self.assertEqual(fits[0]['observedX'], [1] + list(range(3, 21)))
         self.assertEqual(analyze(rows, options, include_fits=False)['fits'], [])
 
+    def test_inverse_tpe_models(self):
+        n = np.arange(1, 61)
+        for model, rate in [('inverse_TPe_power', .45), ('inverse_TPe_exponential', .045)]:
+            for first, limit in [(.020, .080), (.080, .020)]:
+                weight = n**(-rate) if model == 'inverse_TPe_power' else np.exp(-rate*(n-1))
+                y = limit + (first - limit)*weight
+                fit = fit_regression_model(n, y, model)
+                self.assertTrue(fit['ok'])
+                np.testing.assert_allclose(list(fit['parameters'].values()), [first, limit, rate], rtol=1e-4)
+                self.assertLess(fit['rmse'], .001)
+
+    def test_tpe_regression_observations(self):
+        samples = [('001', 1, 1), ('001', 1, 3), ('002', 1, 10),
+                   ('001', 2, None), ('002', 2, 15), ('002', 3, None)]
+        rows = [dict(coreExitMs=1000, participant=p, n=n, countedAsTrial=True,
+                     phase='practice', condition='C1', source='test', line=i+2, attempt=i+1,
+                     errorType='none', region='none', coreMtMs=dict(MT=300, ER=0, TPe=value))
+                for i, (p, n, value) in enumerate(samples)]
+        options = dict(scope='coreMtMs', phase='practice', mode='mean', bin=10,
+                       participants=['001', '002'], conditions=['C1'], exclude=True, regressionMetric='1/TPe')
+        result = analyze_regressions(rows, options)
+        self.assertEqual(set(result['regressionFits']), {'inverse_TPe_power', 'inverse_TPe_exponential'})
+        for models in result['regressionFits'].values():
+            fit, = models
+            self.assertEqual(fit['observedX'], [1, 2])
+            np.testing.assert_allclose(fit['observedY'], [((1 + 1/3)/2 + 1/10)/2, 1/15])
+            self.assertFalse(fit['ok'])
+            self.assertEqual(fit['points'], 2)
+        options.update(phase='post')
+        self.assertFalse(any(analyze_regressions(rows, options)['regressionFits'].values()))
+
     def test_power_curve_units(self):
         x = np.arange(1, 41, dtype=float)
         for unit in (1, 1000):

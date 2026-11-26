@@ -20,6 +20,13 @@ REGRESSION_MODELS = {
     'changing_rate': dict(title='変化する習熟率', plotTitle='Changing learning rate', formula='T(n) = a n^[b / (1 + n/c)]', parameters=('a', 'b', 'c')),
 }
 
+INVERSE_TPE_MODELS = {
+    'inverse_TPe_power': dict(title='1/TPe：終端値付きべき乗則', plotTitle='1/TPe asymptotic power',
+                      formula='Y(n) = Yinf + (Y1 - Yinf) n^(-c)', parameters=('Y1', 'Yinf', 'c')),
+    'inverse_TPe_exponential': dict(title='1/TPe：指数関数的習熟', plotTitle='1/TPe exponential learning',
+                            formula='Y(n) = Yinf + (Y1 - Yinf) exp(-c(n-1))', parameters=('Y1', 'Yinf', 'c')),
+}
+
 
 def number(value):
     try:
@@ -207,6 +214,10 @@ def fit_curve(x, y, unit_scale=1, model="shifted", a_bound="nonnegative", fixed_
 
 def regression_value(model, n, params):
     n = np.asarray(n, dtype=float)
+    if model in INVERSE_TPE_MODELS:
+        first, limit, rate = params
+        weight = n ** (-rate) if model == 'inverse_TPe_power' else np.exp(-rate * (n - 1))
+        return weight * first + (1 - weight) * limit
     if model == 'power_rate':
         return params[0] * n ** params[1]
     if model == 'asymptotic_power':
@@ -228,6 +239,13 @@ def regression_value(model, n, params):
 def regression_setup(model, x, y):
     first, minimum = float(y[0]), float(np.min(y))
     scale, last_n = max(float(np.mean(y)), 1), float(max(x))
+    if model in INVERSE_TPE_MODELS:
+        if model == 'inverse_TPe_power':
+            rates, minimum_rate = (.3, .8, 1.5), .001
+        else:
+            rates, minimum_rate = (1 / last_n, 5 / last_n, min(.1, 20 / last_n)), .000001
+        guesses = [[first, float(y[-1]), rate] for rate in rates]
+        return [0, 0, minimum_rate], [np.inf, np.inf, 5], guesses
     if model == 'power_rate':
         guesses = [[max(first / x[0] ** b, 1e-9), b] for b in (-.1, -.5, -1.5)]
         return [0, -np.inf], [np.inf, 0], guesses
@@ -270,17 +288,18 @@ def public_parameters(model, fitted):
         return dict(a=float(fitted[0]), b=float(fitted[1]), r=float(2 ** fitted[1]))
     if model == 'lower_limit':
         return dict(a=float(fitted[0] + fitted[1]), b=float(fitted[2]), c=float(fitted[0]))
-    names = REGRESSION_MODELS[model]['parameters']
+    details = INVERSE_TPE_MODELS if model in INVERSE_TPE_MODELS else REGRESSION_MODELS
+    names = details[model]['parameters']
     return dict(zip(names, map(float, fitted)))
 
 
 def fit_regression_model(x, y, model):
-    if model not in REGRESSION_MODELS:
+    if model not in REGRESSION_MODELS and model not in INVERSE_TPE_MODELS:
         raise ValueError('回帰モデルが不正です')
     x, y = np.asarray(x, dtype=float), np.asarray(y, dtype=float)
     if len(x) < 8 or len(np.unique(x)) < 8:
-        return dict(ok=False, message='回帰には8点以上の異なる試行番号が必要です')
-    scale = max(float(np.mean(y)), 1)
+        return dict(ok=False, points=len(np.unique(x)), message='回帰には8点以上の異なる試行番号が必要です')
+    scale = float(np.mean(y)) if model in INVERSE_TPE_MODELS else max(float(np.mean(y)), 1)
     lower, upper, guesses = regression_setup(model, x, y)
     best = None
     for guess in guesses:
@@ -292,7 +311,7 @@ def fit_regression_model(x, y, model):
         if fit.success and np.isfinite(fit.fun).all() and (best is None or fit.cost < best.cost):
             best = fit
     if best is None:
-        return dict(ok=False, message='回帰が収束しませんでした')
+        return dict(ok=False, points=len(x), message='回帰が収束しませんでした')
     pred = regression_value(model, x, best.x)
     sse = float(np.sum((y - pred) ** 2))
     sst = float(np.sum((y - np.mean(y)) ** 2))
@@ -375,7 +394,23 @@ def mt_outliers(rows, scope, method, model="shifted", a_bound="nonnegative"):
     return found
 
 
-def analyze(rows, options, include_fits=True):
+def trial_observations(active, scope, metric, inverse=False):
+    per_n = defaultdict(list)
+    for group in active.values():
+        local = defaultdict(list)
+        for row in group:
+            value = row[scope][metric]
+            if value is not None and math.isfinite(value) and value > 0:
+                value = 1 / value if inverse else value
+                if math.isfinite(value):
+                    local[row['n']].append(value)
+        for n, values in local.items():
+            per_n[n].append(average(values))
+    x = sorted(per_n)
+    return x, [average(per_n[n]) for n in x]
+
+
+def analyze(rows, options, include_fits=True, observations=None):
     start, end = trial_range(options)
     model = options.get('curveModel', 'shifted')
     a_bound = options.get('aBound', 'nonnegative')
@@ -450,21 +485,12 @@ def analyze(rows, options, include_fits=True):
                     if metric in ('MTVariance', 'We'):
                         line[metric + 'Participants'].append(sum(v is not None for v in values))
             series.append(line)
+            if observations is not None and phase == 'practice':
+                x, y = trial_observations(active, scope, 'TPe', inverse=True)
+                observations.append(dict(condition=condition, participant=label, observedX=x, observedY=y))
             if include_fits and phase == 'practice':
                 for metric, target in [('MT', fits), ('TPe', inverse_fits)]:
-                    per_n = defaultdict(list)
-                    for group in active.values():
-                        local = defaultdict(list)
-                        for r in group:
-                            value = r[scope][metric]
-                            if value is not None and math.isfinite(value) and value > 0:
-                                value = 1 / value if metric == 'TPe' else value
-                                if math.isfinite(value):
-                                    local[r['n']].append(value)
-                        for n, values in local.items():
-                            per_n[n].append(average(values))
-                    x = sorted(per_n)
-                    y = [average(per_n[n]) for n in x]
+                    x, y = trial_observations(active, scope, metric, inverse=metric == 'TPe')
                     target.append(dict(condition=condition, participant=label, observedX=x, observedY=y,
                                        **fit_curve(x, y, unit_scale=1000 if metric == 'TPe' else 1, model=model,
                                                    a_bound='nonnegative' if a_bound == 'fixed_core' else a_bound,
@@ -479,14 +505,23 @@ def analyze(rows, options, include_fits=True):
 
 
 def analyze_regressions(rows, options):
-    result = analyze(rows, options)
-    fits = {key: [] for key in REGRESSION_MODELS}
-    if options['phase'] == 'practice':
-        for observed in result['fits']:
-            for key in REGRESSION_MODELS:
-                fits[key].append(dict(condition=observed['condition'], participant=observed['participant'],
-                                      observedX=observed['observedX'], observedY=observed['observedY'],
-                                      **fit_regression_model(observed['observedX'], observed['observedY'], key)))
+    metric = options.get('regressionMetric', 'MT')
+    if metric not in ('MT', '1/TPe'):
+        raise ValueError('回帰対象にはMTまたは1/TPeを指定してください')
+    if metric == 'MT':
+        models = REGRESSION_MODELS
+        result = analyze(rows, options)
+        observations = result['fits']
+    else:
+        models = INVERSE_TPE_MODELS
+        observations = []
+        result = analyze(rows, options, include_fits=False, observations=observations)
+    fits = {key: [] for key in models}
+    for observed in observations:
+        for key in models:
+            fitted = fit_regression_model(observed['observedX'], observed['observedY'], key)
+            fits[key].append(dict(condition=observed['condition'], participant=observed['participant'],
+                                  observedX=observed['observedX'], observedY=observed['observedY'], **fitted))
     result['regressionFits'] = fits
-    result['regressionModels'] = [dict(key=key, **details) for key, details in REGRESSION_MODELS.items()]
+    result['regressionModels'] = [dict(key=key, **details) for key, details in models.items()]
     return result
